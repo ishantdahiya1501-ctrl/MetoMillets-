@@ -1,0 +1,26 @@
+# robots.txt for Me to Millets
+# Allow all search engines to crawl the site
+
+User-agent: *
+Allow: /
+
+# Disallow admin areas
+Disallow: /admin/
+
+# Sitemap location
+Sitemap: https://metomillets.me/sitemap.xml
+
+# Common crawler directives
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+# Disallow crawling of specific file types if needed
+# Disallow: /*.json$
+# Disallow: /*.xml$
+
+# Crawl-delay for specific bots (if needed)
+# User-agent: *
+# Crawl-delay: 10

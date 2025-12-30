@@ -1,0 +1,14 @@
+{
+	"name": "me-to-millets-site",
+	"private": true,
+	"type": "module",
+	"scripts": {
+		"minify:assets": "node tools/minify-assets.mjs",
+		"restore:assets": "node tools/minify-assets.mjs --restore"
+	},
+	"devDependencies": {
+		"clean-css": "^5.3.3",
+		"sharp": "^0.34.5",
+		"terser": "^5.39.0"
+	}
+}

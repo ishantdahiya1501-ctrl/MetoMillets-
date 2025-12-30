@@ -1,0 +1,164 @@
+    <!-- =================================================================
+    Header
+    ================================================================== -->
+    <header class="main-header desktop-only">
+        <div class="header-container">
+            <!-- Logo -->
+            <div class="logo">
+                <a href="index.html">
+                    <img src="images/icons/logo2.jpg" alt="Me to Millets" class="logo-img" width="50" height="50" decoding="async">
+                    <div class="logo-text">
+                        <span class="brand-name" style="display:block;font-family:var(--font-heading);font-weight:600;line-height:1.3;color:var(--dark-chocolate);font-size:clamp(1.2rem,2.2vw,1.5rem);">Me to Millets</span>
+                        <p class="tagline">Ethical Luxury Chocolate</p>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Desktop Navigation -->
+            <nav class="main-nav">
+                <ul class="nav-list">
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="pages/products.html">Shop</a></li>
+                    <li><a href="pages/custom-builder.html">Custom Builder</a></li>
+                    <li class="nav-dropdown">
+                        <a href="pages/more.html" aria-label="Explore more pages">Explore <i class="fas fa-chevron-down" aria-hidden="true"></i></a>
+                        <div class="dropdown-menu">
+                            <a href="pages/reviews.html">Reviews</a>
+                            <a href="pages/gift-wizard.html">Gift Wizard</a>
+                            <a href="pages/blog.html">Blog</a>
+                            <a href="pages/tasting-journal.html">Tasting Journal</a>
+                            <a href="pages/special-requests.html">Special Requests</a>
+                                <a href="pages/wrapper-return.html">Wrapper Return</a>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+
+            <!-- User Actions -->
+            <div class="user-actions">
+                <form class="search-container" role="search">
+                    <label class="sr-only" for="search-input">Search</label>
+                    <input type="text" id="search-input" class="search-input" placeholder="Search for chocolates...">
+                    <button type="submit" class="search-btn" aria-label="Submit search"><i class="fas fa-search"></i></button>
+                </form>
+                <button type="button" class="action-btn" id="wishlistBtn" aria-label="View Wishlist">
+                    <i class="far fa-heart"></i>
+                    <span class="action-count" id="wishlistCount">0</span>
+                </button>
+                <button type="button" class="action-btn" id="cartBtn" aria-label="View Cart">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-shopping-bag"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+                    <span class="action-count" id="cartCount">0</span>
+                </button>
+                <a href="pages/login-register.html" class="action-btn" aria-label="My Account" id="accountLink">
+                    <i class="far fa-user"></i>
+                </a>
+                <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Open menu">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- =================================================================
+    Mobile Navigation
+    ================================================================== -->
+    <div class="mobile-nav desktop-only" id="mobileNav">
+        <button class="close-mobile-nav" id="closeMobileNav" type="button" aria-label="Close menu">&times;</button>
+        <ul class="mobile-nav-list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="pages/products.html">All Products</a></li>
+            <li><a href="pages/custom-builder.html">Custom Builder</a></li>
+            <li><a href="pages/wrapper-return.html">Wrapper Return</a></li>
+            <li><a href="pages/gift-wizard.html">Gift Wizard</a></li>
+            <li><a href="pages/tasting-journal.html">Tasting Journal</a></li>
+            <li><a href="pages/blog.html">Blog</a></li>
+            <li><a href="pages/reviews.html">Reviews</a></li>
+            <li><a href="pages/account.html">Account</a></li>
+            <li><a href="pages/account.html#wishlist">Wishlist</a></li>
+        </ul>
+    </div>
+
+    <!-- =================================================================
+    Mobile-Only GUI Layer (Phone ≤ 768px)
+    - Replaces the hamburger menu with a thumb-friendly bottom nav
+    - Leaves desktop header untouched above 768px
+    ================================================================== -->
+    <div class="mobile-only m-topbar" role="banner">
+        <div class="m-topbar-inner">
+            <a class="m-brand" href="index.html" aria-label="Me to Millets home">
+                <img src="images/icons/logo2.jpg" alt="Me to Millets logo" width="32" height="32" decoding="async">
+                <span class="m-brand-text">
+                    <strong>Me to Millets</strong>
+                    <span>Ethical Luxury Chocolate</span>
+                </span>
+            </a>
+            <nav class="m-top-actions" aria-label="Quick actions">
+                <a class="m-icon-btn" href="pages/products.html" aria-label="Search and shop">
+                    <i class="fas fa-search" aria-hidden="true"></i>
+                </a>
+                <button class="m-icon-btn" id="mobileWishlistBtnTop" type="button" aria-label="Open wishlist">
+                    <i class="far fa-heart" aria-hidden="true"></i>
+                    <span class="m-badge" id="mobileWishlistCountTop" aria-label="Wishlist items">0</span>
+                </button>
+                <button class="m-icon-btn" id="mobileCartBtn" type="button" aria-label="Open cart">
+                    <i class="fas fa-shopping-bag" aria-hidden="true"></i>
+                    <span class="m-badge" id="mobileCartCount" aria-label="Cart items">0</span>
+                </button>
+            </nav>
+        </div>
+    </div>
+
+    <div class="mobile-only m-drawer-backdrop" id="mobileMoreBackdrop" aria-hidden="true"></div>
+    <div class="mobile-only m-drawer" id="mobileMoreDrawer" role="dialog" aria-modal="true" aria-label="Explore navigation">
+        <div class="m-drawer-header">
+            <h2>Explore</h2>
+            <button class="m-drawer-close" id="closeMobileMoreDrawer" type="button" aria-label="Close menu">
+                <i class="fas fa-times" aria-hidden="true"></i>
+            </button>
+        </div>
+        <style>
+            /* Drawer CTA styled like other drawer links (left aligned with chevron) */
+            .m-drawer-list .drawer-cta{width:100%;text-align:left;display:flex;align-items:center;justify-content:space-between;gap:var(--spacing-md);padding:14px var(--spacing-lg);min-height:44px;color:var(--dark-chocolate);background:0 0;border:0;text-decoration:none;font-weight:400 !important}
+            .m-drawer-list .drawer-cta i{margin-left:8px;color:var(--dark-gray)}
+        </style>
+        <ul class="m-drawer-list">
+            <li><a href="pages/custom-builder.html">Custom Builder <i class="fas fa-chevron-right" aria-hidden="true"></i></a></li>
+            <li><a href="pages/gift-wizard.html">Gift Wizard <i class="fas fa-chevron-right" aria-hidden="true"></i></a></li>
+            <li><a href="pages/reviews.html">Reviews <i class="fas fa-chevron-right" aria-hidden="true"></i></a></li>
+            <li><a href="pages/blog.html">Blog <i class="fas fa-chevron-right" aria-hidden="true"></i></a></li>
+            <li><a href="pages/special-requests.html">Special Requests <i class="fas fa-chevron-right" aria-hidden="true"></i></a></li>
+            <li><a class="drawer-cta" href="pages/wrapper-return.html">Wrapper Return <i class="fas fa-chevron-right" aria-hidden="true"></i></a></li>
+            <li>
+                <button id="mobileWishlistBtn" type="button">
+                    Wishlist
+                    <span class="m-badge" id="mobileWishlistCount" aria-label="Wishlist items">0</span>
+                    <i class="fas fa-chevron-right" aria-hidden="true"></i>
+                </button>
+            </li>
+        </ul>
+    </div>
+
+    <nav class="mobile-only m-bottom-nav" aria-label="Primary navigation">
+        <div class="m-bottom-nav-inner">
+            <a class="m-nav-item" href="index.html" aria-label="Home">
+                <i class="fas fa-house" aria-hidden="true"></i>
+                <span>Home</span>
+            </a>
+            <a class="m-nav-item" href="pages/products.html" aria-label="Shop">
+                <i class="fas fa-store" aria-hidden="true"></i>
+                <span>Shop</span>
+            </a>
+            <button class="m-nav-item is-primary" id="mobileCartBtnPrimary" type="button" aria-label="Cart">
+                <i class="fas fa-bag-shopping" aria-hidden="true"></i>
+                <span>Cart</span>
+            </button>
+            <a class="m-nav-item" href="pages/login-register.html" id="mobileAccountLink" aria-label="Account">
+                <i class="far fa-user" aria-hidden="true"></i>
+                <span>Account</span>
+            </a>
+            <button class="m-nav-item" id="mobileMoreBtn" type="button" aria-label="Explore" aria-expanded="false" aria-controls="mobileMoreDrawer">
+                <i class="fas fa-ellipsis" aria-hidden="true"></i>
+                <span>Explore</span>
+            </button>
+        </div>
+    </nav>
