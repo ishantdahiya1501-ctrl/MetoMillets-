@@ -1,0 +1,234 @@
+.mini-box-page{
+  padding: var(--spacing-xxl) 0;
+}
+
+/* Smoother motion (page-scoped) */
+.mini-box-page .motion-float{
+  will-change: transform;
+  transition:
+    transform var(--duration-lg) var(--ease-out-soft),
+    box-shadow var(--duration-lg) var(--ease-out-soft),
+    border-color var(--duration-lg) var(--ease-out-soft);
+}
+
+.mini-box-page .motion-float:hover{
+  transform: translateY(-4px);
+  box-shadow: 0 20px 48px rgba(37,11,2,.16);
+}
+
+.mini-box-page .motion-press{
+  will-change: transform;
+  transition: transform var(--duration-md) var(--ease-out-soft);
+}
+
+.mini-box-page .motion-press:active{
+  transform: translateY(-1px) scale(.99);
+}
+
+.mini-box-header{
+  text-align: center;
+  margin: 0 auto var(--spacing-xl);
+  max-width: 860px;
+}
+
+.mini-box-header .pill{
+  margin-bottom: var(--spacing-md);
+}
+
+.mini-box-header h1{
+  font-size: var(--type-h2);
+  margin-bottom: var(--spacing-sm);
+}
+
+.mini-box-header p{
+  margin: 0;
+  color: #3a2b25;
+}
+
+.mini-box-layout{
+  display: grid;
+  grid-template-columns: minmax(320px, 1.1fr) minmax(280px, 0.9fr);
+  gap: var(--spacing-xl);
+  align-items: start;
+}
+
+.mini-box-card{
+  padding: var(--spacing-xl);
+}
+
+.mini-box-price-row{
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--spacing-md);
+  flex-wrap: wrap;
+  margin: var(--spacing-md) 0 var(--spacing-lg);
+}
+
+.mini-box-price{
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+  font-weight: 800;
+  color: var(--dark-chocolate);
+}
+
+.mini-box-price-note{
+  color: #3a2b25;
+  font-weight: 700;
+}
+
+.mini-box-section-title{
+  font-size: 1.25rem;
+  margin: 0 0 var(--spacing-sm);
+}
+
+.mini-box-muted{
+  color: #3a2b25;
+}
+
+.mini-box-qty-row{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--spacing-md);
+  margin: var(--spacing-lg) 0;
+  flex-wrap: wrap;
+}
+
+.mini-box-qty-label{
+  font-weight: 800;
+}
+
+.mini-box-qty-control{
+  gap: .5rem;
+}
+
+.mini-box-qty-input{
+  width: 72px;
+  border: none;
+  background: transparent;
+  text-align: center;
+  font-weight: 800;
+  color: var(--dark-chocolate);
+  padding: .25rem;
+}
+
+.mini-box-qty-input:focus{
+  outline: none;
+}
+
+.mini-box-qty-input:focus-visible{
+  outline: 2px solid rgba(var(--gold-rgb), .7);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+.mini-box-actions{
+  display: flex;
+  gap: var(--spacing-md);
+  flex-wrap: wrap;
+  margin-top: var(--spacing-lg);
+}
+
+.mini-box-actions .btn{
+  flex: 1;
+  min-width: 200px;
+}
+
+.mini-box-actions .btn-secondary{
+  flex: 0;
+  min-width: 160px;
+}
+
+.mini-box-side{
+  padding: var(--spacing-xl);
+}
+
+.mini-box-features{
+  list-style: none;
+  padding: 0;
+  margin: var(--spacing-md) 0 0;
+  color: #3a2b25;
+}
+
+.mini-box-features li{
+  display: flex;
+  gap: var(--spacing-sm);
+  align-items: flex-start;
+  padding: .55rem 0;
+  border-bottom: 1px solid rgba(0,0,0,.06);
+}
+
+.mini-box-features li:last-child{
+  border-bottom: none;
+}
+
+.mini-box-features li::before{
+  content: '✓';
+  color: var(--gold);
+  font-weight: 900;
+  line-height: 1.2;
+}
+
+.mini-box-logo-badge{
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  margin-top: var(--spacing-lg);
+  padding-top: var(--spacing-lg);
+  border-top: 1px solid rgba(0,0,0,.06);
+}
+
+.mini-box-logo-badge img{
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  object-fit: contain;
+  background: var(--white);
+  border: 1px solid rgba(0,0,0,.08);
+  padding: 8px;
+}
+
+.mini-box-details{
+  margin-top: var(--spacing-xl);
+  padding: var(--spacing-xl);
+}
+
+.mini-box-details-grid{
+  display: grid;
+  grid-template-columns: repeat(3, minmax(160px, 1fr));
+  gap: var(--spacing-lg);
+}
+
+.mini-box-detail-key{
+  font-weight: 900;
+  color: var(--dark-chocolate);
+}
+
+.mini-box-detail-value{
+  color: #3a2b25;
+  font-weight: 700;
+  margin-top: .25rem;
+}
+
+@media (max-width: 900px){
+  .mini-box-layout{
+    grid-template-columns: 1fr;
+  }
+  .mini-box-details-grid{
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 576px){
+  .mini-box-card,
+  .mini-box-side,
+  .mini-box-details{
+    padding: var(--spacing-lg);
+  }
+  .mini-box-actions .btn{
+    min-width: 100%;
+  }
+  .mini-box-actions .btn-secondary{
+    min-width: 100%;
+  }
+}

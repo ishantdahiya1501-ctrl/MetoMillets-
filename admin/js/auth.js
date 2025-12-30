@@ -1,0 +1,1 @@
+"true"!==sessionStorage.getItem("isAdminAuthenticated")&&(window.location.href="login.html");

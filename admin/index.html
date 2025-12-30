@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard | Me to Millets</title>
+    <link rel="icon" type="image/png" sizes="96x96" href="../images/icons/logo3.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/images/icons/logo3.png">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <script defer src="../js/async-fontawesome.js"></script>
+    <link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+    <div class="admin-layout">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h2>Me to Millets</h2>
+                <p>Admin Panel</p>
+            </div>
+            <nav class="sidebar-nav">
+                <ul>
+                    <li class="active"><a href="#" data-page="dashboard"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+                    <li><a href="#" data-page="products"><i class="fas fa-box"></i> Products</a></li>
+                    <li><a href="#" data-page="orders"><i class="fas fa-shopping-cart"></i> Orders</a></li>
+                    <li><a href="#" data-page="specialRequests"><i class="fas fa-clipboard-list"></i> Special Requests</a></li>
+                    <li><a href="#" data-page="customers"><i class="fas fa-users"></i> Customers</a></li>
+                    <li><a href="#" data-page="content"><i class="fas fa-edit"></i> Content</a></li>
+                    <li><a href="#" data-page="settings"><i class="fas fa-cog"></i> Settings</a></li>
+                </ul>
+            </nav>
+            <div class="sidebar-footer">
+                <a href="../index.html" target="_blank">View Main Site <i class="fas fa-external-link-alt"></i></a>
+                <a href="#" id="logoutBtn" style="margin-top: 1rem; color: #e74c3c;">Log Out <i class="fas fa-sign-out-alt"></i></a>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="main-header">
+                <h1 id="pageTitle">Dashboard</h1>
+                <div class="user-profile">
+                    <span>Admin User</span>
+                    <i class="fas fa-user-circle"></i>
+                </div>
+            </header>
+
+            <div class="content-area" id="contentArea">
+                <!-- Dashboard Page -->
+                <div id="dashboard" class="page">
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <i class="fas fa-dollar-sign"></i>
+                            <div>
+                                <h3>Total Revenue</h3>
+                                <p id="dashboardTotalRevenue">₹0.00</p>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <i class="fas fa-shopping-cart"></i>
+                            <div>
+                                <h3>Total Orders</h3>
+                                <p id="dashboardTotalOrders">0</p>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <i class="fas fa-users"></i>
+                            <div>
+                                <h3>Total Customers</h3>
+                                <p id="dashboardTotalCustomers">0</p>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <i class="fas fa-chart-line"></i>
+                            <div>
+                                <h3>Avg. Order Value</h3>
+                                <p id="dashboardAvgOrderValue">₹0.00</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <h3>Recent Activity</h3>
+                        <p>Activity feed will be displayed here.</p>
+                    </div>
+                </div>
+
+                <!-- Products Page (Hidden by default) -->
+                <div id="products" class="page" style="display: none;">
+                    <div class="card full-width-card">
+                        <div class="card-header">
+                            <h3>Manage Products</h3>
+                            <button class="btn btn-primary" id="addProductBtn"><i class="fas fa-plus"></i> Add New Product</button>
+                        </div>
+                        <div class="search-container">
+                            <i class="fas fa-search"></i>
+                            <input type="text" id="productSearchInput" placeholder="Search by name or category...">
+                        </div>
+                        <div class="undo-container" id="undoContainer">
+                            <span id="undoMessage"></span>
+                            <button class="btn btn-secondary" id="undoBtn">Undo</button>
+                        </div>
+                        <div class="product-table-container">
+                            <table class="product-table">
+                                <thead>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Name</th>
+                                        <th>Category</th>
+                                        <th>Price</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="productTableBody">
+                                    <!-- Product rows will be inserted here by JavaScript -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Other pages will be loaded here -->
+                <div id="orders" class="page" style="display: none;">
+                    <div class="card full-width-card">
+                        <div class="card-header">
+                            <h3>Recent Orders</h3>
+                            <div style="margin-left:auto">
+                                <button class="btn btn-secondary" id="refreshOrdersBtn" title="Refresh orders">Refresh</button>
+                            </div>
+                        </div>
+                        <div class="order-table-container">
+                            <table class="order-table">
+                                <thead>
+                                    <tr>
+                                        <th>Order ID</th>
+                                        <th>Customer</th>
+                                        <th>Date</th>
+                                        <th>Total</th>
+                                        <th>Status</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="orderTableBody">
+                                    <!-- Order rows will be inserted here by JavaScript -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="specialRequests" class="page" style="display: none;">
+                    <div class="card full-width-card">
+                        <div class="card-header">
+                            <h3>Special Requests</h3>
+                        </div>
+                        <div class="data-table-container">
+                            <table class="data-table">
+                                <thead>
+                                    <tr>
+                                        <th>Request ID</th>
+                                        <th>Name</th>
+                                        <th>Event</th>
+                                        <th>Date Needed</th>
+                                        <th>Qty</th>
+                                        <th>Status</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="specialRequestsTableBody"></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div id="customers" class="page" style="display: none;">
+                    <div class="card full-width-card">
+                        <div class="card-header">
+                            <h3>Customer List</h3>
+                        </div>
+                        <div class="customer-table-container">
+                            <table class="data-table">
+                                <thead>
+                                    <tr>
+                                        <th>Customer Name</th>
+                                        <th>Email</th>
+                                        <th>Phone</th>
+                                        <th>Total Orders</th>
+                                        <th>Total Spent</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="customerTableBody"></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div id="content" class="page" style="display: none;">
+                    <div class="card full-width-card">
+                        <div class="card-header">
+                            <h3>Manage Hero Carousel Slides</h3>
+                            <button class="btn btn-primary" id="addSlideBtn"><i class="fas fa-plus"></i> Add New Slide</button>
+                        </div>
+                        <div class="data-table-container">
+                            <table class="data-table">
+                                <thead>
+                                    <tr>
+                                        <th>Badge</th>
+                                        <th>Title</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="slidesTableBody"></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div id="settings" class="page" style="display: none;"><div class="card"><h3>Admin Settings</h3></div></div>
+
+            </div>
+        </main>
+    </div>
+
+    <!-- Add/Edit Product Modal -->
+    <div id="productModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modalTitle">Add New Product</h2>
+                <button class="close-modal" id="closeModal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="productForm">
+                    <input type="hidden" id="productId">
+                    <div class="form-group">
+                        <label for="productName">Product Name</label>
+                        <input type="text" id="productName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="productCategory">Category</label>
+                        <select id="productCategory" required></select>
+                    </div>
+                    <div class="form-group">
+                        <label for="productPrice">Price</label>
+                        <input type="number" id="productPrice" step="0.01" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="productImage">Image URL</label>
+                        <input type="text" id="productImage">
+                    </div>
+                    <div class="form-group">
+                        <label for="cocoaPercentage">Cocoa Percentage</label>
+                        <input type="number" id="cocoaPercentage" min="0" max="100">
+                    </div>
+                    <div class="form-group">
+                        <label for="subcategory">Subcategory (e.g., bestseller, trending)</label>
+                        <select id="subcategory"></select>
+                    </div>
+                    <div class="form-group">
+                        <label for="origin">Origin</label>
+                        <select id="origin"></select>
+                    </div>
+                    <div class="form-group">
+                        <label for="productDescription">Description</label>
+                        <textarea id="productDescription" rows="3"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="ingredients">Ingredients (comma-separated)</label>
+                        <textarea id="ingredients" rows="2" placeholder="e.g., 85% cocoa, organic honey, Himalayan salt"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="allergens">Allergens (comma-separated)</label>
+                        <textarea id="allergens" rows="2" placeholder="e.g., Tree nuts, May contain dairy"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="pairing">Pairings (comma-separated)</label>
+                        <textarea id="pairing" rows="2" placeholder="e.g., Red wine, Espresso, Raspberries"></textarea>
+                    </div>
+                    <div class="form-group-inline">
+                        <label><input type="checkbox" id="featured"> Featured</label>
+                        <label><input type="checkbox" id="limited"> Limited Edition</label>
+                        <label><input type="checkbox" id="temperatureWarning" checked> Temp. Warning</label>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 1rem;">Save Product</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Order Detail Modal -->
+    <div id="orderDetailModal" class="modal">
+        <div class="modal-content large">
+            <div class="modal-header">
+                <h2 id="orderModalTitle">Order Details</h2>
+                <button class="close-modal" id="closeOrderModal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="order-details-grid">
+                    <div class="order-detail-card">
+                        <h4><i class="fas fa-user"></i> Customer Details</h4>
+                        <p id="orderCustomerName"></p>
+                        <p id="orderCustomerEmail"></p>
+                        <p id="orderCustomerPhone"></p>
+                    </div>
+                    <div class="order-detail-card">
+                        <h4><i class="fas fa-shipping-fast"></i> Shipping Address</h4>
+                        <p id="orderShippingAddress"></p>
+                    </div>
+                </div>
+
+                <div class="order-detail-card">
+                    <h4><i class="fas fa-box-open"></i> Order Items</h4>
+                    <div class="order-items-container">
+                        <table class="order-items-table">
+                            <thead>
+                                <tr>
+                                    <th>Product</th>
+                                    <th>Quantity</th>
+                                    <th>Price</th>
+                                    <th>Subtotal</th>
+                                </tr>
+                            </thead>
+                            <tbody id="orderItemsTableBody">
+                                <!-- Items will be inserted here -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="order-detail-card">
+                    <h4><i class="fas fa-tasks"></i> Manage Status</h4>
+                    <div class="form-group">
+                        <label for="orderStatusSelect">Update Order Status</label>
+                        <select id="orderStatusSelect">
+                            <option value="Pending">Pending</option>
+                            <option value="Processing">Processing</option>
+                            <option value="Delivered">Delivered</option>
+                        </select>
+                    </div>
+                    <button class="btn btn-primary" id="updateStatusBtn">Update Status</button>
+                </div>
+
+                <div class="order-summary">
+                    <h3>Total: <span id="orderTotal"></span></h3>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Special Request Detail Modal -->
+    <div id="specialRequestModal" class="modal">
+        <div class="modal-content large">
+            <div class="modal-header">
+                <h2 id="specialRequestModalTitle">Special Request</h2>
+                <button class="close-modal" id="closeSpecialRequestModal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="order-details-grid">
+                    <div class="order-detail-card">
+                        <h4><i class="fas fa-user"></i> Customer</h4>
+                        <p id="srCustomerName"></p>
+                        <p id="srCustomerEmail"></p>
+                        <p id="srCustomerPhone"></p>
+                    </div>
+                    <div class="order-detail-card">
+                        <h4><i class="fas fa-calendar-alt"></i> Request</h4>
+                        <p id="srEventType"></p>
+                        <p id="srEventDate"></p>
+                        <p id="srQuantity"></p>
+                        <p id="srBudget"></p>
+                    </div>
+                </div>
+
+                <div class="order-detail-card">
+                    <h4><i class="fas fa-info-circle"></i> Details</h4>
+                    <p id="srFlavors"></p>
+                    <p id="srDietary"></p>
+                    <p id="srPackaging"></p>
+                    <p id="srDetails"></p>
+                </div>
+
+                <div class="order-detail-card">
+                    <h4><i class="fas fa-tasks"></i> Manage Status</h4>
+                    <div class="form-group">
+                        <label for="specialRequestStatusSelect">Update Status</label>
+                        <select id="specialRequestStatusSelect">
+                            <option value="New">New</option>
+                            <option value="Contacted">Contacted</option>
+                            <option value="Closed">Closed</option>
+                        </select>
+                    </div>
+                    <button class="btn btn-primary" id="updateSpecialRequestStatusBtn">Update Status</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add/Edit Slide Modal -->
+    <div id="slideModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="slideModalTitle">Add New Slide</h2>
+                <button class="close-modal" id="closeSlideModal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="slideForm">
+                    <input type="hidden" id="slideId">
+                    <div class="form-group">
+                        <label for="slideBadge">Badge Text (e.g., 🍫 Featured)</label>
+                        <input type="text" id="slideBadge" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="slideTitle">Title</label>
+                        <input type="text" id="slideTitle" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="slideSubtitle">Subtitle</label>
+                        <input type="text" id="slideSubtitle" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="slideDescription">Description</label>
+                        <textarea id="slideDescription" rows="3"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="slideImage">Image URL</label>
+                        <input type="text" id="slideImage" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="slideButtonText">Button Text</label>
+                        <input type="text" id="slideButtonText" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="slideButtonLink">Button Link</label>
+                        <input type="text" id="slideButtonLink" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary" style="width: 100%;">Save Slide</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/product-data.js"></script> <!-- To access product info -->
+    <script src="js/auth.js"></script> <!-- Authentication Check -->
+    <script src="../js/utils.js"></script> <!-- Utility functions like localStorage -->
+    <script src="js/admin.js"></script>
+</body>
+</html>
