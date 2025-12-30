@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Custom & Bulk Chocolate Orders | Me to Millets</title>
+        <meta name="description" content="Request custom chocolate bars and bulk orders for weddings, corporate gifting, and events—made by Me to Millets in India.">
+    <link rel="canonical" href="https://metomillets.me/pages/special-requests.html">
+
+        <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "Me to Millets",
+            "url": "https://metomillets.me/",
+            "logo": "https://metomillets.me/images/icons/logo3.png",
+            "contactPoint": [
+                {
+                    "@type": "ContactPoint",
+                    "telephone": "+91-8750441860",
+                    "contactType": "customer support",
+                    "email": "metomillets@gmail.com",
+                    "areaServed": "IN",
+                    "availableLanguage": ["en"]
+                }
+            ]
+        }
+        </script>
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://metomillets.me/pages/special-requests.html">
+    <meta property="og:title" content="Custom & Bulk Chocolate Orders | Me to Millets">
+    <meta property="og:description" content="Request custom chocolate bars and bulk orders for weddings, corporate gifting, and events in India.">
+    <meta property="og:image" content="https://metomillets.me/images/icons/logo2.jpg">
+    <meta property="og:site_name" content="Me to Millets">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://metomillets.me/pages/special-requests.html">
+    <meta name="twitter:title" content="Custom & Bulk Chocolate Orders | Me to Millets">
+    <meta name="twitter:description" content="Request custom chocolate bars and bulk orders for weddings, corporate gifting, and events in India.">
+    <meta name="twitter:image" content="https://metomillets.me/images/icons/logo2.jpg">
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="96x96" href="../images/icons/logo3.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/images/icons/logo3.png">
+    <!-- Fonts (non-blocking) -->
+    <script defer src="../js/async-google-fonts.js"></script>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/components.css">
+    <link rel="stylesheet" href="../css/special-requests.css">
+    <link rel="stylesheet" href="../css/mobile.css">
+
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <script defer src="../js/async-fontawesome.js"></script>
+    <script defer src="../js/header-loader.js"></script>
+</head>
+<body>
+    <header>
+        <div id="header-container" data-header-src="../header-pages.html"></div>
+    </header>
+
+    <main class="special-requests-page">
+        <div class="container">
+            <div class="page-header">
+                <h1>Custom & Bulk Order Requests</h1>
+                <p>Planning a wedding, corporate event, or a special celebration? Let us craft the perfect chocolate experience for you.</p>
+            </div>
+            <div class="request-form-container">
+                <form id="specialRequestForm" novalidate>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="name" class="form-label">Full Name *</label>
+                            <input type="text" id="name" name="name" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email" class="form-label">Email Address *</label>
+                            <input type="email" id="email" name="email" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone" class="form-label">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="eventType" class="form-label">Event Type *</label>
+                            <select id="eventType" name="eventType" class="form-control" required>
+                                <option value="">-- Select an Event --</option>
+                                <option value="wedding">Wedding</option>
+                                <option value="corporate">Corporate Gift</option>
+                                <option value="celebration">Celebration Party</option>
+                                <option value="holiday">Holiday Gift</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="quantity" class="form-label">Number of Guests / Units *</label>
+                            <input type="number" id="quantity" name="quantity" class="form-control" min="10" placeholder="e.g., 50" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="budget" class="form-label">Budget per Unit (₹)</label>
+                            <input type="text" id="budget" name="budget" class="form-control" placeholder="e.g., 500">
+                        </div>
+                        <div class="form-group full-width">
+                            <label for="eventDate" class="form-label">Date Needed By *</label>
+                            <input type="date" id="eventDate" name="eventDate" class="form-control" required>
+                        </div>
+                        <div class="form-group full-width">
+                            <label class="form-label">Desired Flavors or Ingredients</label>
+                            <textarea id="flavors" name="flavors" class="form-control" rows="3" placeholder="e.g., Dark chocolate with almonds, sea salt, and a hint of orange."></textarea>
+                        </div>
+                        <div class="form-group full-width">
+                            <label class="form-label">Dietary Restrictions</label>
+                            <div class="checkbox-group">
+                                <label><input type="checkbox" name="diet" value="nut-free"> Nut-Free</label>
+                                <label><input type="checkbox" name="diet" value="dairy-free"> Dairy-Free</label>
+                                <label><input type="checkbox" name="diet" value="gluten-free"> Gluten-Free</label>
+                                <label><input type="checkbox" name="diet" value="vegan"> Vegan</label>
+                            </div>
+                        </div>
+                        <div class="form-group full-width">
+                            <label class="form-label">Packaging Preferences</label>
+                            <textarea id="packaging" name="packaging" class="form-control" rows="2" placeholder="e.g., Individual boxes with custom logo, eco-friendly wrapping."></textarea>
+                        </div>
+                        <div class="form-group full-width">
+                            <label for="details" class="form-label">Detailed Request *</label>
+                            <textarea id="details" name="details" class="form-control" rows="5" placeholder="Please provide as much detail as possible about your request." required></textarea>
+                        </div>
+                    </div>
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn-primary">Submit Request</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; <span id="currentYear">2026</span> Me to Millets. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/utils.js"></script>
+    <script>
+        (function initSpecialRequestsPage() {
+            const notify = (msg, type) => {
+                if (window.utils && typeof window.utils.showNotification === 'function') {
+                    window.utils.showNotification(msg, type);
+                } else {
+                    alert(msg);
+                }
+            };
+
+            // Set current year in footer
+            const yearEl = document.getElementById('currentYear');
+            if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+            // Set min date for date picker to today
+            const eventDateInput = document.getElementById('eventDate');
+            if (eventDateInput) {
+                const today = new Date().toISOString().split('T')[0];
+                eventDateInput.setAttribute('min', today);
+            }
+
+            const form = document.getElementById('specialRequestForm');
+            if (!form) return;
+
+            form.addEventListener('submit', (e) => {
+                e.preventDefault();
+
+                const nameEl = document.getElementById('name');
+                const emailEl = document.getElementById('email');
+                const detailsEl = document.getElementById('details');
+                const eventTypeEl = document.getElementById('eventType');
+                const quantityEl = document.getElementById('quantity');
+                const budgetEl = document.getElementById('budget');
+                const dateEl = document.getElementById('eventDate');
+                const flavorsEl = document.getElementById('flavors');
+                const packagingEl = document.getElementById('packaging');
+                const phoneEl = document.getElementById('phone');
+
+                const name = (nameEl?.value || '').trim();
+                const email = (emailEl?.value || '').trim();
+                const details = (detailsEl?.value || '').trim();
+                const eventType = (eventTypeEl?.value || '').trim();
+                const quantityRaw = (quantityEl?.value || '').trim();
+                const eventDate = (dateEl?.value || '').trim();
+
+                if (!name || !email || !details || !eventType || !quantityRaw || !eventDate) {
+                    notify('Please fill out all required fields.', 'error');
+                    return;
+                }
+
+                const dietary = Array.from(document.querySelectorAll('input[name="diet"]:checked')).map(i => i.value);
+                const quantity = Number(quantityRaw);
+                if (!Number.isFinite(quantity) || quantity < 10) {
+                    notify('Please enter a valid quantity (minimum 10).', 'error');
+                    return;
+                }
+
+                const STORAGE_KEY = 'meToMilletsSpecialRequests';
+                const existing = (window.utils && typeof window.utils.loadFromLocalStorage === 'function')
+                    ? (window.utils.loadFromLocalStorage(STORAGE_KEY) || [])
+                    : (JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]'));
+
+                const requestObj = {
+                    id: `SR-${Date.now()}`,
+                    createdAt: new Date().toISOString(),
+                    status: 'New',
+                    name,
+                    email,
+                    phone: (phoneEl?.value || '').trim(),
+                    eventType,
+                    quantity,
+                    budget: (budgetEl?.value || '').trim(),
+                    eventDate,
+                    flavors: (flavorsEl?.value || '').trim(),
+                    dietary,
+                    packaging: (packagingEl?.value || '').trim(),
+                    details
+                };
+
+                existing.push(requestObj);
+
+                if (window.utils && typeof window.utils.saveToLocalStorage === 'function') {
+                    window.utils.saveToLocalStorage(STORAGE_KEY, existing);
+                } else {
+                    localStorage.setItem(STORAGE_KEY, JSON.stringify(existing));
+                }
+
+                notify('Thank you! Your request has been submitted. We will contact you shortly.', 'success');
+                form.reset();
+            });
+        })();
+    </script>
+    <script src="../js/cart.js"></script>
+    <script src="../js/main.js"></script>
+    <script src="../js/search.js"></script>
+</body>
+</html>

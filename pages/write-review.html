@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Write a Chocolate Review | Me to Millets</title>
+        <meta name="description" content="Share your feedback on Me to Millets chocolate. Your review helps others choose healthy chocolate and gifts in India.">
+    <link rel="canonical" href="https://metomillets.me/pages/write-review.html">
+
+        <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "Me to Millets",
+            "url": "https://metomillets.me/",
+            "logo": "https://metomillets.me/images/icons/logo3.png",
+            "contactPoint": [
+                {
+                    "@type": "ContactPoint",
+                    "telephone": "+91-8750441860",
+                    "contactType": "customer support",
+                    "email": "metomillets@gmail.com",
+                    "areaServed": "IN",
+                    "availableLanguage": ["en"]
+                }
+            ]
+        }
+        </script>
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://metomillets.me/pages/write-review.html">
+    <meta property="og:title" content="Write a Chocolate Review | Me to Millets">
+    <meta property="og:description" content="Share your feedback on Me to Millets chocolate and help others choose their next bar.">
+    <meta property="og:image" content="https://metomillets.me/images/icons/logo2.jpg">
+    <meta property="og:site_name" content="Me to Millets">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://metomillets.me/pages/write-review.html">
+    <meta name="twitter:title" content="Write a Chocolate Review | Me to Millets">
+    <meta name="twitter:description" content="Share your feedback on Me to Millets chocolate and help others choose their next bar.">
+    <meta name="twitter:image" content="https://metomillets.me/images/icons/logo2.jpg">
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="96x96" href="../images/icons/logo3.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/images/icons/logo3.png">
+    <!-- Fonts (non-blocking) -->
+    <script defer src="../js/async-google-fonts.js"></script>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/mobile.css">
+
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <script defer src="../js/async-fontawesome.js"></script>
+    <script defer src="../js/header-loader.js"></script>
+    <style>
+        .review-page-container { max-width: 800px; margin: 2rem auto; padding: 2rem; background: #fff; border-radius: 12px; box-shadow: 0 8px 24px rgba(0,0,0,0.1); }
+        .review-page-container h1 { text-align: center; color: #3d2b2b; margin-bottom: 2rem; }
+        .form-group { margin-bottom: 1.5rem; }
+        .form-group label { display: block; font-weight: 600; color: #3d2b2b; margin-bottom: 0.5rem; }
+        .form-group input, .form-group textarea, .form-group select {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #e9e0da;
+            border-radius: 8px;
+            font-family: 'Lato', sans-serif;
+            font-size: 1rem;
+        }
+        .form-group textarea { min-height: 120px; resize: vertical; }
+        .star-rating { display: flex; flex-direction: row-reverse; justify-content: center; font-size: 2.5rem; }
+        .star-rating input { display: none; }
+        .star-rating label { color: #ccc; cursor: pointer; transition: color 0.2s; }
+        .star-rating input:checked ~ label,
+        .star-rating label:hover,
+        .star-rating label:hover ~ label { color: #d4af37; }
+        .product-preview { display: flex; align-items: center; gap: 1rem; margin-bottom: 2rem; background: #f8f3ee; padding: 1rem; border-radius: 8px; }
+        .product-preview img { width: 80px; height: 80px; object-fit: cover; border-radius: 8px; }
+        .product-preview-info h3 { margin: 0; color: #3d2b2b; }
+        .product-preview-info p { margin: 0; color: #666; }
+        .submit-btn {
+            display: block;
+            width: 100%;
+            padding: 1rem;
+            background: #3d2b2b;
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.2rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .submit-btn:hover { background: #d4af37; }
+    </style>
+</head>
+<body>
+    <header>
+        <div id="header-container" data-header-src="../header-pages.html"></div>
+    </header>
+
+    <main>
+        <div class="review-page-container">
+            <h1>Share Your Thoughts</h1>
+
+            <div id="productPreview" class="product-preview" style="display: none;"></div>
+
+            <form id="reviewForm">
+                <div class="form-group">
+                    <label for="productSelect">Which chocolate are you reviewing?</label>
+                    <select id="productSelect" name="productId" required></select>
+                </div>
+
+                <div class="form-group">
+                    <label>Your Rating</label>
+                    <div class="star-rating">
+                        <input type="radio" id="star5" name="rating" value="5" required><label for="star5">★</label>
+                        <input type="radio" id="star4" name="rating" value="4"><label for="star4">★</label>
+                        <input type="radio" id="star3" name="rating" value="3"><label for="star3">★</label>
+                        <input type="radio" id="star2" name="rating" value="2"><label for="star2">★</label>
+                        <input type="radio" id="star1" name="rating" value="1"><label for="star1">★</label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="reviewTitle">Review Title</label>
+                    <input type="text" id="reviewTitle" name="title" placeholder="e.g., Absolutely delicious!" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="reviewText">Your Review</label>
+                    <textarea id="reviewText" name="text" placeholder="Tell us more about your experience..." required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="authorName">Your Name</label>
+                    <input type="text" id="authorName" name="author" placeholder="John Doe" required>
+                </div>
+
+                <button type="submit" class="submit-btn">Submit Review</button>
+            </form>
+        </div>
+    </main>
+
+    <footer class="container" style="padding:2rem 0;text-align:center;margin-top:3rem;border-top:1px solid #e9e0da">
+        <small>&copy; <span id="currentYear"></span> Me To Millets. All rights reserved.</small>
+    </footer>
+
+    <script src="../js/utils.js"></script>
+    <script src="../js/product-data.js"></script>
+    <script src="../js/cart.js"></script>
+    <script src="../js/main.js"></script>
+    <script src="../js/search.js"></script>
+    <script src="../js/auth-client.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const productSelect = document.getElementById('productSelect');
+            const productPreview = document.getElementById('productPreview');
+            const reviewForm = document.getElementById('reviewForm');
+            const allProducts = window.productData.products;
+
+            const isLikelyLocalDevHost = () => {
+                try {
+                    const { protocol, hostname } = window.location || {};
+                    if (protocol === 'file:') return true;
+                    if (!hostname) return true;
+                    if (hostname === 'localhost' || hostname === '127.0.0.1') return true;
+                    if (hostname.startsWith('192.168.')) return true;
+                    if (hostname.startsWith('10.')) return true;
+                    if (/^172\.(1[6-9]|2\d|3[0-1])\./.test(hostname)) return true;
+                    return false;
+                } catch {
+                    return false;
+                }
+            };
+
+            const getDefaultLocalDevApiBase = () => {
+                try {
+                    const { hostname } = window.location || {};
+                    return `http://${hostname || 'localhost'}:8080`;
+                } catch {
+                    return 'http://localhost:8080';
+                }
+            };
+
+            const getApiBaseUrl = () => {
+                const fromWindow = (window.MTM_API_BASE_URL || '').toString().trim();
+                const fromStorage = (() => {
+                    try {
+                        return (localStorage.getItem('MTM_API_BASE_URL') || '').toString().trim();
+                    } catch {
+                        return '';
+                    }
+                })();
+
+                const raw = (fromWindow || fromStorage || '').toString().trim();
+                const normalized = raw.endsWith('/') ? raw.slice(0, -1) : raw;
+
+                if (!normalized && isLikelyLocalDevHost()) {
+                    return getDefaultLocalDevApiBase();
+                }
+
+                return normalized;
+            };
+
+            const apiRequest = async (method, path, body) => {
+                const base = getApiBaseUrl();
+                const url = `${base}${path}`;
+                const res = await fetch(url, {
+                    method,
+                    headers: { 'Content-Type': 'application/json' },
+                    credentials: 'include',
+                    body: body ? JSON.stringify(body) : undefined,
+                });
+                const contentType = (res.headers.get('content-type') || '').toLowerCase();
+                const data = contentType.includes('application/json') ? await res.json().catch(() => null) : null;
+
+                if (!res.ok) {
+                    const err = new Error(data?.error || 'SERVER_ERROR');
+                    err.status = res.status;
+                    err.code = data?.error || 'SERVER_ERROR';
+                    throw err;
+                }
+                return data;
+            };
+
+            const ensureLoggedIn = async () => {
+                try {
+                    await apiRequest('GET', '/api/auth/me');
+                    return true;
+                } catch (err) {
+                    if (err?.status === 401) return false;
+                    // If API isn't reachable, treat as not logged in.
+                    return false;
+                }
+            };
+
+            // 1. Populate product dropdown
+            function populateProducts() {
+                if (!allProducts || allProducts.length === 0) {
+                    productSelect.innerHTML = '<option>Could not load products</option>';
+                    return;
+                }
+                let optionsHtml = '<option value="">-- Select a Product --</option>';
+                allProducts.forEach(product => {
+                    optionsHtml += `<option value="${product.id}">${product.name}</option>`;
+                });
+                productSelect.innerHTML = optionsHtml;
+            }
+
+            // 2. Check URL for a pre-selected product
+            function checkUrlForProduct() {
+                const urlParams = new URLSearchParams(window.location.search);
+                const productId = urlParams.get('product_id');
+                if (productId) {
+                    productSelect.value = productId;
+                    updateProductPreview(productId);
+                }
+            }
+
+            // 3. Update product preview when selection changes
+            function updateProductPreview(productId) {
+                const product = allProducts.find(p => p.id == productId);
+                if (product) {
+                    productPreview.innerHTML = `
+                        <img src="${product.image || '/images/icons/logo.png'}" alt="${product.name}">
+                        <div class="product-preview-info">
+                            <h3>${product.name}</h3>
+                            <p>${product.description.substring(0, 80)}...</p>
+                        </div>
+                    `;
+                    productPreview.style.display = 'flex';
+                } else {
+                    productPreview.style.display = 'none';
+                }
+            }
+
+            productSelect.addEventListener('change', () => {
+                updateProductPreview(productSelect.value);
+            });
+
+            // 4. Handle form submission
+            reviewForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const formData = new FormData(reviewForm);
+                const review = Object.fromEntries(formData.entries());
+                
+                // Convert rating to number
+                review.rating = parseInt(review.rating);
+                review.date = new Date().toLocaleDateString();
+
+                if (!review.productId || !review.rating) {
+                    window.utils.showNotification('Please select a product and a rating.', 'error');
+                    return;
+                }
+
+                (async () => {
+                    const loggedIn = await ensureLoggedIn();
+                    if (!loggedIn) {
+                        window.utils.showNotification('Please log in to submit a review.', 'warning');
+                        setTimeout(() => {
+                            window.location.href = 'login-register.html';
+                        }, 800);
+                        return;
+                    }
+
+                    try {
+                        await apiRequest('POST', '/api/reviews', {
+                            productId: String(review.productId),
+                            rating: review.rating,
+                            title: review.title || '',
+                            body: review.text || '',
+                        });
+
+                        window.utils.showNotification('Thank you! Your review has been submitted.', 'success');
+                        setTimeout(() => {
+                            window.location.href = review.productId === 27
+                                ? 'assorted-mini-box.html'
+                                : `product-detail.html?id=${review.productId}`;
+                        }, 900);
+                    } catch (err) {
+                        // Fallback (only if API isn't connected) to preserve current behavior in offline/dev.
+                        const code = err?.code;
+                        if (err?.status === 401) {
+                            window.utils.showNotification('Please log in to submit a review.', 'warning');
+                            setTimeout(() => {
+                                window.location.href = 'login-register.html';
+                            }, 800);
+                            return;
+                        }
+
+                        // Save to localStorage as last resort
+                        const allReviews = window.utils.loadFromLocalStorage('productReviews') || {};
+                        if (!allReviews[review.productId]) {
+                            allReviews[review.productId] = [];
+                        }
+                        allReviews[review.productId].unshift(review);
+                        window.utils.saveToLocalStorage('productReviews', allReviews);
+
+                        window.utils.showNotification(
+                            code === 'API_NOT_CONFIGURED'
+                                ? 'Review saved locally (server not connected).'
+                                : 'Review saved locally due to a server error.',
+                            'warning'
+                        );
+                        setTimeout(() => {
+                            window.location.href = review.productId === 27
+                                ? 'assorted-mini-box.html'
+                                : `product-detail.html?id=${review.productId}`;
+                        }, 1200);
+                    }
+                })();
+            });
+
+            // Set year in footer
+            const yearEl = document.getElementById('currentYear');
+            if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+            // Initialize
+            populateProducts();
+            checkUrlForProduct();
+        });
+    </script>
+</body>
+</html>

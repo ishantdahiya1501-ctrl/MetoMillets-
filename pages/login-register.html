@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login or Register | Me to Millets</title>
+    <meta name="description" content="Access your account to manage orders, wishlist, and subscriptions.">
+    <link rel="canonical" href="https://metomillets.me/pages/login-register.html">
+
+        <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "Me to Millets",
+            "url": "https://metomillets.me/",
+            "logo": "https://metomillets.me/images/icons/logo3.png",
+            "contactPoint": [
+                {
+                    "@type": "ContactPoint",
+                    "telephone": "+91-8750441860",
+                    "contactType": "customer support",
+                    "email": "metomillets@gmail.com",
+                    "areaServed": "IN",
+                    "availableLanguage": ["en"]
+                }
+            ]
+        }
+        </script>
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://metomillets.me/pages/login-register.html">
+    <meta property="og:title" content="Login or Register | Me to Millets">
+    <meta property="og:description" content="Access your account to manage orders, wishlist, and subscriptions.">
+    <meta property="og:image" content="https://metomillets.me/images/icons/logo2.jpg">
+    <meta property="og:site_name" content="Me to Millets">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://metomillets.me/pages/login-register.html">
+    <meta name="twitter:title" content="Login or Register | Me to Millets">
+    <meta name="twitter:description" content="Access your account to manage orders, wishlist, and subscriptions.">
+    <meta name="twitter:image" content="https://metomillets.me/images/icons/logo2.jpg">
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="96x96" href="../images/icons/logo3.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/images/icons/logo3.png">
+    <!-- Fonts (non-blocking) -->
+    <script defer src="../js/async-google-fonts.js"></script>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/components.css">
+    <link rel="stylesheet" href="../css/mobile.css">
+
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <script defer src="../js/async-fontawesome.js"></script>
+    <script defer src="../js/header-loader.js"></script>
+    <style>
+        .auth-page {
+            padding: var(--spacing-xxl) 0;
+            background: var(--light-gray);
+            min-height: 80vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .auth-container {
+            background: var(--white);
+            border-radius: var(--radius-xl);
+            box-shadow: var(--shadow-lg);
+            padding: var(--spacing-xxl);
+            max-width: 500px;
+            width: 90%;
+            text-align: center;
+        }
+        .auth-container h1 {
+            font-size: 2.2rem;
+            margin-bottom: var(--spacing-xl);
+            color: var(--dark-chocolate);
+        }
+        .auth-form {
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-lg);
+            margin-bottom: var(--spacing-xl);
+        }
+        .form-group {
+            text-align: left;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: var(--spacing-sm);
+            font-weight: 600;
+            color: var(--dark-gray);
+        }
+        .form-control {
+            width: 100%;
+            padding: var(--spacing-md);
+            border: 1px solid var(--medium-gray);
+            border-radius: var(--radius-md);
+            font-family: var(--font-body);
+            font-size: 1rem;
+            transition: border-color var(--transition-normal);
+        }
+        .form-control:focus {
+            border-color: var(--primary-pink);
+            outline: none;
+            box-shadow: 0 0 0 2px rgba(212, 132, 122, 0.2);
+        }
+        .auth-toggle {
+            margin-top: var(--spacing-lg);
+            font-size: 0.95rem;
+        }
+        .auth-toggle a {
+            color: var(--primary-pink);
+            font-weight: 600;
+        }
+        .auth-toggle a:hover {
+            text-decoration: underline;
+        }
+        @media (max-width: 768px) {
+            .auth-container {
+                padding: var(--spacing-xl);
+            }
+            .auth-container h1 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div id="header-container" data-header-src="../header-pages.html"></div>
+    </header>
+
+    <main class="auth-page">
+        <div class="auth-container">
+            <h1 id="authTitle">Login to Your Account</h1>
+            <form class="auth-form" id="authForm">
+                <div class="form-group" id="nameGroup" style="display:none;">
+                    <label for="fullName">Full Name</label>
+                    <input type="text" id="fullName" class="form-control" placeholder="Your Full Name">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" class="form-control" placeholder="your@example.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" class="form-control" placeholder="********" required>
+                </div>
+                <button type="submit" class="btn btn-primary" id="authSubmitBtn">Login</button>
+            </form>
+            <div class="auth-toggle">
+                <span id="togglePrompt">Don't have an account?</span> <a href="#" id="toggleAuthMode">Create an account</a>
+            </div>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>&copy; <span id="currentYear"></span> Me to Millets. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../js/utils.js"></script>
+    <script src="../js/cart.js"></script>
+    <script src="../js/main.js"></script>
+    <script src="../js/search.js"></script>
+    <script src="../js/auth-client.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const authTitle = document.getElementById('authTitle');
+            const nameGroup = document.getElementById('nameGroup');
+            const fullNameInput = document.getElementById('fullName');
+            const emailInput = document.getElementById('email');
+            const passwordInput = document.getElementById('password');
+            const authSubmitBtn = document.getElementById('authSubmitBtn');
+            const toggleAuthMode = document.getElementById('toggleAuthMode');
+            const togglePrompt = document.getElementById('togglePrompt');
+            const authForm = document.getElementById('authForm');
+
+            let isLoginMode = true;
+
+            // Auto-login: if a valid session cookie exists, go straight to account.
+            (async () => {
+                if (!window.authClient) return;
+                try {
+                    const { user } = await window.authClient.me();
+                    window.utils.saveToLocalStorage('isUserLoggedIn', true);
+                    window.utils.saveToLocalStorage('userProfile', {
+                        name: user?.name || 'Valued Customer',
+                        email: user?.email || '',
+                        joined: user?.createdAt || new Date().toISOString()
+                    });
+
+                    // If user had a guest cart/wishlist, push it to DB.
+                    try {
+                        if (window.cartManager && typeof window.cartManager.syncWithServerAfterLogin === 'function') {
+                            await window.cartManager.syncWithServerAfterLogin();
+                        }
+                    } catch (_err) {
+                        // Non-blocking: redirect anyway.
+                    }
+                    window.location.href = 'account.html';
+                } catch (_err) {
+                    // Not logged in; stay on the page.
+                }
+            })();
+
+            toggleAuthMode.addEventListener('click', (e) => {
+                e.preventDefault();
+                isLoginMode = !isLoginMode;
+                if (isLoginMode) {
+                    authTitle.textContent = 'Login to Your Account';
+                    nameGroup.style.display = 'none';
+                    fullNameInput.removeAttribute('required');
+                    authSubmitBtn.textContent = 'Login';
+                    togglePrompt.textContent = "Don't have an account?";
+                    toggleAuthMode.textContent = 'Create an account';
+                } else {
+                    authTitle.textContent = 'Create Your Account';
+                    nameGroup.style.display = 'block';
+                    fullNameInput.setAttribute('required', 'required');
+                    authSubmitBtn.textContent = 'Register';
+                    togglePrompt.textContent = 'Already have an account?';
+                    toggleAuthMode.textContent = 'Sign in';
+                }
+            });
+
+            const setBusy = (busy) => {
+                authSubmitBtn.disabled = !!busy;
+                authSubmitBtn.style.opacity = busy ? '0.8' : '';
+            };
+
+            authForm.addEventListener('submit', async (e) => {
+                e.preventDefault();
+                const email = emailInput.value.trim();
+                const password = passwordInput.value.trim();
+                const fullName = fullNameInput.value.trim();
+
+                if (!window.authClient) {
+                    window.utils.showNotification('Auth system not loaded. Please refresh.', 'error');
+                    return;
+                }
+
+                try {
+                    setBusy(true);
+
+                    if (isLoginMode) {
+                        const { user } = await window.authClient.login({ email, password });
+                        window.utils.showNotification('Login successful!', 'success');
+
+                        // Keep existing UI behavior: a simple session flag + profile cache.
+                        // Note: token is stored securely in an HTTP-only cookie by the backend.
+                        window.utils.saveToLocalStorage('isUserLoggedIn', true);
+                        window.utils.saveToLocalStorage('userProfile', {
+                            name: user?.name || 'Valued Customer',
+                            email: user?.email || email,
+                            joined: user?.createdAt || new Date().toISOString()
+                        });
+
+                        // Push guest cart/wishlist to DB in one go.
+                        try {
+                            if (window.cartManager && typeof window.cartManager.syncWithServerAfterLogin === 'function') {
+                                await window.cartManager.syncWithServerAfterLogin();
+                            }
+                        } catch (_err) {
+                            // Non-blocking: allow login flow to continue.
+                        }
+
+                        setTimeout(() => {
+                            window.location.href = 'account.html';
+                        }, 500);
+                        return;
+                    }
+
+                    // Register (preserve flow: register -> show message -> switch to login)
+                    if (!fullName) {
+                        window.utils.showNotification('Please enter your full name.', 'warning');
+                        return;
+                    }
+                    if (password.length < 6) {
+                        window.utils.showNotification('Password must be at least 6 characters long.', 'warning');
+                        return;
+                    }
+
+                    await window.authClient.register({ name: fullName, email, password });
+                    window.utils.showNotification('Registration successful! Please log in.', 'success');
+
+                    isLoginMode = true;
+                    authTitle.textContent = 'Login to Your Account';
+                    nameGroup.style.display = 'none';
+                    fullNameInput.removeAttribute('required');
+                    authSubmitBtn.textContent = 'Login';
+                    togglePrompt.textContent = "Don't have an account?";
+                    toggleAuthMode.textContent = 'Create an account';
+                    authForm.reset();
+                } catch (err) {
+                    const code = err?.code;
+                    if (code === 'API_NOT_CONFIGURED') {
+                        window.utils.showNotification('Login server not connected. Please contact support.', 'error');
+                    } else
+                    if (code === 'DB_UNAVAILABLE') {
+                        window.utils.showNotification(
+                            'Backend is up but database is not connected. Fix Render env MONGODB_URI / Atlas Network Access, then redeploy.',
+                            'error'
+                        );
+                    } else if (code === 'CORS_BLOCKED') {
+                        window.utils.showNotification(
+                            'CORS blocked. Set Render CORS_ORIGIN to your exact frontend URL (https://...).',
+                            'error'
+                        );
+                    } else if (code === 'SERVER_ERROR') {
+                        window.utils.showNotification(
+                            'Backend server error. Check Render logs for the real error message.',
+                            'error'
+                        );
+                    } else
+                    if (code === 'EMAIL_ALREADY_EXISTS') {
+                        window.utils.showNotification('Email already exists. Please log in instead.', 'error');
+                    } else if (code === 'INVALID_CREDENTIALS') {
+                        window.utils.showNotification('Invalid email or password.', 'error');
+                    } else if (code === 'TOO_MANY_ATTEMPTS') {
+                        window.utils.showNotification('Too many attempts. Please try again later.', 'warning');
+                    } else if (code === 'VALIDATION_ERROR') {
+                        window.utils.showNotification('Please check your details and try again.', 'warning');
+                    } else {
+                        window.utils.showNotification(`Server error (${code || 'UNKNOWN'}). Please try again.`, 'error');
+                    }
+                } finally {
+                    setBusy(false);
+                }
+            });
+
+            // Set year for footer
+            const currentYear = document.getElementById('currentYear');
+            if (currentYear) currentYear.textContent = new Date().getFullYear();
+        });
+    </script>
+</body>
+</html>

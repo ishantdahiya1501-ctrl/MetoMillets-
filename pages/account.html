@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Account | Me to Millets</title>
+    <meta name="description" content="Manage your Me to Millets profile, orders, and wishlist from one place.">
+    <link rel="canonical" href="https://metomillets.me/pages/account.html">
+
+        <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "Me to Millets",
+            "url": "https://metomillets.me/",
+            "logo": "https://metomillets.me/images/icons/logo3.png",
+            "contactPoint": [
+                {
+                    "@type": "ContactPoint",
+                    "telephone": "+91-8750441860",
+                    "contactType": "customer support",
+                    "email": "metomillets@gmail.com",
+                    "areaServed": "IN",
+                    "availableLanguage": ["en"]
+                }
+            ]
+        }
+        </script>
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://metomillets.me/pages/account.html">
+    <meta property="og:title" content="My Account | Me to Millets">
+    <meta property="og:description" content="Manage your profile, orders, and wishlist.">
+    <meta property="og:image" content="https://metomillets.me/images/icons/logo2.jpg">
+    <meta property="og:site_name" content="Me to Millets">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://metomillets.me/pages/account.html">
+    <meta name="twitter:title" content="My Account | Me to Millets">
+    <meta name="twitter:description" content="Manage your profile, orders, and wishlist.">
+    <meta name="twitter:image" content="https://metomillets.me/images/icons/logo2.jpg">
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="96x96" href="../images/icons/logo3.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/images/icons/logo3.png">
+    <!-- Fonts (non-blocking) -->
+    <script defer src="../js/async-google-fonts.js"></script>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/components.css">
+    <link rel="stylesheet" href="../css/mobile.css">
+
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <script defer src="../js/async-fontawesome.js"></script>
+    <script defer src="../js/header-loader.js"></script>
+    <style>
+        .account-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: var(--spacing-xl) var(--spacing-lg);
+            min-height: 60vh;
+        }
+        
+        .account-header {
+            text-align: center;
+            margin-bottom: var(--spacing-xxl);
+        }
+        
+        .account-welcome {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-lg);
+            margin-bottom: var(--spacing-xl);
+            padding: var(--spacing-xl);
+            background: linear-gradient(135deg, var(--light-pink), var(--cream));
+            border-radius: var(--radius-lg);
+        }
+        
+        .user-avatar {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: var(--gold);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: var(--white);
+            font-weight: 700;
+        }
+        
+        .user-info h2 {
+            margin-bottom: var(--spacing-sm);
+        }
+        
+        .user-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: var(--spacing-lg);
+            margin-bottom: var(--spacing-xxl);
+        }
+        
+        .stat-card {
+            background: var(--white);
+            border-radius: var(--radius-lg);
+            padding: var(--spacing-xl);
+            text-align: center;
+            box-shadow: var(--shadow-sm);
+            transition: all var(--transition-normal);
+        }
+        
+        .stat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+        }
+        
+        .stat-icon {
+            font-size: 2rem;
+            color: var(--gold);
+            margin-bottom: var(--spacing-md);
+        }
+        
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--dark-chocolate);
+            margin-bottom: var(--spacing-sm);
+        }
+        
+        .account-content {
+            display: grid;
+            grid-template-columns: 250px 1fr;
+            gap: var(--spacing-xxl);
+        }
+        
+        .account-sidebar {
+            background: var(--white);
+            border-radius: var(--radius-lg);
+            padding: var(--spacing-xl);
+            box-shadow: var(--shadow-sm);
+            position: sticky;
+            top: 120px;
+            height: fit-content;
+        }
+        
+        .account-menu {
+            list-style: none;
+        }
+        
+        .account-menu li {
+            margin-bottom: var(--spacing-sm);
+        }
+        
+        .account-menu a {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-md);
+            padding: var(--spacing-md);
+            border-radius: var(--radius-md);
+            transition: all var(--transition-normal);
+        }
+        
+        .account-menu a:hover, .account-menu a.active {
+            background: var(--light-pink);
+            color: var(--gold);
+        }
+        
+        .account-menu i {
+            width: 20px;
+            text-align: center;
+        }
+        
+        .account-section {
+            background: var(--white);
+            border-radius: var(--radius-lg);
+            padding: var(--spacing-xl);
+            box-shadow: var(--shadow-sm);
+            display: none;
+        }
+        
+        .account-section.active {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+        
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: var(--spacing-xl);
+            padding-bottom: var(--spacing-lg);
+            border-bottom: 2px solid var(--light-pink);
+        }
+        
+        .orders-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        .orders-table th {
+            text-align: left;
+            padding: var(--spacing-md);
+            background: var(--light-pink);
+            font-weight: 600;
+        }
+        
+        .orders-table td {
+            padding: var(--spacing-md);
+            border-bottom: 1px solid var(--medium-gray);
+        }
+        
+        .order-status {
+            padding: var(--spacing-xs) var(--spacing-md);
+            border-radius: var(--radius-sm);
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+        
+        .status-delivered {
+            background: var(--success);
+            color: var(--white);
+        }
+        
+        .status-processing {
+            background: var(--warning);
+            color: var(--dark-chocolate);
+        }
+        
+        .status-pending {
+            background: var(--light-pink);
+            color: var(--dark-chocolate);
+        }
+        
+        .preferences-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--spacing-xl);
+        }
+        
+        .preference-card {
+            background: var(--light-pink);
+            border-radius: var(--radius-lg);
+            padding: var(--spacing-xl);
+            text-align: center;
+        }
+        
+        .preference-icon {
+            font-size: 2.5rem;
+            margin-bottom: var(--spacing-md);
+        }
+        
+        .flavor-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--spacing-sm);
+            margin-top: var(--spacing-md);
+            justify-content: center;
+        }
+        
+        .subscription-card {
+            background: linear-gradient(135deg, var(--light-gold), var(--light-pink));
+            border-radius: var(--radius-lg);
+            padding: var(--spacing-xl);
+            margin-bottom: var(--spacing-lg);
+        }
+        
+        .subscription-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: var(--spacing-lg);
+        }
+        
+        .subscription-actions {
+            display: flex;
+            gap: var(--spacing-md);
+            margin-top: var(--spacing-lg);
+        }
+        
+        .address-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--spacing-xl);
+        }
+        
+        .address-card {
+            background: var(--light-pink);
+            border-radius: var(--radius-lg);
+            padding: var(--spacing-xl);
+            position: relative;
+        }
+        
+        .address-actions {
+            position: absolute;
+            top: var(--spacing-md);
+            right: var(--spacing-md);
+            display: flex;
+            gap: var(--spacing-sm);
+        }
+        
+        .address-default {
+            display: inline-block;
+            margin-top: var(--spacing-md);
+            padding: var(--spacing-xs) var(--spacing-md);
+            background: var(--gold);
+            color: var(--white);
+            border-radius: var(--radius-sm);
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+        
+        .empty-state {
+            text-align: center;
+            padding: var(--spacing-xxl);
+            color: var(--light-chocolate);
+        }
+        
+        .empty-state i {
+            font-size: 3rem;
+            margin-bottom: var(--spacing-lg);
+            color: var(--medium-gray);
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        @media (max-width: 768px) {
+            .user-stats {
+                display: none;
+            }
+
+            .account-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .account-mobile-nav {
+                position: fixed;
+                top: calc(12px + env(safe-area-inset-top));
+                left: 12px;
+                z-index: 1400;
+                display: flex;
+                align-items: center;
+                justify-content: flex-start;
+                gap: var(--spacing-md);
+                padding: 0;
+                background: transparent;
+                border: none;
+                box-shadow: none;
+                margin: 0;
+                animation: none;
+            }
+
+            .account-nav-toggle {
+                appearance: none;
+                border: 1px solid var(--medium-gray);
+                background: var(--white);
+                color: var(--dark-chocolate);
+                border-radius: var(--radius-lg);
+                min-width: 44px;
+                min-height: 44px;
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                box-shadow: var(--shadow-sm);
+            }
+
+            .account-nav-toggle:active {
+                transform: translateY(1px);
+            }
+
+            .account-current-tab {
+                display: none;
+            }
+
+            .account-sidebar {
+                position: static;
+                display: none;
+            }
+
+            .account-sidebar.is-open {
+                display: block;
+                margin-bottom: var(--spacing-lg);
+            }
+            
+            .user-stats {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .orders-table {
+                display: block;
+                overflow-x: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div id="header-container" data-header-src="../header-pages.html"></div>
+    </header>
+
+    <main class="account-page">
+        <div class="account-container">
+            <div class="account-header">
+                <h1>My Account</h1>
+                <p>Manage your profile, orders, and preferences</p>
+            </div>
+            
+            <div class="account-welcome">
+                <div class="user-avatar" id="userInitials">U</div>
+                <div class="user-info">
+                    <h2 id="userName">Welcome Back!</h2>
+                    <p>Member since <span id="memberSince">2024</span></p>
+                </div>
+            </div>
+            
+            <div class="user-stats">
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-shopping-bag"></i>
+                    </div>
+                    <div class="stat-number" id="totalOrders">0</div>
+                    <h3>Total Orders</h3>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <div class="stat-number" id="wishlistCountStat">0</div>
+                    <h3>Wishlist Items</h3>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="stat-number" id="avgRating">0.0</div>
+                    <h3>Avg. Rating</h3>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-chocolate-bar"></i>
+                    </div>
+                    <div class="stat-number" id="tastingsCount">0</div>
+                    <h3>Tastings Logged</h3>
+                </div>
+            </div>
+            
+            <div class="account-mobile-nav mobile-only">
+                <button class="account-nav-toggle" id="accountNavToggle" type="button" aria-label="Open account menu" aria-expanded="false" aria-controls="accountSidebar">
+                    <i class="fas fa-bars" aria-hidden="true"></i>
+                </button>
+                <div class="account-current-tab" id="accountCurrentTab">Overview</div>
+            </div>
+
+            <div class="account-content">
+                <div class="account-sidebar" id="accountSidebar">
+                    <ul class="account-menu">
+                        <li><a href="#" class="active" data-section="overview">
+                            <i class="fas fa-home"></i> Overview
+                        </a></li>
+                        <li><a href="#" data-section="orders">
+                            <i class="fas fa-shopping-bag"></i> Orders
+                        </a></li>
+                        <li><a href="#" data-section="wishlist">
+                            <i class="fas fa-heart"></i> Wishlist
+                        </a></li>
+                        <li><a href="#" data-section="tasting-journal">
+                            <i class="fas fa-book"></i> Tasting Journal
+                        </a></li>
+                        <li><a href="#" data-section="preferences">
+                            <i class="fas fa-sliders-h"></i> Preferences
+                        </a></li>
+                        <li><a href="#" data-section="subscriptions">
+                            <i class="fas fa-calendar-alt"></i> Subscriptions
+                        </a></li>
+                        <li><a href="#" data-section="addresses">
+                            <i class="fas fa-map-marker-alt"></i> Addresses
+                        </a></li>
+                        <li><a href="#" data-section="security">
+                            <i class="fas fa-lock"></i> Security
+                        </a></li>
+                        <li><a href="../admin/index.html" target="_blank" rel="noopener noreferrer" class="account-admin-link">
+                            <i class="fas fa-user-shield"></i> Are you an admin?
+                        </a></li>
+                        <li><a href="#" id="logoutBtn">
+                            <i class="fas fa-sign-out-alt"></i> Logout
+                        </a></li>
+                    </ul>
+                </div>
+
+                <div class="account-main">
+                    <!-- Overview Section -->
+                    <div class="account-section active" id="overview">
+                        <div class="section-header">
+                            <h3>Account Overview</h3>
+                        </div>
+                        <p>Welcome back! Here are the highlights of your account.</p>
+                        <div class="section-block">
+                            <h4>Recent Orders</h4>
+                            <div id="recentOrders" class="orders-list"></div>
+                        </div>
+                        <div class="section-block">
+                            <h4>Active Subscriptions</h4>
+                            <div id="overviewSubscriptions"></div>
+                        </div>
+                        <div class="section-block">
+                            <h4>Preferences</h4>
+                            <div id="overviewPreferences" class="flavor-tags"></div>
+                        </div>
+                    </div>
+
+                    <!-- Orders Section -->
+                    <div class="account-section" id="orders">
+                        <div class="section-header">
+                            <h3>Your Orders</h3>
+                            <a href="products.html" class="btn btn-primary">Shop chocolates</a>
+                        </div>
+                        <table class="orders-table">
+                            <thead>
+                                <tr>
+                                    <th>Order #</th>
+                                    <th>Date</th>
+                                    <th>Items</th>
+                                    <th>Total</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody id="ordersTableBody">
+                                <!-- Orders rendered here -->
+                            </tbody>
+                        </table>
+                        <div id="noOrders" class="empty-state" style="display:none;">
+                            <i class="fas fa-shopping-bag"></i>
+                            <p>No orders yet — start shopping!</p>
+                            <a href="products.html" class="btn btn-primary">Shop chocolates</a>
+                        </div>
+                    </div>
+
+                    <!-- Wishlist Section -->
+                    <div class="account-section" id="wishlist">
+                        <div class="section-header">
+                            <h3>Your Wishlist</h3>
+                        </div>
+                        <div id="accountWishlistItems"></div>
+                    </div>
+
+                    <!-- Tasting Journal Section -->
+                    <div class="account-section" id="tasting-journal">
+                        <div class="section-header">
+                            <h3>Tasting Journal</h3>
+                            <a href="tasting-journal.html" class="btn btn-primary">Open Journal</a>
+                        </div>
+                        <div id="journalSummary"></div>
+                    </div>
+
+                    <!-- Preferences Section -->
+                    <div class="account-section" id="preferences">
+                        <div class="section-header">
+                            <h3>Flavor Preferences</h3>
+                            <button class="btn btn-primary" id="savePreferences">Save Preferences</button>
+                        </div>
+                        <p>Select your favorite flavor profiles so we can recommend chocolates you'll love.</p>
+                        <div class="preferences-grid" id="preferencesGrid">
+                            <!-- Preference cards will be generated here by JS -->
+                        </div>
+                    </div>
+
+                    <!-- Tasting Journal Section -->
+                    <div class="account-section" id="tasting-journal">
+                        <div class="section-header">
+                            <h3>Tasting Journal</h3>
+                            <a href="tasting-journal.html" class="btn btn-primary">Open Journal</a>
+                        </div>
+                        <div id="journalSummary"></div>
+                    </div>
+
+                    <!-- Tasting Journal Section -->
+                    <div class="account-section" id="tasting-journal">
+                        <div class="section-header">
+                            <h3>Tasting Journal</h3>
+                            <!-- Preference cards generated here -->
+                        </div>
+                    </div>
+
+                    <!-- Subscriptions Section -->
+                    <div class="account-section" id="subscriptions">
+                        <div class="section-header">
+                            <h3>Subscriptions</h3>
+                            <a href="subscription.html" class="btn btn-primary">Create Subscription</a>
+                        </div>
+                        <div id="subscriptionsList"></div>
+                        <div id="noSubscriptions" class="empty-state" style="display:none;">
+                            <i class="fas fa-calendar-alt"></i>
+                            <p>No active subscriptions</p>
+                            <a href="subscription.html" class="btn btn-primary">Start a Subscription</a>
+                        </div>
+                    </div>
+
+                    <!-- Addresses Section -->
+                    <div class="account-section" id="addresses">
+                        <div class="section-header">
+                            <h3>Addresses</h3>
+                            <button class="btn btn-primary" id="addAddressBtn">Add Address</button>
+                        </div>
+                        <div id="addressesList" class="address-grid"></div>
+                        <div id="noAddresses" class="empty-state" style="display:none;">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <p>No saved addresses</p>
+                        </div>
+                    </div>
+
+                    <!-- Security Section -->
+                    <div class="account-section" id="security">
+                        <div class="section-header">
+                            <h3>Security</h3>
+                        </div>
+                        <form id="changePasswordForm" style="max-width:480px;">
+                            <div class="form-group">
+                                <label for="currentPassword">Current Password</label>
+                                <input type="password" id="currentPassword" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="newPassword">New Password</label>
+                                <input type="password" id="newPassword" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="confirmPassword">Confirm Password</label>
+                                <input type="password" id="confirmPassword" class="form-control" required>
+                            </div>
+                            <button class="btn btn-primary" type="submit">Change Password</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer (simple) -->
+    <footer class="site-footer">
+        <div class="container">
+            <p>&copy; <span id="currentYear"></span> Me to Millets. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="../js/product-data.js"></script>
+    <script src="../js/utils.js"></script>
+    <script src="../js/cart.js"></script>
+    <script src="../js/subscription.js"></script>
+    <script src="../js/main.js"></script>
+    <script src="../js/search.js"></script>
+    <script src="../js/orders-api.js"></script>
+    <script src="../js/auth-client.js"></script>
+    <script src="../js/account-v2.js"></script>
+</body>
+</html>

@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Healthy Chocolate Reviews | Me to Millets</title>
+        <meta name="description" content="Read real customer reviews for our healthy sugar free chocolate made with sorghum and no preservatives. See favorites before you buy.">
+    <link rel="canonical" href="https://metomillets.me/pages/reviews.html">
+
+        <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "Me to Millets",
+            "url": "https://metomillets.me/",
+            "logo": "https://metomillets.me/images/icons/logo3.png",
+            "contactPoint": [
+                {
+                    "@type": "ContactPoint",
+                    "telephone": "+91-8750441860",
+                    "contactType": "customer support",
+                    "email": "metomillets@gmail.com",
+                    "areaServed": "IN",
+                    "availableLanguage": ["en"]
+                }
+            ]
+        }
+        </script>
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://metomillets.me/pages/reviews.html">
+    <meta property="og:title" content="Customer Reviews - Me to Millets">
+    <meta property="og:description" content="Customer reviews and stories about Me to Millets chocolates.">
+    <meta property="og:image" content="https://metomillets.me/images/icons/logo2.jpg">
+    <meta property="og:site_name" content="Me to Millets">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://metomillets.me/pages/reviews.html">
+    <meta name="twitter:title" content="Customer Reviews - Me to Millets">
+    <meta name="twitter:description" content="Customer reviews and stories about Me to Millets chocolates.">
+    <meta name="twitter:image" content="https://metomillets.me/images/icons/logo2.jpg">
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="96x96" href="../images/icons/logo3.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/images/icons/logo3.png">
+    <!-- Fonts (non-blocking) -->
+    <script defer src="../js/async-google-fonts.js"></script>
+    
+    <!-- CSS paths from html/ folder -->
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/reviews2.css">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="../css/mobile.css">
+
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <script defer src="../js/async-fontawesome.js"></script>
+    <script defer src="../js/header-loader.js"></script>
+</head>
+<body>
+    <header>
+        <div id="header-container" data-header-src="../header-pages.html"></div>
+    </header>
+
+    <main class="reviews-page">
+        <div class="container">
+            <!-- Page Header -->
+            <div class="reviews-header">
+                <h1 class="section-title" style="color: var(--white);">What Our Customers Say</h1>
+                <p class="section-subtitle">Honest reviews from our beloved chocolate connoisseurs. Explore our <a href="products.html" style="color: inherit; text-decoration: underline;">healthy sugar free chocolate</a> before you buy.</p>
+                <!-- Write review disabled while reviews are paused -->
+            </div>
+
+            <!-- Search and Filter Toolbar -->
+            <div class="reviews-toolbar">
+                <div class="search-reviews">
+                    <input type="search" id="reviewSearch" placeholder="Search reviews by product or keyword...">
+                    <button class="btn-icon"><i class="fas fa-search"></i></button>
+                </div>
+                <div class="filter-reviews">
+                    <select id="flavorFilter">
+                        <option value="all">All Flavors</option>
+                        <option value="white">White Chocolate</option>
+                        <option value="blueberry">Blueberry</option>
+                        <option value="nutty">Nutty</option>
+                        <option value="fruity">Fruity</option>
+                        <option value="spiced">Spiced</option>
+                        <option value="organic">Organic</option>
+                        <option value="premium">Premium Collection</option>
+                        <option value="limited">Limited Edition</option>
+                        <option value="vegan">Vegan</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Reviews Grid -->
+            <div class="reviews-grid">
+                <!-- Empty State -->
+                <div class="empty-state">
+                    <i class="fas fa-comments"></i>
+                    <h3>No Reviews Yet</h3>
+                    <p>Be the first to share your thoughts on our chocolates!</p>
+                    <a href="write-review.html" class="btn btn-gold">Write First Review</a>
+                </div>
+            <!-- Review cards will be dynamically inserted here -->
+            <div class="review-card" data-product-id="15" data-rating="5" data-flavor="dark">
+                <!-- ... content of a review card ... -->
+            </div>
+            </div>
+
+            <!-- Pagination (hidden when no reviews) -->
+            <div class="reviews-pagination" style="display: none;">
+                <button class="btn btn-secondary" id="prevPage" disabled>
+                    <i class="fas fa-chevron-left"></i> Previous
+                </button>
+                <div class="page-numbers">
+                    <span class="page-number active">1</span>
+                </div>
+                <button class="btn btn-secondary" id="nextPage">
+                    Next <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <script src="../js/product-data.js"></script>
+    <script src="../js/utils.js"></script>
+    <script src="../js/cart.js"></script>
+    <script src="../js/main.js"></script>
+    <script src="../js/search.js"></script>
+    <script src="../js/reviews.js"></script>
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-logo">
+                        <img src="../images/icons/logo.svg" alt="Me to Millets">
+                        <h3>Me to Millets</h3>
+                    </div>
+                    <p class="footer-description">Premium, ethical chocolates with 100% processed-free sugar, sweetened naturally with honey & dates.</p>
+                                <!-- Pinterest removed -->
+                        <a href="#" aria-label="Me to Millets on Facebook"><i class="fab fa-facebook" aria-hidden="true"></i></a>
+                        <a href="https://www.youtube.com/@Metomillets" aria-label="Me to Millets on YouTube"><i class="fab fa-youtube" aria-hidden="true"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="products.html">Shop All</a></li>
+                        <li><a href="custom-builder.html">Custom Builder</a></li>
+                        <li><a href="gift-wizard.html">Gift Wizard</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="more.html">Explore</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="faq.html">FAQs</a></li>
+                        <li><a href="reviews.html">Customer Reviews</a></li>
+                        <li><a href="login.html">Account</a></li> 
+                        <li><a href="terms.html">Terms & Conditions</a></li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="tasting-journal.html">Tasting Journal</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Support</h4>
+                    <ul class="footer-links">
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="shipping.html">Shipping & Returns</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="terms.html">Terms & Conditions</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <ul class="footer-contact">
+                        <li><i class="fas fa-map-marker-alt"></i> Dwarka, Delhi</li>
+                        <li><i class="fas fa-phone"></i> 8750441860</li>
+                        <li><i class="fas fa-envelope"></i> metomillets@gmail.com</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 Me to Millets. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript for interactivity -->
+    <script>
+        // Reviews are disabled site-wide to remove fake reviews.
+        document.addEventListener('DOMContentLoaded', function() {
+            const reviewsGrid = document.querySelector('.reviews-grid');
+            if (reviewsGrid) {
+                reviewsGrid.innerHTML = `
+                    <div class="empty-state">
+                        <i class="fas fa-comments"></i>
+                        <h3>Reviews are temporarily unavailable</h3>
+                        <p>We are updating our review system. Thank you for your patience.</p>
+                    </div>
+                `;
+            }
+            const pagination = document.querySelector('.reviews-pagination');
+            if (pagination) pagination.style.display = 'none';
+        });
+    </script>
+
+    <!-- The old script is removed as the new one above replaces it -->
+    <!--
+    <script>
+        // Search functionality
+        document.getElementById('reviewSearch').addEventListener('input', function(e) {
+            const searchTerm = e.target.value.toLowerCase();
+            const reviewCards = document.querySelectorAll('.review-card');
+            
+            if (reviewCards.length > 0) {
+                reviewCards.forEach(card => {
+                    const text = card.textContent.toLowerCase();
+                    card.style.display = text.includes(searchTerm) ? 'block' : 'none';
+                });
+            }
+        });
+
+        // Filter functionality
+        document.getElementById('flavorFilter').addEventListener('change', function(e) {
+            const selectedFlavor = e.target.value;
+            const reviewCards = document.querySelectorAll('.review-card');
+            
+            if (reviewCards.length > 0) {
+                reviewCards.forEach(card => {
+                    if (selectedFlavor === 'all') {
+                        card.style.display = 'block';
+                    } else {
+                        const hasFlavor = card.querySelector(`.${selectedFlavor}`);
+                        card.style.display = hasFlavor ? 'block' : 'none';
+                    }
+                });
+            }
+        });
+
+        // Report button functionality (for future reviews)
+        document.querySelectorAll('.report-btn').forEach(button => {
+            button.addEventListener('click', function() {
+                const productName = this.closest('.review-card').querySelector('.review-product-name').textContent;
+                if (confirm(`Report this review for "${productName}"?`)) {
+                    alert('Thank you for reporting. Our team will review this content.');
+                }
+            });
+        });
+    </script>
+    -->
+
+</body>
+</html>

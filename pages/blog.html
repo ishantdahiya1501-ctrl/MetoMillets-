@@ -1,0 +1,1095 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Healthy Chocolate Blog | Me to Millets</title>
+    <meta name="description" content="Tips, recipes and stories on healthy chocolate, sorghum, and preservative free sweetness. Explore sugar free chocolate ideas in India.">
+    <meta name="keywords" content="chocolate blog, sorghum recipes, healthy chocolate tips, chocolate pairing, ethical chocolate stories, chocolate health benefits">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://metomillets.me/pages/blog.html">
+
+        <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "Me to Millets",
+            "url": "https://metomillets.me/",
+            "logo": "https://metomillets.me/images/icons/logo3.png",
+            "contactPoint": [
+                {
+                    "@type": "ContactPoint",
+                    "telephone": "+91-8750441860",
+                    "contactType": "customer support",
+                    "email": "metomillets@gmail.com",
+                    "areaServed": "IN",
+                    "availableLanguage": ["en"]
+                }
+            ]
+        }
+        </script>
+    
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://metomillets.me/pages/blog.html">
+    <meta property="og:title" content="Chocolate Chronicles | Me to Millets Blog">
+    <meta property="og:description" content="Discover recipes, health tips, and stories about our sorghum chocolates.">
+    <meta property="og:image" content="https://metomillets.me/images/icons/logo2.jpg">
+    <meta property="og:site_name" content="Me to Millets">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://metomillets.me/pages/blog.html">
+    <meta name="twitter:title" content="Chocolate Chronicles | Me to Millets Blog">
+    <meta name="twitter:description" content="Discover recipes, health tips, and stories about our sorghum chocolates.">
+    <meta name="twitter:image" content="https://metomillets.me/images/icons/logo2.jpg">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="96x96" href="../images/icons/logo3.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/images/icons/logo3.png">
+    <!-- Fonts (non-blocking) -->
+    <script defer src="../js/async-google-fonts.js"></script>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/components.css">
+    <link rel="stylesheet" href="../css/mobile.css">
+
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <script defer src="../js/async-fontawesome.js"></script>
+    <script defer src="../js/header-loader.js"></script>
+    <style>
+        .blog-page {
+            padding-top: var(--spacing-xl);
+            background: linear-gradient(180deg, var(--cream) 0%, var(--white) 100%);
+            min-height: 100vh;
+        }
+        
+        .blog-hero {
+            background: linear-gradient(135deg, rgba(232, 180, 184, 0.1), rgba(212, 175, 55, 0.1)),
+                        url('https://images.unsplash.com/photo-1511381939415-e44015466834?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80');
+            background-size: cover;
+            background-position: center;
+            padding: var(--spacing-xxl) 0;
+            text-align: center;
+            color: var(--white);
+            position: relative;
+            margin-bottom: var(--spacing-xxl);
+        }
+        
+        .blog-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(61, 44, 46, 0.8), rgba(123, 63, 0, 0.6));
+        }
+        
+        .blog-hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-lg);
+        }
+        
+        .blog-hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: var(--spacing-lg);
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .blog-hero p {
+            font-size: 1.3rem;
+            margin-bottom: var(--spacing-xl);
+            opacity: 0.95;
+            line-height: 1.6;
+        }
+        
+        .blog-search {
+            max-width: 500px;
+            margin: 0 auto;
+            position: relative;
+        }
+        
+        .blog-search input {
+            width: 100%;
+            padding: var(--spacing-lg) var(--spacing-xl);
+            border: none;
+            border-radius: var(--radius-lg);
+            font-size: 1.1rem;
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .blog-search button {
+            position: absolute;
+            right: var(--spacing-md);
+            top: 50%;
+            transform: translateY(-50%);
+            background: var(--gold);
+            color: var(--white);
+            border: none;
+            padding: var(--spacing-sm) var(--spacing-lg);
+            border-radius: var(--radius-md);
+            cursor: pointer;
+            transition: all var(--transition-normal);
+        }
+        
+        .blog-search button:hover {
+            background: var(--dark-chocolate);
+        }
+        
+        .blog-categories {
+            display: flex;
+            justify-content: center;
+            gap: var(--spacing-sm);
+            margin-bottom: var(--spacing-xxl);
+            flex-wrap: wrap;
+        }
+        
+        .blog-category-btn {
+            padding: var(--spacing-md) var(--spacing-xl);
+            background: var(--white);
+            border: 2px solid var(--light-pink);
+            border-radius: var(--radius-lg);
+            font-weight: 600;
+            cursor: pointer;
+            transition: all var(--transition-normal);
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+        }
+        
+        .blog-category-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-md);
+            border-color: var(--gold);
+        }
+        
+        .blog-category-btn.active {
+            background: var(--gold);
+            color: var(--white);
+            border-color: var(--gold);
+        }
+        
+        .blog-category-btn i {
+            font-size: 1.2rem;
+        }
+        
+        .featured-blog-post {
+            background: var(--white);
+            border-radius: var(--radius-xl);
+            overflow: hidden;
+            box-shadow: var(--shadow-xl);
+            margin-bottom: var(--spacing-xxl);
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            min-height: 500px;
+        }
+        
+        .featured-image {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .featured-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform var(--transition-slow);
+        }
+        
+        .featured-blog-post:hover .featured-image img {
+            transform: scale(1.05);
+        }
+        
+        .featured-badge {
+            position: absolute;
+            top: var(--spacing-lg);
+            left: var(--spacing-lg);
+            background: var(--gold);
+            color: var(--white);
+            padding: var(--spacing-sm) var(--spacing-lg);
+            border-radius: var(--radius-md);
+            font-weight: 700;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+        }
+        
+        .featured-content {
+            padding: var(--spacing-xxl);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        
+        .featured-content h2 {
+            font-size: 2.2rem;
+            margin-bottom: var(--spacing-lg);
+            line-height: 1.3;
+            color: var(--dark-chocolate);
+        }
+        
+        .featured-meta {
+            display: flex;
+            gap: var(--spacing-lg);
+            margin-bottom: var(--spacing-lg);
+            color: var(--light-chocolate);
+            font-size: 0.95rem;
+        }
+        
+        .featured-meta span {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+        }
+        
+        .featured-excerpt {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            margin-bottom: var(--spacing-xl);
+            color: var(--dark-chocolate);
+        }
+        
+        .read-more-btn {
+            align-self: flex-start;
+            padding: var(--spacing-md) var(--spacing-xl);
+            background: var(--gold);
+            color: var(--white);
+            border-radius: var(--radius-md);
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+            transition: all var(--transition-normal);
+        }
+        
+        .read-more-btn:hover {
+            background: var(--dark-chocolate);
+            transform: translateX(5px);
+            color: var(--white);
+        }
+        
+        .blog-grid-section {
+            margin-bottom: var(--spacing-xxl);
+        }
+        
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: var(--spacing-xl);
+            padding-bottom: var(--spacing-lg);
+            border-bottom: 3px solid var(--light-pink);
+        }
+        
+        .section-header h2 {
+            font-size: 2rem;
+            color: var(--dark-chocolate);
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-md);
+        }
+        
+        .view-all-link {
+            color: var(--gold);
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+            transition: all var(--transition-normal);
+        }
+        
+        .view-all-link:hover {
+            color: var(--dark-chocolate);
+            transform: translateX(5px);
+        }
+        
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: var(--spacing-xl);
+            margin-bottom: var(--spacing-xxl);
+        }
+        
+        .blog-card {
+            background: var(--white);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            transition: all var(--transition-normal);
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .blog-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-xl);
+        }
+        
+        .blog-card-image {
+            height: 220px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .blog-card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform var(--transition-slow);
+        }
+        
+        .blog-card:hover .blog-card-image img {
+            transform: scale(1.1);
+        }
+        
+        .card-category {
+            position: absolute;
+            top: var(--spacing-md);
+            left: var(--spacing-md);
+            background: var(--primary-pink);
+            color: var(--white);
+            padding: var(--spacing-xs) var(--spacing-md);
+            border-radius: var(--radius-sm);
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .blog-card-content {
+            padding: var(--spacing-xl);
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .blog-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: var(--spacing-md);
+            line-height: 1.4;
+            color: var(--dark-chocolate);
+        }
+        
+        .blog-card-excerpt {
+            color: var(--light-chocolate);
+            line-height: 1.6;
+            margin-bottom: var(--spacing-lg);
+            flex: 1;
+        }
+        
+        .card-meta {
+            display: flex;
+            justify-content: space-between;
+            color: var(--light-chocolate);
+            font-size: 0.9rem;
+            margin-top: auto;
+            padding-top: var(--spacing-lg);
+            border-top: 1px solid var(--light-pink);
+        }
+        
+        .card-meta span {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+        }
+        
+        .sidebar {
+            background: var(--white);
+            border-radius: var(--radius-lg);
+            padding: var(--spacing-xl);
+            box-shadow: var(--shadow-md);
+            margin-bottom: var(--spacing-xl);
+        }
+        
+        .sidebar-title {
+            font-size: 1.3rem;
+            margin-bottom: var(--spacing-lg);
+            padding-bottom: var(--spacing-md);
+            border-bottom: 2px solid var(--light-pink);
+            color: var(--dark-chocolate);
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+        }
+        
+        .popular-posts {
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-lg);
+        }
+        
+        .popular-post {
+            display: flex;
+            gap: var(--spacing-md);
+            padding: var(--spacing-md);
+            border-radius: var(--radius-md);
+            transition: all var(--transition-normal);
+        }
+        
+        .popular-post:hover {
+            background: var(--light-pink);
+            transform: translateX(5px);
+        }
+        
+        .popular-post-image {
+            width: 80px;
+            height: 80px;
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            flex-shrink: 0;
+        }
+        
+        .popular-post-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .popular-post-content h4 {
+            font-size: 0.95rem;
+            margin-bottom: var(--spacing-xs);
+            line-height: 1.4;
+        }
+        
+        .popular-post-date {
+            font-size: 0.8rem;
+            color: var(--light-chocolate);
+        }
+        
+        .newsletter-sidebar {
+            background: linear-gradient(135deg, var(--light-pink), var(--light-gold));
+            border-radius: var(--radius-lg);
+            padding: var(--spacing-xl);
+            text-align: center;
+        }
+        
+        .newsletter-sidebar h3 {
+            color: var(--dark-chocolate);
+            margin-bottom: var(--spacing-md);
+        }
+        
+        .newsletter-sidebar p {
+            color: var(--light-chocolate);
+            margin-bottom: var(--spacing-lg);
+        }
+        
+        .newsletter-form {
+            display: flex;
+            gap: var(--spacing-sm);
+        }
+        
+        .newsletter-form input {
+            flex: 1;
+            padding: var(--spacing-md);
+            border: 1px solid var(--medium-gray);
+            border-radius: var(--radius-md);
+        }
+        
+        .newsletter-form button {
+            background: var(--gold);
+            color: var(--white);
+            border: none;
+            padding: var(--spacing-md) var(--spacing-lg);
+            border-radius: var(--radius-md);
+            cursor: pointer;
+            transition: all var(--transition-normal);
+        }
+        
+        .newsletter-form button:hover {
+            background: var(--dark-chocolate);
+        }
+        
+        .tags-cloud {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--spacing-sm);
+        }
+        
+        .tag {
+            background: var(--light-pink);
+            padding: var(--spacing-sm) var(--spacing-md);
+            border-radius: var(--radius-md);
+            font-size: 0.9rem;
+            transition: all var(--transition-normal);
+            cursor: pointer;
+        }
+        
+        .tag:hover {
+            background: var(--gold);
+            color: var(--white);
+            transform: translateY(-2px);
+        }
+        
+        .blog-layout {
+            display: grid;
+            grid-template-columns: 1fr 350px;
+            gap: var(--spacing-xxl);
+        }
+        
+        .pagination {
+            display: flex;
+            justify-content: center;
+            gap: var(--spacing-sm);
+            margin: var(--spacing-xxl) 0;
+        }
+        
+        .pagination-btn {
+            padding: var(--spacing-md) var(--spacing-lg);
+            background: var(--white);
+            border: 2px solid var(--light-pink);
+            border-radius: var(--radius-md);
+            cursor: pointer;
+            transition: all var(--transition-normal);
+            font-weight: 600;
+        }
+        
+        .pagination-btn:hover {
+            border-color: var(--gold);
+            transform: translateY(-2px);
+        }
+        
+        .pagination-btn.active {
+            background: var(--gold);
+            color: var(--white);
+            border-color: var(--gold);
+        }
+        
+        .blog-footer {
+            text-align: center;
+            padding: var(--spacing-xxl) 0;
+            background: var(--dark-chocolate);
+            color: var(--white);
+            margin-top: var(--spacing-xxl);
+        }
+        
+        .blog-footer h3 {
+            color: var(--white);
+            margin-bottom: var(--spacing-lg);
+        }
+        
+        @media (max-width: 1024px) {
+            .blog-layout {
+                grid-template-columns: 1fr;
+            }
+            
+            .featured-blog-post {
+                grid-template-columns: 1fr;
+            }
+            
+            .blog-hero h1 {
+                font-size: 2.5rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .blog-hero {
+                padding: var(--spacing-xl) 0;
+            }
+            
+            .blog-hero h1 {
+                font-size: 2rem;
+            }
+            
+            .blog-categories {
+                gap: var(--spacing-sm);
+            }
+            
+            .blog-category-btn {
+                padding: var(--spacing-sm) var(--spacing-md);
+                font-size: 0.9rem;
+            }
+            
+            .blog-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .newsletter-form {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div id="header-container" data-header-src="../header-pages.html"></div>
+    </header>
+
+    <main class="blog-page">
+        <!-- Blog Hero Section -->
+        <section class="blog-hero">
+            <div class="blog-hero-content">
+                <h1>Chocolate Chronicles</h1>
+                <p>Discover stories, recipes, and insights from our journey of creating ethical, delicious chocolates. From bean to bar, farm to fork.</p>
+                <div class="blog-search">
+                    <input type="text" placeholder="Search articles...">
+                    <button><i class="fas fa-search"></i></button>
+                </div>
+            </div>
+        </section>
+
+        <div class="container">
+            <!-- Categories -->
+            <div class="blog-categories">
+                <button class="blog-category-btn active" data-category="all">
+                    <i class="fas fa-th-large"></i> All Topics
+                </button>
+                <button class="blog-category-btn" data-category="process">
+                    <i class="fas fa-industry"></i> Making Process
+                </button>
+                <button class="blog-category-btn" data-category="health">
+                    <i class="fas fa-heart"></i> Health Benefits
+                </button>
+                <button class="blog-category-btn" data-category="recipes">
+                    <i class="fas fa-utensils"></i> Recipes
+                </button>
+                <button class="blog-category-btn" data-category="sustainability">
+                    <i class="fas fa-leaf"></i> Sustainability
+                </button>
+                <button class="blog-category-btn" data-category="stories">
+                    <i class="fas fa-book-open"></i> Our Stories
+                </button>
+            </div>
+
+            <!-- Featured Post -->
+            <article class="featured-blog-post">
+                <div class="featured-image">
+                    <img src="https://images.unsplash.com/photo-1575377427642-087cf684f29d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Chocolate Making Process">
+                    <span class="featured-badge">Featured Article</span>
+                </div>
+                <div class="featured-content">
+                    <span class="card-category">Making Process</span>
+                    <h2>The Art of Bean-to-Bar Chocolate Making: A Journey of Passion</h2>
+                    <div class="featured-meta">
+                        <span><i class="far fa-calendar"></i> March 15, 2024</span>
+                        <span><i class="far fa-clock"></i> 8 min read</span>
+                        <span><i class="far fa-comment"></i> 24 comments</span>
+                    </div>
+                    <p class="featured-excerpt">
+                        Discover the meticulous journey from cocoa bean to chocolate bar. Learn about our ethical sourcing practices, fermentation process, and how we maintain quality at every step. Join us behind the scenes of creating the finest chocolate experience that respects both people and planet.
+                    </p>
+                    <a href="blog-post.html" class="read-more-btn">
+                        Read Full Story <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </article>
+
+            <div class="blog-layout">
+                <!-- Main Content -->
+                <div class="blog-main">
+                    <!-- Latest Articles Section -->
+                    <div class="blog-grid-section">
+                        <div class="section-header">
+                            <h2><i class="fas fa-newspaper"></i> Latest Articles</h2>
+                            <a href="#blogGrid" class="view-all-link">Browse all articles <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+                        </div>
+                        
+                        <div class="blog-grid" id="blogGrid">
+                            <!-- Blog posts will be loaded here -->
+                        </div>
+                        
+                        <div class="pagination">
+                            <button class="pagination-btn active">1</button>
+                            <button class="pagination-btn">2</button>
+                            <button class="pagination-btn">3</button>
+                            <button class="pagination-btn">4</button>
+                            <button class="pagination-btn">Next <i class="fas fa-chevron-right"></i></button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Sidebar -->
+                <div class="blog-sidebar">
+                    <!-- Newsletter -->
+                    <div class="sidebar newsletter-sidebar">
+                        <h3><i class="fas fa-envelope"></i> Chocolate Newsletter</h3>
+                        <p>Subscribe to get exclusive recipes, stories, and chocolate wisdom delivered to your inbox.</p>
+                        <form class="newsletter-form">
+                            <input type="email" placeholder="Your email address" required>
+                            <button type="submit">Subscribe</button>
+                        </form>
+                        <p style="font-size: 0.8rem; margin-top: var(--spacing-sm);">No spam, just chocolate love.</p>
+                    </div>
+                    
+                    <!-- Popular Posts -->
+                    <div class="sidebar">
+                        <h3 class="sidebar-title"><i class="fas fa-fire"></i> Popular Posts</h3>
+                        <div class="popular-posts" id="popularPosts">
+                            <!-- Popular posts will be loaded here -->
+                        </div>
+                    </div>
+                    
+                    <!-- Categories -->
+                    <div class="sidebar">
+                        <h3 class="sidebar-title"><i class="fas fa-folder"></i> Categories</h3>
+                        <div class="categories-list">
+                            <div class="category-item">
+                                <a href="#" data-category="process">Making Process <span>(12)</span></a>
+                            </div>
+                            <div class="category-item">
+                                <a href="#" data-category="health">Health Benefits <span>(8)</span></a>
+                            </div>
+                            <div class="category-item">
+                                <a href="#" data-category="recipes">Recipes <span>(15)</span></a>
+                            </div>
+                            <div class="category-item">
+                                <a href="#" data-category="sustainability">Sustainability <span>(6)</span></a>
+                            </div>
+                            <div class="category-item">
+                                <a href="#" data-category="stories">Our Stories <span>(10)</span></a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Tags -->
+                    <div class="sidebar">
+                        <h3 class="sidebar-title"><i class="fas fa-tags"></i> Topics</h3>
+                        <div class="tags-cloud">
+                            <span class="tag">Dark Chocolate</span>
+                            <span class="tag">Ethical Sourcing</span>
+                            <span class="tag">Sorghum</span>
+                            <span class="tag">Sugar-Free</span>
+                            <span class="tag">Recipes</span>
+                            <span class="tag">Health Benefits</span>
+                            <span class="tag">Sustainability</span>
+                            <span class="tag">Artisan</span>
+                            <span class="tag">Pairing Guide</span>
+                            <span class="tag">Gift Ideas</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-logo">
+                        <div style="width: 40px; height: 40px; background: var(--gold); border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; margin-right: var(--spacing-md);">M</div>
+                        <h3>Me to Millets</h3>
+                    </div>
+                    <p class="footer-description">Premium, ethical chocolates with 100% processed-free sugar, sweetened naturally with honey & dates.</p>
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/metomillets/" aria-label="Me to Millets on Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+                        <a href="#" aria-label="Me to Millets on Facebook"><i class="fab fa-facebook" aria-hidden="true"></i></a>
+                        <!-- Pinterest removed -->
+                        <a href="https://www.youtube.com/@Metomillets" aria-label="Me to Millets on YouTube"><i class="fab fa-youtube" aria-hidden="true"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="products.html">Shop All</a></li>
+                        <li><a href="custom-builder.html">Custom Builder</a></li>
+                        <li><a href="gift-wizard.html">Gift Wizard</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="more.html">Explore</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="faq.html">FAQs</a></li>
+                        <li><a href="reviews.html">Customer Reviews</a></li>
+                        <li><a href="login.html">Account</a></li> 
+                        <li><a href="terms.html">Terms & Conditions</a></li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="tasting-journal.html">Tasting Journal</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Categories</h4>
+                    <ul class="footer-links">
+                        <li><a href="products.html?category=gifts">Gift Hampers</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <ul class="footer-contact">
+                        <li><i class="fas fa-map-marker-alt"></i> Dwarka, Delhi</li>
+                        <li><i class="fas fa-phone"></i> 8750441860</li>
+                        <li><i class="fas fa-envelope"></i> metomillets@gmail.com</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 Me to Millets. All rights reserved. | Made with <i class="fas fa-heart"></i> and 🍫</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/product-data.js"></script>
+    <script src="../js/utils.js"></script>
+    <script>
+        // Blog Page Script
+        document.addEventListener('DOMContentLoaded', function() {
+            const blogPage = new BlogPage();
+            blogPage.init();
+        });
+        
+        class BlogPage {
+            constructor() {
+                this.currentCategory = 'all';
+                this.blogPosts = this.getBlogPosts();
+            }
+            
+            getBlogPosts() {
+                return [
+                    {
+                        id: 1,
+                        title: "Why Sorghum in Chocolate Is a Superfood Combo",
+                        excerpt: "Discover how combining antioxidant-rich dark chocolate with nutritious sorghum creates the ultimate healthy indulgence.",
+                        category: "health",
+                        date: "2024-03-10",
+                        readTime: "6 min",
+                        image: "https://images.unsplash.com/photo-1575377427642-087cf684f29d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+                        comments: 18
+                    },
+                    {
+                        id: 2,
+                        title: "Perfect Pairings: Chocolate with Wine, Coffee & More",
+                        excerpt: "Our expert guide to pairing different chocolate varieties with beverages and foods for the ultimate tasting experience.",
+                        category: "recipes",
+                        date: "2024-03-05",
+                        readTime: "10 min",
+                        image: "https://images.unsplash.com/photo-1548907042-3e8c5b07a98c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+                        comments: 32
+                    },
+                    {
+                        id: 3,
+                        title: "Ethical Sourcing: Our Commitment to Farmers",
+                        excerpt: "How we ensure fair wages and sustainable practices in our cocoa supply chain from farm to factory.",
+                        category: "sustainability",
+                        date: "2024-02-28",
+                        readTime: "7 min",
+                        image: "https://images.unsplash.com/photo-1544787219-7f47ccb76574?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+                        comments: 15
+                    },
+                    {
+                        id: 4,
+                        title: "The Science of Sugar Alternatives: Honey vs Dates",
+                        excerpt: "Exploring the natural sweeteners we use and their unique flavor profiles in our chocolate creations.",
+                        category: "health",
+                        date: "2024-02-20",
+                        readTime: "9 min",
+                        image: "https://images.unsplash.com/photo-1568702846914-96b305d2aaeb?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+                        comments: 24
+                    },
+                    {
+                        id: 5,
+                        title: "Chocolate Meditation: A Sensory Experience",
+                        excerpt: "How to fully appreciate chocolate using all your senses for maximum enjoyment and mindfulness.",
+                        category: "stories",
+                        date: "2024-02-15",
+                        readTime: "5 min",
+                        image: "https://images.unsplash.com/photo-1519677100203-6f5d4c7a08c9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+                        comments: 29
+                    },
+                    {
+                        id: 6,
+                        title: "Seasonal Chocolate: Working with Nature's Calendar",
+                        excerpt: "How we create limited edition chocolates based on seasonal ingredients and harvest cycles.",
+                        category: "process",
+                        date: "2024-02-10",
+                        readTime: "8 min",
+                        image: "https://images.unsplash.com/photo-1534687941688-651ccaafbff8?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+                        comments: 21
+                    }
+                ];
+            }
+            
+            init() {
+                this.renderBlogPosts();
+                this.renderPopularPosts();
+                this.setupEventListeners();
+            }
+            
+            setupEventListeners() {
+                // Category buttons
+                document.querySelectorAll('.blog-category-btn').forEach(btn => {
+                    btn.addEventListener('click', (e) => {
+                        const category = e.currentTarget.dataset.category;
+                        this.filterByCategory(category);
+                    });
+                });
+                
+                // Category links
+                document.querySelectorAll('.categories-list a').forEach(link => {
+                    link.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        const category = link.dataset.category;
+                        this.filterByCategory(category);
+                    });
+                });
+                
+                // Tags
+                document.querySelectorAll('.tag').forEach(tag => {
+                    tag.addEventListener('click', () => {
+                        const tagText = tag.textContent;
+                        this.filterByTag(tagText);
+                    });
+                });
+                
+                // Search
+                const searchInput = document.querySelector('.blog-search input');
+                const searchBtn = document.querySelector('.blog-search button');
+                
+                if (searchBtn) {
+                    searchBtn.addEventListener('click', () => {
+                        this.searchPosts(searchInput.value);
+                    });
+                }
+                
+                if (searchInput) {
+                    searchInput.addEventListener('keypress', (e) => {
+                        if (e.key === 'Enter') {
+                            this.searchPosts(searchInput.value);
+                        }
+                    });
+                }
+                
+                // Newsletter
+                const newsletterForm = document.querySelector('.newsletter-form');
+                if (newsletterForm) {
+                    newsletterForm.addEventListener('submit', (e) => {
+                        e.preventDefault();
+                        const email = newsletterForm.querySelector('input[type="email"]').value;
+                        if (email) {
+                            alert('Thank you for subscribing to our chocolate newsletter!');
+                            newsletterForm.reset();
+                        }
+                    });
+                }
+            }
+            
+            filterByCategory(category) {
+                this.currentCategory = category;
+                
+                // Update active button
+                document.querySelectorAll('.blog-category-btn').forEach(btn => {
+                    btn.classList.remove('active');
+                    if (btn.dataset.category === category) {
+                        btn.classList.add('active');
+                    }
+                });
+                
+                // Render filtered posts
+                this.renderBlogPosts();
+                
+                // Scroll to blog grid
+                document.getElementById('blogGrid').scrollIntoView({ behavior: 'smooth' });
+            }
+            
+            filterByTag(tag) {
+                alert(`Showing posts tagged: "${tag}"`);
+                // In a real implementation, this would filter posts
+            }
+            
+            searchPosts(query) {
+                if (query.trim()) {
+                    alert(`Searching for: "${query}"`);
+                    // In a real implementation, this would search posts
+                }
+            }
+            
+            renderBlogPosts() {
+                const container = document.getElementById('blogGrid');
+                if (!container) return;
+                
+                // Filter posts by category
+                let filteredPosts = this.blogPosts;
+                if (this.currentCategory !== 'all') {
+                    filteredPosts = filteredPosts.filter(post => post.category === this.currentCategory);
+                }
+                
+                // Generate HTML
+                let html = '';
+                filteredPosts.forEach(post => {
+                    const date = new Date(post.date).toLocaleDateString('en-US', {
+                        year: 'numeric',
+                        month: 'long',
+                        day: 'numeric'
+                    });
+                    
+                    const categoryNames = {
+                        'process': 'Making Process',
+                        'health': 'Health Benefits',
+                        'recipes': 'Recipes',
+                        'sustainability': 'Sustainability',
+                        'stories': 'Our Stories'
+                    };
+                    
+                    html += `
+                        <article class="blog-card">
+                            <div class="blog-card-image">
+                                <img src="${post.image}" alt="${post.title}">
+                                <span class="card-category">${categoryNames[post.category]}</span>
+                            </div>
+                            <div class="blog-card-content">
+                                <h3>${post.title}</h3>
+                                <p class="blog-card-excerpt">${post.excerpt}</p>
+                                <div class="card-meta">
+                                    <span><i class="far fa-calendar"></i> ${date}</span>
+                                    <span><i class="far fa-clock"></i> ${post.readTime} read</span>
+                                    <span><i class="far fa-comment"></i> ${post.comments}</span>
+                                </div>
+                            </div>
+                        </article>
+                    `;
+                });
+                
+                container.innerHTML = html;
+            }
+            
+            renderPopularPosts() {
+                const container = document.getElementById('popularPosts');
+                if (!container) return;
+                
+                // Get top 5 posts (by comments)
+                const popularPosts = [...this.blogPosts]
+                    .sort((a, b) => b.comments - a.comments)
+                    .slice(0, 5);
+                
+                let html = '';
+                popularPosts.forEach(post => {
+                    const date = new Date(post.date).toLocaleDateString('en-US', {
+                        month: 'short',
+                        day: 'numeric'
+                    });
+                    
+                    html += `
+                        <div class="popular-post">
+                            <div class="popular-post-image">
+                                <img src="${post.image}" alt="${post.title}">
+                            </div>
+                            <div class="popular-post-content">
+                                <h4>${post.title}</h4>
+                                <div class="popular-post-date">${date}</div>
+                            </div>
+                        </div>
+                    `;
+                });
+                
+                container.innerHTML = html;
+            }
+        }
+        
+        // Initialize cart count if cartManager exists
+        if (window.cartManager) {
+            window.cartManager.updateCartCount();
+            window.cartManager.updateWishlistCount();
+        }
+    </script>
+    <script src="../js/utils.js"></script>
+    <script src="../js/cart.js"></script>
+    <script src="../js/main.js"></script>
+    <script src="../js/search.js"></script>
+</body>
+</html>

@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Assorted Mini Box | Me to Millets</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="96x96" href="../images/icons/logo3.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/images/icons/logo3.png">
+
+    <!-- CSS (match other pages) -->
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/components.css">
+    <link rel="stylesheet" href="../css/background.css">
+    <link rel="stylesheet" href="../css/mobile.css">
+    <link rel="stylesheet" href="../css/assorted-mini-box.css">
+
+    <style>
+        .mini-box-photo{width:100%;max-width:420px;height:auto;border-radius:10px;display:block;margin:14px 0}
+        @media(max-width:640px){
+            .mini-box-photo{max-width:100%;margin:12px 0}
+            .mini-box-layout{display:block}
+            .mini-box-card{width:100%;order:2}
+            .mini-box-side{order:1;margin-bottom:12px}
+        }
+    </style>
+
+    <!-- Performance hints / non-blocking icons -->
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <script defer src="../js/async-fontawesome.js"></script>
+
+    <!-- Header loader -->
+    <script defer src="../js/header-loader.js"></script>
+</head>
+<body>
+    <header>
+        <div id="header-container" data-header-src="../header-pages.html"></div>
+    </header>
+
+    <main class="mini-box-page">
+        <div class="container">
+            <section id="miniBox">
+                    <div class="mini-box-header anim-fade-up">
+                    <div class="pill">Gift hamper</div>
+                    <h1>Assorted Mini Box</h1>
+                    <p class="mini-box-muted">A curated assorted mini chocolate box for gifting.</p>
+                    <img src="../images/products/mini%20box%20.jpeg" alt="Assorted Mini Box" class="mini-box-photo">
+                </div>
+
+                <div class="mini-box-layout">
+                    <section class="surface-elevated motion-float mini-box-card anim-fade-up" aria-label="Purchase">
+                        <div class="mini-box-price-row">
+                            <div>
+                                <div id="miniBoxPrice" class="mini-box-price">₹699.00</div>
+                                <div class="mini-box-price-note">1 Box</div>
+                            </div>
+                            <div class="pill">Fixed price</div>
+                        </div>
+
+                        <div>
+                            <h2 class="mini-box-section-title">What’s inside</h2>
+                            <p id="miniBoxDescription" class="mini-box-muted">
+                                Includes 2 pcs of each type of chocolate.
+                            </p>
+                        </div>
+
+                        <div class="mini-box-qty-row">
+                            <label for="miniBoxQty" class="mini-box-qty-label">Quantity</label>
+                            <div class="quantity-control mini-box-qty-control" role="group" aria-label="Quantity selector">
+                                <button type="button" class="quantity-btn" id="miniBoxQtyMinus" aria-label="Decrease quantity">-</button>
+                                <input id="miniBoxQty" class="mini-box-qty-input" type="number" min="1" value="1" inputmode="numeric" />
+                                <button type="button" class="quantity-btn" id="miniBoxQtyPlus" aria-label="Increase quantity">+</button>
+                            </div>
+                        </div>
+
+                        <div class="mini-box-actions">
+                            <button type="button" class="btn btn-primary motion-press" id="miniBoxAddToCart">
+                                <i class="fas fa-shopping-bag" aria-hidden="true"></i>
+                                Add Box to Cart
+                            </button>
+                            <button type="button" class="btn btn-secondary motion-press" id="miniBoxAddToWishlist" aria-label="Add to wishlist">
+                                <i class="far fa-heart" aria-hidden="true"></i>
+                                Wishlist
+                            </button>
+                        </div>
+                    </section>
+
+                    <aside class="surface-glass motion-float mini-box-side anim-fade-up" aria-label="Highlights">
+                        <h2 class="mini-box-section-title">Why this box is special</h2>
+                        <ul class="mini-box-features">
+                            <li>Curated for gifting and sharing</li>
+                            <li>One fixed price (₹699)</li>
+                            <li>No weight selection needed</li>
+                        </ul>
+
+                        <div class="mini-box-logo-badge">
+                            <img src="/images/icons/logo.png" alt="Me to Millets">
+                            <div class="mini-box-muted">No product image is shown for this box.</div>
+                        </div>
+                    </aside>
+                </div>
+
+                <section class="surface-base mini-box-details anim-fade-up" aria-label="Details">
+                    <h2 class="mini-box-section-title">Details</h2>
+                    <div class="mini-box-details-grid">
+                        <div>
+                            <div class="mini-box-detail-key">Category</div>
+                            <div class="mini-box-detail-value">Gifts</div>
+                        </div>
+                        <div>
+                            <div class="mini-box-detail-key">Allergens</div>
+                            <div id="miniBoxAllergens" class="mini-box-detail-value">May contain nuts</div>
+                        </div>
+                        <div>
+                            <div class="mini-box-detail-key">Origin</div>
+                            <div id="miniBoxOrigin" class="mini-box-detail-value">Assorted</div>
+                        </div>
+                    </div>
+                </section>
+            </section>
+        </div>
+    </main>
+
+    <!-- Sidebars are injected via header + cart.js (same as other pages) -->
+
+    <script src="../js/product-data.js"></script>
+    <script src="../js/utils.js"></script>
+    <script src="../js/cart.js"></script>
+    <script src="../js/reviews.js"></script>
+    <script src="../js/search.js"></script>
+    <script src="../js/main.js"></script>
+
+    <script>
+        (function () {
+            function getMiniBoxProduct() {
+                const products = window.productData && window.productData.products;
+                if (!Array.isArray(products)) return null;
+                return products.find(p => Number(p.id) === 27) || null;
+            }
+
+            function renderMiniBox(product) {
+                if (!product) return;
+
+                const priceEl = document.getElementById('miniBoxPrice');
+                const descEl = document.getElementById('miniBoxDescription');
+                const allergensEl = document.getElementById('miniBoxAllergens');
+                const originEl = document.getElementById('miniBoxOrigin');
+
+                if (priceEl && window.utils) priceEl.textContent = window.utils.formatPrice(Number(product.price) || 699);
+                if (descEl) descEl.textContent = product.description || 'Includes 2 pcs of each type of chocolate.';
+                if (allergensEl) allergensEl.textContent = (product.allergens && product.allergens.join(', ')) || 'May contain nuts';
+                if (originEl) originEl.textContent = product.origin || 'Assorted';
+            }
+
+            function bindActions(product) {
+                const qtyInput = document.getElementById('miniBoxQty');
+                const minusBtn = document.getElementById('miniBoxQtyMinus');
+                const plusBtn = document.getElementById('miniBoxQtyPlus');
+                const addToCartBtn = document.getElementById('miniBoxAddToCart');
+                const addToWishlistBtn = document.getElementById('miniBoxAddToWishlist');
+
+                const clampQty = () => {
+                    const n = Math.max(1, parseInt(qtyInput.value || '1', 10));
+                    qtyInput.value = String(n);
+                    return n;
+                };
+
+                if (minusBtn && qtyInput) {
+                    minusBtn.addEventListener('click', () => {
+                        qtyInput.value = String(Math.max(1, parseInt(qtyInput.value || '1', 10) - 1));
+                    });
+                }
+
+                if (plusBtn && qtyInput) {
+                    plusBtn.addEventListener('click', () => {
+                        qtyInput.value = String(parseInt(qtyInput.value || '1', 10) + 1);
+                    });
+                }
+
+                if (qtyInput) {
+                    qtyInput.addEventListener('blur', clampQty);
+                }
+
+                if (addToCartBtn) {
+                    addToCartBtn.addEventListener('click', () => {
+                        if (!product || !window.cartManager) return;
+                        const qty = clampQty();
+
+                        const productVariant = {
+                            ...product,
+                            id: `${product.id}-Box`,
+                            name: `${product.name} (Box)`,
+                            price: Number(product.price) || 699,
+                            weight: 'Box',
+                            image: '/images/icons/logo.png'
+                        };
+
+                        window.cartManager.addToCart(productVariant, qty);
+                    });
+                }
+
+                if (addToWishlistBtn) {
+                    addToWishlistBtn.addEventListener('click', () => {
+                        if (!product || !window.cartManager) return;
+                        window.cartManager.addToWishlist({
+                            ...product,
+                            image: '/images/icons/logo.png'
+                        });
+                    });
+                }
+            }
+
+            document.addEventListener('DOMContentLoaded', () => {
+                const product = getMiniBoxProduct();
+                renderMiniBox(product);
+                bindActions(product);
+            });
+        })();
+    </script>
+</body>
+</html>

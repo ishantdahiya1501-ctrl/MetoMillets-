@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Preservative Free Chocolate Gifts | Me to Millets</title>
+        <meta name="description" content="Find the right chocolate gift in minutes—healthy, sorghum-powered, and made with zero preservatives. Get sugar free-style picks in India.">
+    <link rel="canonical" href="https://metomillets.me/pages/gift-wizard.html">
+
+        <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "Me to Millets",
+            "url": "https://metomillets.me/",
+            "logo": "https://metomillets.me/images/icons/logo3.png",
+            "contactPoint": [
+                {
+                    "@type": "ContactPoint",
+                    "telephone": "+91-8750441860",
+                    "contactType": "customer support",
+                    "email": "metomillets@gmail.com",
+                    "areaServed": "IN",
+                    "availableLanguage": ["en"]
+                }
+            ]
+        }
+        </script>
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://metomillets.me/pages/gift-wizard.html">
+    <meta property="og:title" content="Preservative Free Chocolate Gifts | Me to Millets">
+    <meta property="og:description" content="Find the right chocolate gift in minutes—healthy, sorghum-powered, and made with zero preservatives.">
+    <meta property="og:image" content="https://metomillets.me/images/icons/logo2.jpg">
+    <meta property="og:site_name" content="Me to Millets">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://metomillets.me/pages/gift-wizard.html">
+    <meta name="twitter:title" content="Preservative Free Chocolate Gifts | Me to Millets">
+    <meta name="twitter:description" content="Find the right chocolate gift in minutes—healthy, sorghum-powered, and made with zero preservatives.">
+    <meta name="twitter:image" content="https://metomillets.me/images/icons/logo2.jpg">
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="96x96" href="../images/icons/logo3.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/images/icons/logo3.png">
+    <!-- Fonts (non-blocking) -->
+    <script defer src="../js/async-google-fonts.js"></script>
+    
+    <!-- CSS paths -->
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/background.css">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="../css/mobile.css">
+
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <script defer src="../js/async-fontawesome.js"></script>
+    <script defer src="../js/header-loader.js"></script>
+
+    <style>
+        .wizard-page {
+            padding: var(--spacing-xxl) 0;
+            background-color: var(--light-gray);
+        }
+        .wizard-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: var(--white);
+            padding: var(--spacing-xl);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-lg);
+        }
+        .wizard-progress-simple {
+            width: 100%;
+            height: 8px;
+            background-color: var(--medium-gray);
+            border-radius: var(--radius-sm);
+            margin-bottom: var(--spacing-xl);
+            overflow: hidden;
+        }
+        .wizard-progress-bar-simple {
+            width: 0;
+            height: 100%;
+            background-color: var(--gold);
+            border-radius: var(--radius-sm);
+            transition: width var(--transition-normal);
+        }
+        .wizard-step {
+            display: none;
+            animation: fadeIn 0.5s ease;
+        }
+        .wizard-step.active {
+            display: block;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(15px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .wizard-step h2 {
+            text-align: center;
+            margin-bottom: var(--spacing-xl);
+            color: var(--dark-chocolate);
+        }
+        .form-group {
+            margin-bottom: var(--spacing-lg);
+            text-align: left;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: var(--spacing-sm);
+            font-weight: bold;
+            color: var(--dark-gray);
+        }
+        .form-group input, .form-group select, .form-group textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid var(--medium-gray);
+            border-radius: var(--radius-md);
+            font-size: 1rem;
+        }
+        .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+            border-color: var(--gold);
+            outline: none;
+            box-shadow: 0 0 0 2px rgba(201, 162, 39, 0.2);
+        }
+        .wizard-option-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            gap: var(--spacing-lg);
+        }
+        .wizard-option {
+            border: 2px solid var(--medium-gray);
+            border-radius: var(--radius-lg);
+            padding: var(--spacing-lg);
+            text-align: center;
+            cursor: pointer;
+            transition: all var(--transition-normal);
+        }
+        .wizard-option:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+            border-color: var(--primary-pink);
+        }
+        .wizard-option.selected {
+            border-color: var(--gold);
+            background-color: var(--light-gold);
+            box-shadow: var(--shadow-gold);
+        }
+        .wizard-option img {
+            width: 100%;
+            height: 120px;
+            object-fit: cover;
+            border-radius: var(--radius-md);
+            margin-bottom: var(--spacing-md);
+        }
+        .wizard-option .option-icon {
+            font-size: 3rem;
+            margin-bottom: var(--spacing-md);
+            color: var(--gold);
+        }
+        .wizard-option div {
+            font-weight: 600;
+            color: var(--dark-chocolate);
+        }
+        .details-item {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-lg);
+            padding: var(--spacing-md);
+            background: var(--light-gray);
+            border-radius: var(--radius-md);
+            margin-bottom: var(--spacing-md);
+        }
+        .floating-nav {
+            position: fixed;
+            bottom: calc(72px + env(safe-area-inset-bottom));
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100%;
+            max-width: 800px; /* Match container width */
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            padding: var(--spacing-lg);
+            box-shadow: 0 -4px 20px rgba(0,0,0,0.1);
+            z-index: 1200;
+            display: none; /* Initially hidden */
+            justify-content: space-between;
+            align-items: center;
+            gap: var(--spacing-md);
+        }
+        .floating-nav .btn {
+            padding: 1rem 1.25rem;
+            font-size: 1.05rem;
+            min-width: 160px;
+            border-radius: 10px;
+            box-shadow: var(--shadow-lg);
+            background: var(--primary-pink);
+            color: var(--white);
+            border: 0;
+            text-align: center;
+        }
+        .floating-nav .btn.secondary{background:transparent;color:var(--dark-chocolate);border:1px solid var(--medium-gray)}
+        .floating-nav .btn:active{transform:translateY(1px)}
+        .floating-nav.selection-made {
+            background: transparent;
+            backdrop-filter: none;
+            box-shadow: none;
+            justify-content: center;
+        }
+        .floating-nav.selection-made #nextBtn {
+            background: var(--primary-pink);
+            box-shadow: 0 8px 20px rgba(212, 132, 122, 0.35);
+        }
+        .custom-select-wrapper {
+    position: relative;
+    display: inline-block;
+}
+.custom-select-wrapper::after {
+    content: '\f078'; /* Font Awesome chevron-down */
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+    color: var(--gold);
+    transition: color var(--transition-normal);
+}
+.custom-select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-color: var(--white);
+    border: 1px solid var(--medium-gray);
+    border-radius: var(--radius-md);
+    padding: 0.75rem 2.5rem 0.75rem 1rem; /* Increased padding */
+    font-size: 1rem; /* Increased font size */
+    cursor: pointer;
+    width: 130px; /* Increased width */
+    transition: all var(--transition-normal);
+}
+.custom-select:hover {
+    border-color: var(--primary-pink);
+}
+.custom-select:focus {
+    border-color: var(--gold);
+    box-shadow: 0 0 0 2px rgba(201, 162, 39, 0.2);
+    outline: none;
+}
+    </style>
+</head>
+<body>
+    <header>
+        <div id="header-container" data-header-src="../header-pages.html"></div>
+    </header>
+
+    <main class="wizard-page">
+        <div class="container">
+            <div class="wizard-container">
+                <h1 class="section-title">Gift Wizard</h1>
+                <p class="section-subtitle">Pick chocolates, choose packaging, and add a message.</p>
+
+                <div class="wizard-progress-simple" aria-hidden="true">
+                    <div class="wizard-progress-bar-simple" id="progressBar"></div>
+                </div>
+
+                <form id="giftWizardForm" novalidate>
+                    <!-- Step 1: Choose Chocolates -->
+                    <div class="wizard-step" id="step1">
+                        <h2>Step 1: Choose Chocolates</h2>
+                        <div class="plans-grid wizard-option-grid" id="chocolate-options" aria-label="Chocolate options"></div>
+                    </div>
+
+                    <div id="priceSummary" style="display:none;"></div>
+
+                    <div class="wizard-step" id="step2">
+                        <h2>Step 2: Select Size and Quantity</h2>
+                        <div id="selected-chocolates-details"></div>
+                    </div>
+
+                    <!-- Step 3: Packaging -->
+                    <div class="wizard-step" id="step3">
+                        <h2>Step 3: Choose Your Packaging</h2>
+                        <div class="plans-grid" id="packaging-options">
+                            <div class="plan-card wizard-option" data-value="eco">
+                                <div class="plan-name">Eco-Friendly Wrap</div>
+                                <div style="font-size:0.95rem; margin-top:0.5rem;">🌿 Sustainable, minimal</div>
+                            </div>
+                            <div class="plan-card wizard-option" data-value="gift-box">
+                                <div class="plan-name">Gift Box</div>
+                                <div style="font-size:0.95rem; margin-top:0.5rem;">🎁 Classic presentation</div>
+                            </div>
+                            <div class="plan-card wizard-option" data-value="premium">
+                                <div class="plan-name">Premium Gift Set</div>
+                                <div style="font-size:0.95rem; margin-top:0.5rem;">✨ Luxurious finish</div>
+                            </div>
+                        </div>
+                        <div class="form-group" style="display:none;">
+                            <label for="packaging">Packaging Quality</label>
+                            <input type="hidden" id="packaging" name="packaging">
+                        </div>
+                    </div>
+
+                    <!-- Step 4: Recipient & Occasion -->
+                    <div class="wizard-step" id="step4">
+                        <h2>Step 4: Tell Us About the Gift</h2>
+                        <div class="form-group">
+                            <label for="recipient">For Whom is this Gift?</label>
+                            <input type="text" id="recipient" name="recipient" placeholder="e.g., My Mom, Best Friend, Partner">
+                        </div>
+                        <div class="form-group">
+                            <label for="occasion">What's the Occasion?</label>
+                            <input type="text" id="occasion" name="occasion" placeholder="e.g., Anniversary, Thank You, Just Because">
+                        </div>
+                        <div class="form-group">
+                            <label for="giftMessage">Add a Personal Message (Optional)</label>
+                            <textarea id="giftMessage" name="giftMessage" rows="4" placeholder="Write your heartfelt message here..."></textarea>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <!-- Floating Navigation -->
+    <div class="floating-nav" id="floatingNav">
+        <button type="button" class="btn btn-secondary" id="prevBtn" style="display: none;">Previous</button>
+        <button type="button" class="btn btn-gold" id="nextBtn">Next</button>
+    </div>
+
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2026 Me to Millets. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/product-data.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const wizardSteps = document.querySelectorAll('.wizard-step'); 
+            const prevBtn = document.getElementById('prevBtn');
+            const nextBtn = document.getElementById('nextBtn');
+            const submitBtn = document.getElementById('submitBtn');
+            const floatingNav = document.getElementById('floatingNav');
+            const priceSummary = document.getElementById('priceSummary');
+            let currentStep = 0;
+            const progressBar = document.getElementById('progressBar');
+            // Use gift-appropriate products
+            const priceMap = {
+                '15g': 30.00,
+                '30g': 60.00,
+                '80g': 160.00,
+                '150g': 250.00
+            };
+
+            const products = window.productData.products.filter(p => p.category === 'dark' || p.subcategory === 'bestseller');
+            const chocolateOptionsContainer = document.getElementById('chocolate-options');
+
+            // Load chocolates into Step 1
+            products.forEach(p => {
+                chocolateOptionsContainer.innerHTML += `
+                    <div class="plan-card wizard-option" data-id="${p.id}">
+                        <img src="${p.image}" alt="${p.name}" style="height:140px; object-fit:cover; border-radius:8px; margin-bottom:12px;">
+                        <div class="plan-name">${p.name}</div>
+                        <div style="font-size:0.9rem; color:var(--dark-gray); margin-top:8px;">${(p.shortDescription||'')}</div>
+                    </div>`;
+            });
+
+            chocolateOptionsContainer.addEventListener('click', e => {
+                const item = e.target.closest('.wizard-option');
+                if (item) {
+                    item.classList.toggle('selected');
+                    const hasSelected = !!document.querySelector('#chocolate-options .wizard-option.selected');
+                    if (hasSelected) {
+                        floatingNav.style.display = 'flex';
+                        floatingNav.classList.add('selection-made');
+                        prevBtn.style.display = 'none';
+                        nextBtn.classList.replace('btn-gold', 'btn-primary');
+                    } else {
+                        floatingNav.style.display = 'none';
+                    }
+                }
+            });
+
+            // Packaging selection (matches custom-builder)
+            const packagingOptionsContainer = document.getElementById('packaging-options');
+            const packagingInput = document.getElementById('packaging');
+            packagingOptionsContainer.addEventListener('click', e => {
+                const item = e.target.closest('.wizard-option');
+                if (item) {
+                    packagingOptionsContainer.querySelectorAll('.wizard-option').forEach(opt => opt.classList.remove('selected'));
+                    item.classList.add('selected');
+                    packagingInput.value = item.dataset.value;
+                }
+            });
+
+            function updateWizard() {
+                const lastIndex = wizardSteps.length - 1;
+                wizardSteps.forEach((step, index) => {
+                    step.classList.toggle('active', index === currentStep);
+                });
+                prevBtn.style.display = currentStep > 0 ? 'inline-block' : 'none';
+                // Next is always visible; on final step it becomes Add to Cart
+                nextBtn.style.display = 'inline-block';
+                if (currentStep === lastIndex) {
+                    nextBtn.textContent = 'Add to Cart';
+                    nextBtn.classList.remove('btn-primary');
+                    nextBtn.classList.add('btn-gold');
+                } else {
+                    nextBtn.textContent = 'Next';
+                    nextBtn.classList.remove('btn-gold');
+                    nextBtn.classList.add('btn-primary');
+                }
+            }
+
+            nextBtn.addEventListener('click', () => {
+                const lastIndex = wizardSteps.length - 1;
+                if (currentStep < lastIndex) {
+                    if (currentStep === 0) { // After selecting chocolates
+                        const selected = document.querySelectorAll('#chocolate-options .wizard-option.selected');
+                        if (selected.length === 0) {
+                            alert('Please select at least one chocolate.');
+                            return;
+                        }
+                        // Populate step 2
+                        const detailsContainer = document.getElementById('selected-chocolates-details');
+                        detailsContainer.innerHTML = '';
+                        selected.forEach(item => {
+                            const productId = item.dataset.id;
+                            const product = products.find(p => p.id == productId);
+                            detailsContainer.innerHTML += `
+                                <div class="details-item">
+                                    <img src="${product.image || '/images/icons/logo.png'}" alt="${product.name}" style="width: 60px; height: 60px; object-fit: cover; border-radius: 4px;">
+                                    <div style="flex-grow: 1;">
+                                        <strong>${product.name}</strong>
+                                    </div>
+                                    <div class="form-group" style="margin-bottom: 0;">
+                                        <label for="size_${productId}" style="font-size: 0.85rem; margin-bottom: 0.25rem;">Size</label>
+                                        <div class="custom-select-wrapper">
+                                            <select id="size_${productId}" name="size_${productId}" data-product-id="${productId}" class="size-selector custom-select"><option value="15g">15g</option><option value="30g">30g</option><option value="80g" selected>80g</option><option value="150g">150g</option></select>
+                                        </div>
+                                    </div>
+                                    <div class="form-group" style="margin-bottom: 0; text-align: right;">
+                                        <label style="font-size: 0.85rem; margin-bottom: 0.25rem;">Price</label>
+                                        <div class="price-display" data-product-id="${productId}" style="font-weight: bold; color: var(--dark-chocolate); font-size: 1.1rem;">₹${priceMap['80g'].toFixed(2)}</div>
+                                    </div>
+                                    <div class="form-group" style="margin-bottom: 0;">
+                                        <label for="qty_${productId}" style="font-size: 0.85rem; margin-bottom: 0.25rem;">Quantity</label>
+                                        <input type="number" id="qty_${productId}" name="qty_${productId}" value="1" min="1" style="width: 70px; padding: 0.5rem;">
+                                    </div>
+                                </div>`;
+                        });
+                        // Add event listeners for the newly created size selectors
+                        document.querySelectorAll('.size-selector').forEach(selector => {
+                            selector.addEventListener('change', (e) => {
+                                const selectedSize = e.target.value;
+                                const productId = e.target.dataset.productId;
+                                const price = priceMap[selectedSize];
+                                const priceDisplay = document.querySelector(`.price-display[data-product-id="${productId}"]`);
+                                if (priceDisplay) priceDisplay.textContent = `₹${price.toFixed(2)}`;
+                            });
+                        });
+                    }
+                    if (currentStep === 1) { // After setting details
+                        document.querySelectorAll('.size-selector').forEach(selector => {
+                            selector.addEventListener('change', (e) => {
+                                const selectedSize = e.target.value;
+                                const productId = e.target.dataset.productId;
+                                const price = priceMap[selectedSize];
+                                const priceDisplay = document.querySelector(`.price-display[data-product-id="${productId}"]`);
+                                if (priceDisplay) priceDisplay.textContent = `₹${price.toFixed(2)}`;
+                            });
+                        });
+                    }
+                    if (currentStep === 2) { // After selecting packaging
+                        if (!packagingInput.value) {
+                            alert('Please select a packaging option.');
+                            return;
+                        }
+                        floatingNav.style.display = 'flex';
+                        floatingNav.classList.remove('selection-made');
+                    }
+                    currentStep++;
+                    updateWizard();
+                } else {
+                    // Final step: Add to cart (Next becomes Add to Cart)
+                    const gift = collectGiftData();
+                    if (!gift) {
+                        window.utils.showNotification('Please select at least one chocolate.', 'warning');
+                        return;
+                    }
+                    if (window.cartManager && typeof window.cartManager.addToCart === 'function') {
+                        window.cartManager.addToCart(gift, 1);
+                        window.cartManager.renderCartItems && window.cartManager.renderCartItems();
+                    }
+                    window.utils && window.utils.showNotification('Gift added to cart!', 'success');
+                }
+            });
+
+            prevBtn.addEventListener('click', () => {
+                if (currentStep > 0) {
+                    floatingNav.style.display = 'flex';
+                    floatingNav.classList.remove('selection-made');
+                    if (priceSummary) priceSummary.style.display = 'block';
+                    currentStep--;
+                    updateWizard();
+                }
+            });
+
+            function collectGiftData() {
+                const selected = Array.from(document.querySelectorAll('#chocolate-options .wizard-option.selected'));
+                if (selected.length === 0) return null;
+
+                const components = [];
+                let total = 0;
+                selected.forEach(item => {
+                    const productId = item.dataset.id;
+                    const sizeEl = document.getElementById(`size_${productId}`);
+                    const qtyEl = document.getElementById(`qty_${productId}`);
+                    const size = sizeEl ? sizeEl.value : '80g';
+                    const qty = qtyEl ? Math.max(1, parseInt(qtyEl.value,10)||1) : 1;
+                    const unitPrice = priceMap[size] || priceMap['80g'];
+                    const product = products.find(p => p.id == productId) || {};
+                    const lineTotal = unitPrice * qty;
+                    total += lineTotal;
+                    components.push({ id: productId, name: product.name || `Item ${productId}`, size, qty, unitPrice, image: product.image || '' });
+                });
+
+                // packaging
+                const packaging = packagingInput.value || 'eco';
+                const packagingPrices = { 'eco': 0, 'gift-box': 49, 'premium': 99 };
+                const packagingPrice = packagingPrices[packaging] || 0;
+                total += packagingPrice;
+
+                const recipient = document.getElementById('recipient')?.value || '';
+                const occasion = document.getElementById('occasion')?.value || '';
+                const giftMessage = document.getElementById('giftMessage')?.value || '';
+
+                const name = `Gift Box: ${components.map(c => c.name.split(' ')[0]).join(', ')}`;
+                const image = components[0]?.image || '../images/banners/gift-default.jpg';
+
+                // Use a negative timestamp id to avoid colliding with catalog ids
+                const id = String(-Date.now());
+
+                const giftProduct = {
+                    id: id,
+                    name: name,
+                    price: Number(total) || 0,
+                    image: image,
+                    description: `Packaging: ${packaging}. For: ${recipient || '—'}. Occasion: ${occasion || '—'}`,
+                    components,
+                    packaging,
+                    recipient,
+                    occasion,
+                    giftMessage
+                };
+
+                return giftProduct;
+            }
+
+            document.getElementById('giftWizardForm').addEventListener('submit', function(e) {
+                e.preventDefault();
+                const gift = collectGiftData();
+                if (!gift) {
+                    window.utils.showNotification('Please select at least one chocolate.', 'warning');
+                    return;
+                }
+                // add to cart
+                if (window.cartManager && typeof window.cartManager.addToCart === 'function') {
+                    window.cartManager.addToCart(gift, 1);
+                    window.cartManager.renderCartItems && window.cartManager.renderCartItems();
+                }
+                window.utils && window.utils.showNotification('Gift added to cart!', 'success');
+            });
+
+            // Buy Now handler: add to cart then go to checkout
+            const buyNowBtnEl = document.getElementById('buyNowBtn');
+            if (buyNowBtnEl) {
+                buyNowBtnEl.addEventListener('click', () => {
+                    const gift = collectGiftData();
+                    if (!gift) {
+                        window.utils.showNotification('Please select at least one chocolate.', 'warning');
+                        return;
+                    }
+                    if (window.cartManager && typeof window.cartManager.addToCart === 'function') {
+                        window.cartManager.addToCart(gift, 1);
+                    }
+                    // Redirect to checkout
+                    window.location.href = 'checkout.html';
+                });
+            }
+
+            updateWizard();
+        });
+    </script>
+
+    <script src="../js/utils.js"></script>
+    <script src="../js/cart.js"></script>
+    <script src="../js/main.js"></script>
+    <script src="../js/search.js"></script>
+
+</body>
+</html>

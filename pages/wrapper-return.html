@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Wrapper Return Program — Me To Millets</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/components.css">
+    <link rel="stylesheet" href="../css/background.css">
+    <link rel="stylesheet" href="../css/mobile.css">
+    <script defer src="../js/async-fontawesome.js"></script>
+    <script defer src="../js/header-loader.js"></script>
+    <style>
+        .promo-hero{background:linear-gradient(135deg,#f7efe6,#fff);padding:48px 0;border-bottom:1px solid #eee}
+        .promo-card{background:#fff;border-radius:10px;box-shadow:0 8px 24px rgba(15,15,15,0.06);padding:28px;margin:18px 0}
+        .steps{display:flex;gap:16px;flex-wrap:wrap}
+        .step{flex:1;min-width:220px;background:linear-gradient(180deg,#fff,#fafafa);padding:18px;border-radius:8px;border:1px solid #f0f0f0}
+        .cta-row{display:flex;gap:12px;align-items:center;margin-top:18px}
+        .btn-primary{background:#6b3e26;color:#fff;padding:10px 18px;border-radius:8px;text-decoration:none}
+        .btn-secondary{background:transparent;border:1px solid #ccc;padding:8px 14px;border-radius:8px;text-decoration:none;color:#333}
+        .muted{color:#666;font-size:0.95rem}
+        /* Responsive tweaks for phone UI */
+        @media(max-width:640px){
+            .promo-hero{padding:28px 12px}
+            .promo-hero h1{font-size:1.4rem}
+            .promo-card{padding:18px}
+            .steps{flex-direction:column}
+            .cta-row{flex-direction:column;align-items:stretch}
+            .cta-row a{display:block;width:100%}
+            .btn-primary{padding:12px;border-radius:10px;text-align:center}
+            .btn-secondary{padding:10px;border-radius:10px;text-align:center}
+        }
+        /* Force mobile GUI on this page (show phone layout even on desktop) */
+        .desktop-only{display:none !important}
+        .mobile-only{display:block !important}
+        /* Ensure mobile bottom nav and topbar are visible */
+        .m-topbar, .m-drawer {display:block !important; width:100% !important}
+        .m-bottom-nav {display:block !important; position:fixed !important; left:0 !important; right:0 !important; bottom:0 !important; width:100% !important; z-index:1100 !important}
+        .m-bottom-nav-inner {max-width:100% !important; grid-template-columns:repeat(5,1fr) !important; padding:8px 10px !important}
+        .m-drawer {position:fixed;left:0;right:0;bottom:0;top:auto}
+        /* Keep default header behavior (show desktop header) */
+        /* Removed previous rule that forced header hidden on this page */
+    </style>
+</head>
+<body>
+    <div id="header-container" data-header-src="../header-pages.html"></div>
+
+    <!-- Mobile-specific topbar for Wrapper Return page -->
+    <div class="mobile-only wrapper-topbar" style="display:flex;align-items:center;gap:12px;padding:12px;background:#fff;border-bottom:1px solid #eee;position:sticky;top:0;z-index:120;">
+        <a href="../index.html" aria-label="Back" class="mobile-back" style="display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:8px;background:transparent;color:#3b2a22;text-decoration:none;border:1px solid transparent;">
+            <i class="fas fa-chevron-left"></i>
+        </a>
+        <div style="flex:1">
+            <strong style="font-size:1rem;color:#3b2a22">Wrapper Return</strong>
+            <div style="font-size:0.85rem;color:#7a6a60">Bring 100 wrappers — get 1 free</div>
+        </div>
+        <button id="wrapperMenuBtn" aria-label="Open menu" style="width:40px;height:40px;border-radius:8px;border:1px solid #eee;background:#fff;color:#3b2a22">
+            <i class="fas fa-ellipsis-v"></i>
+        </button>
+    </div>
+
+    <main class="container">
+        <section class="promo-hero">
+            <div class="container">
+                <h1>Wrapper Return Program</h1>
+                <p class="muted">Bring back 100 original Me To Millets wrappers and choose one free chocolate (up to ₹250). We verify and issue a redemption coupon.</p>
+            </div>
+        </section>
+
+        <section class="promo-card container">
+            <div class="steps">
+                <div class="step">
+                    <h3>1. Collect</h3>
+                    <p class="muted">Gather 100 original Me To Millets wrappers. No photocopies, torn receipts, or third-party packaging.</p>
+                </div>
+
+                <div class="step">
+                    <h3>2. Submit</h3>
+                    <p class="muted">Either bring them to our studio in Dwarka, Delhi, or mail them. For fast processing, include your name and phone number.</p>
+                </div>
+
+                <div class="step">
+                    <h3>3. Redeem</h3>
+                    <p class="muted">After verification you'll receive a coupon valid for one free chocolate (up to ₹250). Coupon delivery may take up to 7 business days.</p>
+                </div>
+            </div>
+
+            <div class="cta-row">
+                <a class="btn-primary" href="mailto:metomillets@gmail.com?subject=Wrapper%20Return%20Redemption&body=Hi%20Me%20To%20Millets%2C%0A%0AI%20have%20100%20wrappers%20and%20would%20like%20to%20redeem%20a%20free%20chocolate.%20Please%20let%20me%20know%20the%20next%20steps.%0A%0AName%3A%0APhone%3A%0AAddress%3A">Get Your Free Chocolate — Email Us</a>
+                <a class="btn-secondary" href="contact.html">Contact Page</a>
+            </div>
+
+            <hr style="margin:18px 0;border:none;border-top:1px solid #eee">
+
+            <h3>Mailing address</h3>
+            <p class="muted">Me To Millets — Wrapper Returns<br>Artisan Chocolate Studio<br>Dwarka, Delhi</p>
+
+            <h3>If you prefer photos</h3>
+            <p class="muted">Send clear photos of the 100 wrappers to <a href="mailto:metomillets@gmail.com">metomillets@gmail.com</a> with your name, phone number and preferred delivery address. We'll review and issue a coupon if approved.</p>
+
+            <h3>Terms</h3>
+            <ul class="muted">
+                <li>One redemption per 100 wrappers.</li>
+                <li>Coupons cannot be combined with other discounts unless stated.</li>
+                <li>Me To Millets reserves the right to verify and decline submissions.</li>
+            </ul>
+
+            <p class="muted">Questions? Email <a href="mailto:metomillets@gmail.com">metomillets@gmail.com</a>.</p>
+        </section>
+
+    </main>
+
+    <footer class="main-footer">
+        <div class="container footer-grid">
+            <div>
+                <p>Dwarka, Delhi</p>
+            </div>
+            <div>
+                <p>© 2026 Me To Millets — For best user experience use laptop.</p>
+            </div>
+        </div>
+    </footer>
+    <script>
+    // Mobile menu opener for this page: opens the site's mobile 'Explore' drawer and highlights the Wrapper Return link
+    (function(){
+        function openDrawer(){
+            const mobileMoreBtn = document.getElementById('mobileMoreBtn') || document.querySelector('[aria-label="Explore"]');
+            const drawer = document.getElementById('mobileMoreDrawer') || document.querySelector('.m-drawer');
+            if(mobileMoreBtn) mobileMoreBtn.click();
+            if(drawer){
+                drawer.style.display = 'block';
+                drawer.setAttribute('aria-hidden','false');
+                // highlight wrapper link inside drawer
+                const link = drawer.querySelector('a[href$="wrapper-return.html"], a[href$="pages/wrapper-return.html"]');
+                if(link){
+                    link.classList.add('active');
+                }
+            }
+        }
+
+        document.getElementById('wrapperMenuBtn')?.addEventListener('click', function(e){
+            e.preventDefault();
+            // try to open the drawer; if header-loader hasn't injected yet, wait briefly
+            let attempts = 0;
+            const t = setInterval(()=>{
+                attempts++;
+                const btn = document.getElementById('mobileMoreBtn');
+                const drawer = document.getElementById('mobileMoreDrawer');
+                if(btn || drawer || attempts>20){
+                    clearInterval(t);
+                    openDrawer();
+                }
+            }, 120);
+        });
+    })();
+    </script>
+</body>
+</html>

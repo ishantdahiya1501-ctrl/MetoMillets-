@@ -1,0 +1,1273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Custom Chocolate Gifts & Bulk Orders | Me to Millets</title>
+        <meta name="description" content="Create custom chocolate for gifts, events & bulk orders - made with sorghum and zero preservatives. Share your requirements in India.">
+    <link rel="canonical" href="https://metomillets.me/pages/custom-builder.html">
+
+        <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "Me to Millets",
+            "url": "https://metomillets.me/",
+            "logo": "https://metomillets.me/images/icons/logo3.png",
+            "contactPoint": [
+                {
+                    "@type": "ContactPoint",
+                    "telephone": "+91-8750441860",
+                    "contactType": "customer support",
+                    "email": "metomillets@gmail.com",
+                    "areaServed": "IN",
+                    "availableLanguage": ["en"]
+                }
+            ]
+        }
+        </script>
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://metomillets.me/pages/custom-builder.html">
+    <meta property="og:title" content="Custom Chocolate Gifts & Bulk Orders | Me to Millets">
+    <meta property="og:description" content="Create custom chocolate for gifts, events & bulk orders - made with sorghum and zero preservatives.">
+    <meta property="og:image" content="https://metomillets.me/images/icons/logo2.jpg">
+    <meta property="og:site_name" content="Me to Millets">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://metomillets.me/pages/custom-builder.html">
+    <meta name="twitter:title" content="Custom Chocolate Gifts & Bulk Orders | Me to Millets">
+    <meta name="twitter:description" content="Create custom chocolate for gifts, events & bulk orders - made with sorghum and zero preservatives.">
+    <meta name="twitter:image" content="https://metomillets.me/images/icons/logo2.jpg">
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="96x96" href="../images/icons/logo3.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/images/icons/logo3.png">
+    <!-- Fonts (non-blocking) -->
+    <script defer src="../js/async-google-fonts.js"></script>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/components.css">
+    <link rel="stylesheet" href="../css/mobile.css">
+
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <script defer src="../js/async-fontawesome.js"></script>
+    <script defer src="../js/header-loader.js"></script>
+    <style>
+        .builder-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: var(--spacing-xl) var(--spacing-lg);
+        }
+        
+        .builder-preview-container {
+            background: linear-gradient(135deg, var(--light-pink), var(--cream));
+            border-radius: var(--radius-lg);
+            padding: var(--spacing-xl);
+            margin-bottom: var(--spacing-xl);
+            text-align: center;
+            position: sticky;
+            top: 100px;
+            z-index: 10;
+        }
+        
+        .preview-chocolate {
+            width: 200px;
+            height: 200px;
+            margin: 0 auto var(--spacing-lg);
+            background: linear-gradient(135deg, #3D2C2E, #5C4033);
+            border-radius: 8px;
+            position: relative;
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .preview-toppings {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        
+        .preview-packaging {
+            position: absolute;
+            top: -10px;
+            left: -10px;
+            right: -10px;
+            bottom: -10px;
+            border: 2px dashed var(--gold);
+            border-radius: 12px;
+            background: rgba(255, 255, 255, 0.1);
+        }
+        
+        .custom-summary {
+            background: var(--white);
+            border-radius: var(--radius-lg);
+            padding: var(--spacing-xl);
+            margin-top: var(--spacing-xl);
+            box-shadow: var(--shadow-md);
+        }
+        
+        .summary-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: var(--spacing-md);
+            padding-bottom: var(--spacing-md);
+            border-bottom: 1px solid var(--medium-gray);
+        }
+        
+        .total-price {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--gold);
+            text-align: right;
+            margin-top: var(--spacing-lg);
+        }
+        
+        .builder-step-container {
+            display: none;
+        }
+        
+        .builder-step-container.active {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .option-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            gap: var(--spacing-lg);
+        }
+        
+        .custom-option {
+            background: var(--white);
+            border: 2px solid var(--medium-gray);
+            border-radius: var(--radius-md);
+            padding: var(--spacing-lg);
+            text-align: center;
+            cursor: pointer;
+            transition: all var(--transition-normal);
+            position: relative;
+        }
+        
+        .custom-option:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+            border-color: var(--primary-pink);
+        }
+        
+        .custom-option.selected {
+            border-color: var(--gold);
+            background: var(--light-gold);
+        }
+        
+        .custom-option.disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+        
+        .option-icon {
+            font-size: 2.5rem;
+            margin-bottom: var(--spacing-md);
+        }
+        
+        .option-price {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: var(--gold);
+            color: var(--white);
+            padding: 4px 8px;
+            border-radius: var(--radius-sm);
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+        
+        .builder-navigation {
+            display: flex;
+            justify-content: space-between;
+            margin-top: var(--spacing-xl);
+            padding-top: var(--spacing-xl);
+            border-top: 1px solid var(--medium-gray);
+        }
+        
+        .step-indicator {
+            text-align: center;
+            margin-bottom: var(--spacing-xl);
+        }
+        
+        .step-dots {
+            display: flex;
+            justify-content: center;
+            gap: var(--spacing-lg);
+            margin-bottom: var(--spacing-md);
+        }
+        
+        .step-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--medium-gray);
+            transition: all var(--transition-normal);
+        }
+        
+        .step-dot.active {
+            background: var(--gold);
+            transform: scale(1.3);
+        }
+        
+        .step-dot.completed {
+            background: var(--success);
+        }
+        
+        .step-title {
+            font-weight: 600;
+            color: var(--dark-chocolate);
+        }
+        
+        .flavor-description {
+            margin-top: var(--spacing-md);
+            font-size: 0.9rem;
+            color: var(--light-chocolate);
+            min-height: 40px;
+        }
+        
+        .ingredient-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--spacing-sm);
+            margin-top: var(--spacing-md);
+            justify-content: center;
+        }
+        
+        .ingredient-tag {
+            background: var(--light-pink);
+            padding: 4px 12px;
+            border-radius: var(--radius-sm);
+            font-size: 0.85rem;
+        }
+
+        .floating-nav .btn {
+            padding: 1rem 1.25rem;
+            font-size: 1.05rem;
+            min-width: 160px;
+            border-radius: 10px;
+            box-shadow: var(--shadow-lg);
+            background: var(--primary-pink);
+            color: var(--white);
+            border: 0;
+            text-align: center;
+        }
+        .floating-nav .btn.secondary{background:transparent;color:var(--dark-chocolate);border:1px solid var(--medium-gray)}
+        .floating-nav .btn:active{transform:translateY(1px)}
+
+        .floating-nav {
+            position: fixed;
+            bottom: calc(72px + env(safe-area-inset-bottom));
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1200;
+            display: flex;
+            gap: var(--spacing-md);
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            padding-bottom: calc(var(--spacing-lg) + env(safe-area-inset-bottom));
+        }
+
+        .confirmation-modal {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: rgba(0,0,0,0.6);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 2000;
+            backdrop-filter: blur(5px);
+        }
+        .confirmation-modal-content {
+            background: var(--white);
+            padding: var(--spacing-xl);
+            border-radius: var(--radius-lg);
+            max-width: 450px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div id="header-container" data-header-src="../header-pages.html"></div>
+    </header>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const backButton = document.getElementById('backButton');
+            if (!backButton) return;
+            backButton.addEventListener('click', (e) => {
+                e.preventDefault();
+                const modal = document.getElementById('confirmationModal');
+                if (modal) modal.style.display = 'flex';
+            });
+        });
+    </script>
+    
+    <main class="custom-builder-page">
+        <div class="builder-container">
+            <div class="page-header">
+                <h1>Create Your Custom Chocolate</h1>
+                <p>Design your perfect chocolate bar from scratch. Choose your base, add toppings, and select packaging.</p>
+            </div>
+            
+            <div class="builder-steps">
+                <div class="step-indicator">
+                    <div class="step-dots">
+                        <div class="step-dot active" data-step="1"></div>
+                        <div class="step-dot" data-step="2"></div>
+                        <div class="step-dot" data-step="3"></div>
+                        <div class="step-dot" data-step="4"></div>
+                    </div>
+                    <div class="step-title">Choose Base Chocolate</div>
+                </div>
+            </div>
+            
+            <div class="builder-content">
+                <div class="builder-preview-container">
+                    <div class="preview-chocolate" id="chocolatePreview">
+                        <div class="preview-toppings" id="toppingsPreview"></div>
+                        <div class="preview-packaging" id="packagingPreview"></div>
+                    </div>
+                    <h3 id="previewName">Your Custom Chocolate</h3>
+                    <div class="preview-description" id="previewDescription">Start building to see your creation</div>
+                </div>
+                
+                <!-- Step 1: Choose Base -->
+                <div class="builder-step-container active" id="step1">
+                    <h2>Choose Your Base Chocolate</h2>
+                    <p class="section-subtitle">Select the foundation of your custom chocolate bar</p>
+                    
+                    <div class="option-grid" id="baseOptions">
+                        <!-- Base options will be loaded by JavaScript -->
+                    </div>
+                </div>
+                
+                <!-- Step 2: Choose Toppings -->
+                <div class="builder-step-container" id="step2">
+                    <h2>Add Toppings & Mix-ins</h2>
+                    <p class="section-subtitle">Customize with your favorite additions (select as many as you like)</p>
+                    
+                    <div class="option-grid" id="toppingOptions">
+                        <!-- Topping options will be loaded by JavaScript -->
+                    </div>
+                    <div class="selected-toppings" id="selectedToppingsContainer" style="display: none;">
+                        <h3>Selected Toppings:</h3>
+                        <div class="ingredient-list" id="selectedToppingsList"></div>
+                    </div>
+                </div>
+                
+                <!-- Step 3: Choose Packaging -->
+                <div class="builder-step-container" id="step3">
+                    <h2>Select Packaging</h2>
+                    <p class="section-subtitle">Choose how your chocolate will be presented</p>
+                    
+                    <div class="option-grid" id="packagingOptions">
+                        <!-- Packaging options will be loaded by JavaScript -->
+                    </div>
+                </div>
+                
+                <!-- Step 4: Add Custom Message -->
+                <div class="builder-step-container" id="step4">
+                    <h2>Personalize Your Chocolate</h2>
+                    <p class="section-subtitle">Add a custom message for gifting or personal enjoyment</p>
+                    
+                    <div class="personalization-form">
+                        <div class="form-group">
+                            <label class="form-label" for="customWeight">Choose Weight</label>
+                            <select class="form-control" id="customWeight">
+                                <option value="150" selected>150g</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Custom Message (Optional)</label>
+                            <textarea class="form-control" id="customMessage" rows="4" placeholder="Add a personal message... (max 100 characters)" maxlength="100"></textarea>
+                            <div class="char-count">
+                                <span id="charCount">0</span>/100 characters
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label">Special Instructions (Optional)</label>
+                            <input type="text" class="form-control" id="specialInstructions" placeholder="Any special requests or instructions">
+                        </div>
+                        
+                        <div class="form-group">
+                            <div class="form-check">
+                                <input type="checkbox" id="isGift" class="form-check-input">
+                                <label class="form-check-label" for="isGift">This is a gift</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Summary and Actions -->
+                <div class="custom-summary">
+                    <h3>Your Custom Chocolate Summary</h3>
+                    <div class="summary-details">
+                        <div class="summary-item">
+                            <span>Base Chocolate:</span>
+                            <span id="summaryBase">Not selected</span>
+                        </div>
+                        <div class="summary-item">
+                            <span>Weight:</span>
+                            <span id="summaryWeight">150g</span>
+                        </div>
+                        <div class="summary-item">
+                            <span>Toppings:</span>
+                            <span id="summaryToppings">None</span>
+                        </div>
+                        <div class="summary-item">
+                            <span>Packaging:</span>
+                            <span id="summaryPackaging">Standard wrap</span>
+                        </div>
+                        <div class="summary-item">
+                            <span>Personalization:</span>
+                            <span id="summaryPersonalization">None</span>
+                        </div>
+                    </div>
+                    <div class="total-price" id="totalPrice">$0.00</div>
+                    
+                    <div class="builder-navigation">
+                        <button class="btn btn-secondary" id="prevStep" disabled><i class="fas fa-arrow-left"></i> Previous</button>
+                        <!-- Next and Add to Cart buttons are now in the floating nav -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <!-- Floating Navigation -->
+    <div class="floating-nav" id="floatingNav" style="display: none;">
+        <button class="btn btn-primary" id="floatingNextStep">Next <i class="fas fa-arrow-right"></i></button>
+        <button class="btn btn-gold" id="floatingAddToCart" style="display: none;">
+            🛒 Add to Cart
+        </button>
+        <button class="btn btn-primary" id="floatingBuyNow" style="display: none;">
+            ⚡ Buy Now
+        </button>
+    </div>
+
+    <!-- Confirmation Modal -->
+    <div class="confirmation-modal" id="confirmationModal" style="display: none;">
+        <div class="confirmation-modal-content">
+            <h3>Are you sure?</h3>
+            <p>Your progress in the builder will be lost if you leave this page.</p>
+            <div class="modal-actions" style="display: flex; justify-content: center; gap: 1rem; margin-top: 1.5rem;">
+                <button class="btn btn-danger" id="confirmLeaveBtn">Yes, Leave</button>
+                <button class="btn btn-secondary" id="cancelLeaveBtn">No, Stay</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Same footer as index.html -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-logo">
+                        <img src="../images/icons/logo.svg" alt="Me to Millets">
+                        <h3>Me to Millets</h3>
+                    </div>
+                    <p class="footer-description">Premium, ethical chocolates with 100% processed-free sugar, sweetened naturally with honey & dates.</p>
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/metomillets/" target="_blank" rel="noopener noreferrer" aria-label="Me to Millets on Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+                        <a href="#" aria-label="Me to Millets on Facebook"><i class="fab fa-facebook" aria-hidden="true"></i></a>
+                        <!-- Pinterest removed -->
+                        <a href="https://www.youtube.com/@Metomillets" target="_blank" rel="noopener noreferrer" aria-label="Me to Millets on YouTube"><i class="fab fa-youtube" aria-hidden="true"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="products.html">Shop All</a></li>
+                        <li><a href="custom-builder.html">Custom Builder</a></li>
+                        <li><a href="gift-wizard.html">Gift Wizard</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="more.html">Explore</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="faq.html">FAQs</a></li>
+                        <li><a href="reviews.html">Customer Reviews</a></li>
+                        <li><a href="login.html">Account</a></li> 
+                        <li><a href="terms.html">Terms & Conditions</a></li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="tasting-journal.html">Tasting Journal</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Support</h4>
+                    <ul class="footer-links">
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="shipping.html">Shipping & Returns</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="terms.html">Terms & Conditions</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <ul class="footer-contact">
+                        <li><i class="fas fa-map-marker-alt"></i> Dwarka, Delhi</li>
+                        <li><i class="fas fa-phone"></i> 8750441860</li>
+                        <li><i class="fas fa-envelope"></i> metomillets@gmail.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Me to Millets. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="../js/product-data.js"></script>
+    <script src="../js/utils.js"></script>
+    <script src="../js/cart.js"></script>
+    <script src="../js/main.js"></script>
+    <script src="../js/search.js"></script>
+    <script>
+        // Custom Chocolate Builder Script
+        document.addEventListener('DOMContentLoaded', function() {
+            const customBuilder = new CustomChocolateBuilder();
+            customBuilder.init();
+
+            // Back button confirmation logic
+            const confirmationModal = document.getElementById('confirmationModal');
+            const confirmLeaveBtn = document.getElementById('confirmLeaveBtn');
+            const cancelLeaveBtn = document.getElementById('cancelLeaveBtn');
+
+            const backButton = document.getElementById('backButton');
+            if (backButton) {
+                backButton.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    confirmationModal.style.display = 'flex';
+                });
+            }
+
+            if (confirmLeaveBtn) {
+                confirmLeaveBtn.addEventListener('click', () => {
+                    window.history.back();
+                });
+            }
+
+            if (cancelLeaveBtn) {
+                cancelLeaveBtn.addEventListener('click', () => {
+                    confirmationModal.style.display = 'none';
+                });
+            }
+        });
+        
+        class CustomChocolateBuilder {
+            constructor() {
+                this.currentStep = 1;
+                this.totalSteps = 4;
+                this.customChocolate = {
+                    base: null,
+                    toppings: [],
+                    packaging: null,
+                    message: '',
+                    instructions: '',
+                    isGift: false,
+                    weight: 150
+                };
+                this.pricing = {
+                    // toppings will be populated from the current product flavours below
+                    toppings: {},
+                    packaging: {
+                        'eco': { price: 0, name: 'Eco-Friendly Wrap' },
+                        'gift-box': { price: 49, name: 'Gift Box' },
+                        'premium': { price: 99, name: 'Premium Gift Set' }
+                    }
+                };
+
+                this.baseCatalog = [];
+                // Bases: explicitly define the base options shown in the custom builder
+                // Keep base ingredients minimal (no extra tags)
+                this.baseCatalog.push({ id: '85', name: 'Classic 85%', price: 300, description: 'An intense and robust 85% dark chocolate', ingredients: ['85% cocoa'], cocoaPercentage: 85, image: '' });
+
+                // Synthetic base entries for percentages not present in catalog
+                this.baseCatalog.push({ id: '90', name: '90% Dark', price: 320, description: 'Ultra-high cocoa 90% dark chocolate for the true purist', ingredients: ['90% cocoa'], cocoaPercentage: 90, image: '' });
+                this.baseCatalog.push({ id: '55', name: '55% Dark', price: 250, description: 'Smooth 55% dark chocolate with balanced sweetness', ingredients: ['55% cocoa'], cocoaPercentage: 55, image: '' });
+                this.baseCatalog.push({ id: '40', name: '40% Dark', price: 200, description: 'Mild 40% dark chocolate with gentle cocoa notes', ingredients: ['40% cocoa'], cocoaPercentage: 40, image: '' });
+
+                this.pricing.bases = this.baseCatalog.reduce((acc, p) => {
+                    acc[String(p.id)] = {
+                        productId: p.id,
+                        price: Number(p.price) || 0,
+                        name: p.name,
+                        description: p.description || '',
+                        ingredients: Array.isArray(p.ingredients) ? p.ingredients : [],
+                        cocoaPercentage: p.cocoaPercentage,
+                        image: p.image || ''
+                    };
+                    return acc;
+                }, {});
+            }
+            
+            init() {
+                this.loadBaseOptions();
+                this.loadToppingOptions();
+                this.loadPackagingOptions();
+                this.setupEventListeners();
+                this.updatePreview();
+                this.updateSummary();
+            }
+            
+            loadBaseOptions() {
+                const container = document.getElementById('baseOptions');
+                if (!container) return;
+
+                const bases = (this.baseCatalog && this.baseCatalog.length ? this.baseCatalog : []).map(p => {
+                    const pPricing = this.pricing.bases[String(p.id)];
+                    return {
+                        id: String(p.id),
+                        name: pPricing?.name || p.name,
+                        description: pPricing?.description || 'Premium dark chocolate crafted with natural sweeteners and sorghum',
+                        icon: '🍫',
+                        ingredients: pPricing?.ingredients || []
+                    };
+                });
+                
+                let html = '';
+                bases.forEach(base => {
+                    html += `
+                        <div class="custom-option" data-id="${base.id}">
+                            <div class="option-icon">${base.icon}</div>
+                            <h4>${base.name}</h4>
+                            <div class="flavor-description">${base.description}</div>
+                            <div class="ingredient-list">
+                                ${base.ingredients.map(ing => `<span class="ingredient-tag">${ing}</span>`).join('')}
+                            </div>
+                            <div class="option-price">${window.utils.formatPrice(this.pricing.bases[base.id].price)}</div>
+                        </div>
+                    `;
+                });
+                
+                container.innerHTML = html;
+                
+                // Add click listeners
+                container.querySelectorAll('.custom-option').forEach(option => {
+                    option.addEventListener('click', () => this.selectBase(option.dataset.id));
+                });
+            }
+            
+            loadToppingOptions() {
+                const container = document.getElementById('toppingOptions');
+                if (!container) return;
+
+                // Fixed topping list (no limit on selection)
+                const toppingCatalog = [
+                    { id: 'pink-salt', name: 'Pink Salt', icon: '🧂', description: 'A subtle mineral crunch that sharpens cocoa notes.' },
+                    { id: 'raspberry', name: 'Raspberry', icon: '🍇', description: 'Bright, tart bursts to lift the richness.' },
+                    { id: 'cranberry', name: 'Cranberry', icon: '🍒', description: 'Chewy tang with a ruby sheen.' },
+                    { id: 'orange', name: 'Orange', icon: '🍊', description: 'Citrus zest that perfumes every bite.' },
+                    { id: 'coconut', name: 'Coconut', icon: '🥥', description: 'Toasted, mellow sweetness with gentle crunch.' },
+                    { id: 'pistachio', name: 'Pistachio', icon: '🥜', description: 'Buttery green nuts for a luxe finish.' },
+                    { id: 'almond', name: 'Almond', icon: '🌰', description: 'Classic roasted snap and warmth.' },
+                    { id: 'hazelnut', name: 'Hazelnut', icon: '🍫', description: 'Nutella-adjacent aroma with a golden roast.' },
+                    { id: 'blueberry', name: 'Blueberry', icon: '🫐', description: 'Juicy-sweet pops with deep berry color.' },
+                    { id: 'walnut', name: 'Walnut', icon: '🥧', description: 'Earthy crunch that loves dark chocolate.' },
+                    { id: 'cashew', name: 'Cashew', icon: '🧁', description: 'Creamy, mellow chew that softens the bite.' },
+                    { id: 'cherry', name: 'Cherry', icon: '🍓', description: 'Jammy sweetness with a hint of tart.' },
+                    { id: 'raisins', name: 'Raisins', icon: '🍑', description: 'Sun-dried caramel fruitiness.' },
+                    { id: 'dates', name: 'Dates', icon: '🌴', description: 'Honeyed chew with natural sweetness.' },
+                    { id: 'strawberry', name: 'Strawberry', icon: '🍎', description: 'Fresh berry lift and ruby color.' },
+                    { id: 'peanuts', name: 'Peanuts', icon: '🧈', description: 'Salty-roasted crunch for a classic duo.' }
+                ];
+
+                this.pricing.toppings = {};
+                toppingCatalog.forEach((t) => {
+                    this.pricing.toppings[t.id] = {
+                        price: 25,
+                        name: t.name,
+                        icon: t.icon,
+                        description: ''
+                    };
+                });
+
+                const toppings = toppingCatalog.map(t => ({
+                    id: t.id,
+                    name: t.name,
+                    icon: t.icon,
+                    description: t.description || 'Adds texture and flavor contrast.'
+                }));
+
+                let html = '';
+                toppings.forEach(topping => {
+                    html += `
+                        <div class="custom-option" data-id="${topping.id}">
+                            <div class="option-icon">${topping.icon}</div>
+                            <h4>${topping.name}</h4>
+                            <div class="flavor-description">${topping.description}</div>
+                            <div class="option-price">+${window.utils.formatPrice(this.pricing.toppings[topping.id].price)}</div>
+                        </div>
+                    `;
+                });
+
+                container.innerHTML = html;
+
+                // Add click listeners
+                container.querySelectorAll('.custom-option').forEach(option => {
+                    option.addEventListener('click', () => this.selectTopping(option.dataset.id));
+                });
+            }
+            
+            loadPackagingOptions() {
+                const container = document.getElementById('packagingOptions');
+                if (!container) return;
+                
+                const packaging = [
+                    { id: 'eco', name: 'Eco-Friendly Wrap', icon: '🌿', description: 'Biodegradable wrapper' },
+                    { id: 'gift-box', name: 'Gift Box', icon: '🎁', description: 'Elegant gift box', isComingSoon: true },
+                    { id: 'premium', name: 'Premium Gift Set', icon: '✨', description: 'Complete gift experience', isComingSoon: true }
+                ];
+                
+                let html = '';
+                packaging.forEach(pack => {
+                    const badge = pack.isComingSoon ? '<span class="option-badge" style="position:absolute;bottom:12px;left:50%;transform:translateX(-50%);background:#f7c873;color:#2d1c12;font-weight:800;font-size:13px;padding:6px 14px;border-radius:999px;text-transform:uppercase;letter-spacing:0.05em;box-shadow:0 6px 14px rgba(0,0,0,0.18);">Coming Soon</span>' : '';
+                    const cardStyle = pack.isComingSoon ? ' style="position: relative; padding-top: 32px; pointer-events: none; opacity: 0.55;"' : '';
+                    const disabledAttr = pack.isComingSoon ? ' data-disabled="true" aria-disabled="true"' : '';
+                    html += `
+                        <div class="custom-option" data-id="${pack.id}"${cardStyle}${disabledAttr}>
+                            ${badge}
+                            <div class="option-icon">${pack.icon}</div>
+                            <h4>${pack.name}</h4>
+                            <div class="flavor-description">${pack.description}</div>
+                            <div class="option-price">${this.pricing.packaging[pack.id].price > 0 ? '+' + window.utils.formatPrice(this.pricing.packaging[pack.id].price) : 'Free'}</div>
+                        </div>
+                    `;
+                });
+                
+                container.innerHTML = html;
+                
+                // Add click listeners
+                container.querySelectorAll('.custom-option').forEach(option => {
+                    option.addEventListener('click', () => {
+                        if (option.dataset.disabled === 'true') return;
+                        this.selectPackaging(option.dataset.id);
+                    });
+                });
+            }
+            
+            setupEventListeners() {
+                // Navigation buttons
+                const prevBtn = document.getElementById('prevStep');
+                const floatingNextBtn = document.getElementById('floatingNextStep');
+                const floatingAddToCartBtn = document.getElementById('floatingAddToCart');
+                const floatingBuyNowBtn = document.getElementById('floatingBuyNow');
+                
+                if (floatingNextBtn) {
+                    floatingNextBtn.addEventListener('click', () => this.nextStep());
+                }
+                if (floatingAddToCartBtn) {
+                    floatingAddToCartBtn.addEventListener('click', () => this.addToCart(false));
+                }
+                if (floatingBuyNowBtn) {
+                    floatingBuyNowBtn.addEventListener('click', () => this.addToCart(true));
+                }
+                
+                if (prevBtn) {
+                    prevBtn.addEventListener('click', () => this.prevStep());
+                }
+                
+                // Custom message character counter
+                const messageInput = document.getElementById('customMessage');
+                if (messageInput) {
+                    messageInput.addEventListener('input', (e) => {
+                        this.customChocolate.message = e.target.value;
+                        document.getElementById('charCount').textContent = e.target.value.length;
+                        this.updateSummary();
+                    });
+                }
+
+                // Weight selector
+                const weightSelect = document.getElementById('customWeight');
+                if (weightSelect) {
+                    weightSelect.addEventListener('change', (e) => {
+                        const w = parseInt(e.target.value, 10);
+                        this.customChocolate.weight = Number.isFinite(w) && w > 0 ? w : 150;
+                        this.updatePreview();
+                        this.updateSummary();
+                    });
+                }
+                
+                // Special instructions
+                const instructionsInput = document.getElementById('specialInstructions');
+                if (instructionsInput) {
+                    instructionsInput.addEventListener('input', (e) => {
+                        this.customChocolate.instructions = e.target.value;
+                        this.updateSummary();
+                    });
+                }
+                
+                // Gift checkbox
+                const giftCheckbox = document.getElementById('isGift');
+                if (giftCheckbox) {
+                    giftCheckbox.addEventListener('change', (e) => {
+                        this.customChocolate.isGift = e.target.checked;
+                        this.updateSummary();
+                    });
+                }
+            }
+            
+            selectBase(baseId) {
+                this.customChocolate.base = baseId;
+                
+                // Update UI
+                document.querySelectorAll('#baseOptions .custom-option').forEach(option => {
+                    option.classList.remove('selected');
+                });
+                document.querySelector(`#baseOptions .custom-option[data-id="${baseId}"]`).classList.add('selected');
+                
+                this.updatePreview();
+                this.updateSummary();
+                this.showFloatingNav();
+            }
+            
+            selectTopping(toppingId) {
+                const index = this.customChocolate.toppings.indexOf(toppingId);
+                
+                if (index > -1) {
+                    // Remove if already selected
+                    this.customChocolate.toppings.splice(index, 1);
+                } else {
+                    this.customChocolate.toppings.push(toppingId);
+                }
+                
+                // Update UI
+                const option = document.querySelector(`#toppingOptions .custom-option[data-id="${toppingId}"]`);
+                if (option) {
+                    option.classList.toggle('selected');
+                }
+                
+                this.updateSelectedToppingsList();
+                this.updatePreview();
+                this.updateSummary();
+                this.showFloatingNav();
+            }
+            
+            selectPackaging(packagingId) {
+                this.customChocolate.packaging = packagingId;
+                
+                // Update UI
+                document.querySelectorAll('#packagingOptions .custom-option').forEach(option => {
+                    option.classList.remove('selected');
+                });
+                document.querySelector(`#packagingOptions .custom-option[data-id="${packagingId}"]`).classList.add('selected');
+                
+                this.updatePreview();
+                this.updateSummary();
+                this.showFloatingNav();
+            }
+            
+            updateSelectedToppingsList() {
+                const container = document.getElementById('selectedToppingsContainer');
+                const list = document.getElementById('selectedToppingsList');
+                
+                if (!container || !list) return;
+                
+                if (this.customChocolate.toppings.length > 0) {
+                    container.style.display = 'block';
+                    list.innerHTML = this.customChocolate.toppings.map(toppingId => {
+                        const topping = this.pricing.toppings[toppingId];
+                        return `<span class="ingredient-tag">${topping.name}</span>`;
+                    }).join('');
+                } else {
+                    container.style.display = 'none';
+                }
+            }
+            
+            nextStep() {
+                // Validate current step
+                if (!this.validateCurrentStep()) {
+                    return;
+                }
+                
+                // Hide current step
+                document.getElementById(`step${this.currentStep}`).classList.remove('active');
+                document.querySelector(`.step-dot[data-step="${this.currentStep}"]`).classList.remove('active');
+                
+                // Move to next step
+                this.currentStep++;
+                
+                // Show next step
+                document.getElementById(`step${this.currentStep}`).classList.add('active');
+                document.querySelector(`.step-dot[data-step="${this.currentStep}"]`).classList.add('active');
+                document.querySelector(`.step-dot[data-step="${this.currentStep - 1}"]`).classList.add('completed');
+                
+                // Update navigation buttons
+                this.updateNavigationButtons();
+                this.showFloatingNav();
+                
+                // Update step title
+                const stepTitles = ['Choose Base Chocolate', 'Add Toppings', 'Select Packaging', 'Personalize'];
+                document.querySelector('.step-title').textContent = stepTitles[this.currentStep - 1];
+            }
+            
+            prevStep() {
+                // Hide current step
+                document.getElementById(`step${this.currentStep}`).classList.remove('active');
+                document.querySelector(`.step-dot[data-step="${this.currentStep}"]`).classList.remove('active');
+                
+                // Move to previous step
+                this.currentStep--;
+                
+                // Show previous step
+                document.getElementById(`step${this.currentStep}`).classList.add('active');
+                document.querySelector(`.step-dot[data-step="${this.currentStep}"]`).classList.add('active');
+                document.querySelector(`.step-dot[data-step="${this.currentStep + 1}"]`).classList.remove('completed');
+                
+                // Update navigation buttons
+                this.updateNavigationButtons();
+                this.showFloatingNav();
+                
+                // Update step title
+                const stepTitles = ['Choose Base Chocolate', 'Add Toppings', 'Select Packaging', 'Personalize'];
+                document.querySelector('.step-title').textContent = stepTitles[this.currentStep - 1];
+            }
+            
+            validateCurrentStep() {
+                switch (this.currentStep) {
+                    case 1:
+                        if (!this.customChocolate.base) {
+                            window.utils.showNotification('Please select a base chocolate', 'warning');
+                            return false;
+                        }
+                        break;
+                    case 3:
+                        if (!this.customChocolate.packaging) {
+                            window.utils.showNotification('Please select packaging', 'warning');
+                            return false;
+                        }
+                        break;
+                }
+                return true;
+            }
+            
+            updateNavigationButtons() {
+                const prevBtn = document.getElementById('prevStep');
+                const floatingNextBtn = document.getElementById('floatingNextStep');
+                const floatingAddToCartBtn = document.getElementById('floatingAddToCart');
+                const floatingBuyNowBtn = document.getElementById('floatingBuyNow');
+                
+                // Previous button
+                if (prevBtn) {
+                    prevBtn.disabled = this.currentStep === 1;
+                }
+                
+                // Floating Next/Add to Cart buttons
+                if (floatingNextBtn && floatingAddToCartBtn && floatingBuyNowBtn) {
+                    if (this.currentStep === this.totalSteps) {
+                        floatingNextBtn.style.display = 'none';
+                        floatingAddToCartBtn.style.display = 'inline-block';
+                        floatingBuyNowBtn.style.display = 'inline-block';
+                    } else {
+                        floatingNextBtn.style.display = 'inline-block';
+                        floatingAddToCartBtn.style.display = 'none';
+                        floatingBuyNowBtn.style.display = 'none';
+                    }
+                }
+            }
+            
+            showFloatingNav() {
+                const floatingNav = document.getElementById('floatingNav');
+                if (!floatingNav) return;
+
+                const hasStarted = !!this.customChocolate.base || this.currentStep > 1;
+                floatingNav.style.display = hasStarted ? 'block' : 'none';
+            }
+
+            hideFloatingNav() {
+                const floatingNav = document.getElementById('floatingNav');
+                if (floatingNav) {
+                    floatingNav.style.display = 'none';
+                }
+            }
+
+            updatePreview() {
+                const preview = document.getElementById('chocolatePreview');
+                const toppingsPreview = document.getElementById('toppingsPreview');
+                const packagingPreview = document.getElementById('packagingPreview');
+                const previewName = document.getElementById('previewName');
+                const previewDescription = document.getElementById('previewDescription');
+                
+                if (!preview) return;
+                
+                // Set base color (darker for higher cocoa %, lighter for lower)
+                let baseColor = '#3D2C2E';
+                if (this.customChocolate.base) {
+                    const base = this.pricing.bases[this.customChocolate.base];
+                    const cocoa = base?.cocoaPercentage;
+                    baseColor = this.colorForCocoa(cocoa);
+                }
+                preview.style.background = `linear-gradient(135deg, ${baseColor}, ${this.lightenColor(baseColor, 22)})`;
+                
+                // Update toppings preview
+                if (toppingsPreview) {
+                    toppingsPreview.innerHTML = this.customChocolate.toppings.map(toppingId => {
+                        const topping = this.pricing.toppings[toppingId] || {};
+                        const icon = topping.icon || '🍫';
+                        return `<span title="${topping.name || ''}" style="position: absolute; font-size: 24px; opacity: 0.85; transform: translate(${Math.random() * 140 + 30}px, ${Math.random() * 140 + 30}px);">${icon}</span>`;
+                    }).join('');
+                }
+                
+                // Update packaging preview
+                if (packagingPreview) {
+                    if (this.customChocolate.packaging === 'gift-box') {
+                        packagingPreview.style.border = '3px solid var(--gold)';
+                        packagingPreview.style.background = 'rgba(255, 255, 255, 0.3)';
+                    } else if (this.customChocolate.packaging === 'premium') {
+                        packagingPreview.style.border = '3px solid var(--gold)';
+                        packagingPreview.style.background = 'linear-gradient(135deg, rgba(232,180,184,0.3), rgba(255,255,255,0.5))';
+                    } else {
+                        packagingPreview.style.border = '2px dashed var(--gold)';
+                        packagingPreview.style.background = 'rgba(255, 255, 255, 0.1)';
+                    }
+                }
+                
+                // Update name and description
+                if (previewName) {
+                    let name = 'Custom Chocolate Creation';
+                    if (this.customChocolate.base) {
+                        name = this.pricing.bases[this.customChocolate.base].name;
+                        if (this.customChocolate.toppings.length > 0) {
+                            name += ' with ' + this.customChocolate.toppings.map(t => this.pricing.toppings[t].name.split(' ')[0]).join(', ');
+                        }
+                        name += ` (${this.customChocolate.weight || 150}g)`;
+                    }
+                    previewName.textContent = name;
+                }
+                
+                if (previewDescription) {
+                    let description = 'Your custom chocolate bar';
+                    if (this.customChocolate.base && this.customChocolate.packaging) {
+                        const base = this.pricing.bases[this.customChocolate.base];
+                        const packaging = this.pricing.packaging[this.customChocolate.packaging];
+                        description = `${base.name} in ${packaging.name.toLowerCase()}`;
+                    }
+                    previewDescription.textContent = description;
+                }
+            }
+            
+            updateSummary() {
+                // Update summary details
+                document.getElementById('summaryBase').textContent = 
+                    this.customChocolate.base ? this.pricing.bases[this.customChocolate.base].name : 'Not selected';
+
+                const weightEl = document.getElementById('summaryWeight');
+                if (weightEl) {
+                    const w = this.customChocolate.weight || 150;
+                    weightEl.textContent = `${w}g`;
+                }
+                
+                document.getElementById('summaryToppings').textContent = 
+                    this.customChocolate.toppings.length > 0 ? 
+                    this.customChocolate.toppings.map(t => this.pricing.toppings[t].name).join(', ') : 'None';
+                
+                document.getElementById('summaryPackaging').textContent = 
+                    this.customChocolate.packaging ? this.pricing.packaging[this.customChocolate.packaging].name : 'Standard wrap';
+                
+                let personalization = [];
+                if (this.customChocolate.message) personalization.push('Custom message');
+                if (this.customChocolate.instructions) personalization.push('Special instructions');
+                if (this.customChocolate.isGift) personalization.push('Gift packaging');
+                document.getElementById('summaryPersonalization').textContent = 
+                    personalization.length > 0 ? personalization.join(', ') : 'None';
+                
+                // Calculate and update total price
+                let total = 0;
+                const weightMultiplier = (Number(this.customChocolate.weight) || 150) / 100;
+                let baseAndToppings = 0;
+                
+                if (this.customChocolate.base) {
+                    baseAndToppings += this.pricing.bases[this.customChocolate.base].price;
+                }
+                
+                this.customChocolate.toppings.forEach(toppingId => {
+                    baseAndToppings += this.pricing.toppings[toppingId].price;
+                });
+
+                total += baseAndToppings * weightMultiplier;
+                
+                if (this.customChocolate.packaging) {
+                    total += this.pricing.packaging[this.customChocolate.packaging].price;
+                }
+                
+                document.getElementById('totalPrice').textContent = window.utils.formatPrice(total);
+            }
+            
+            addToCart(buyNow = false) {
+                if (!this.customChocolate.base) {
+                    window.utils.showNotification('Please select a base chocolate', 'warning');
+                    return;
+                }
+                
+                if (!this.customChocolate.packaging) {
+                    window.utils.showNotification('Please select packaging', 'warning');
+                    return;
+                }
+                
+                // Calculate total price
+                const weightMultiplier = (Number(this.customChocolate.weight) || 150) / 100;
+                let baseAndToppings = 0;
+                baseAndToppings += this.pricing.bases[this.customChocolate.base].price;
+                this.customChocolate.toppings.forEach(toppingId => {
+                    baseAndToppings += this.pricing.toppings[toppingId].price;
+                });
+                let total = baseAndToppings * weightMultiplier;
+                total += this.pricing.packaging[this.customChocolate.packaging].price;
+
+                const baseImage = this.pricing.bases[this.customChocolate.base]?.image;
+                
+                // Create custom chocolate product
+                const customProduct = {
+                    id: Date.now(), // Unique ID based on timestamp
+                    name: this.getCustomChocolateName(),
+                    description: this.getCustomChocolateDescription(),
+                    price: total,
+                    category: 'custom',
+                    image: baseImage || 'https://images.unsplash.com/photo-1575377427642-087cf684f29d?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80',
+                    customData: {
+                        base: this.customChocolate.base,
+                        toppings: [...this.customChocolate.toppings],
+                        packaging: this.customChocolate.packaging,
+                        message: this.customChocolate.message,
+                        instructions: this.customChocolate.instructions,
+                        isGift: this.customChocolate.isGift,
+                        weight: this.customChocolate.weight,
+                        createdAt: new Date().toISOString()
+                    }
+                };
+                
+                // Add to cart
+                if (window.cartManager) {
+                    window.cartManager.addToCart(customProduct);
+
+                    if (buyNow) {
+                        window.location.href = 'checkout.html';
+                        return;
+                    }
+
+                    // Reset builder
+                    this.resetBuilder();
+                }
+            }
+            
+            getCustomChocolateName() {
+                let name = this.pricing.bases[this.customChocolate.base].name;
+                if (this.customChocolate.toppings.length > 0) {
+                    name += ' with ' + this.customChocolate.toppings
+                        .map(t => this.pricing.toppings[t].name)
+                        .join(', ');
+                }
+                name += ` (${this.customChocolate.weight || 150}g, Custom)`;
+                return name;
+            }
+            
+            getCustomChocolateDescription() {
+                let desc = 'Custom-made chocolate bar';
+                const w = this.customChocolate.weight || 150;
+                desc += ` (${w}g)`;
+                if (this.customChocolate.toppings.length > 0) {
+                    desc += ' with selected toppings';
+                }
+                if (this.customChocolate.isGift) {
+                    desc += '. Includes gift packaging';
+                }
+                return desc;
+            }
+            
+            resetBuilder() {
+                this.currentStep = 1;
+                this.customChocolate = {
+                    base: null,
+                    toppings: [],
+                    packaging: null,
+                    message: '',
+                    instructions: '',
+                    isGift: false,
+                    weight: 150
+                };
+                
+                // Reset UI
+                document.querySelectorAll('.builder-step-container').forEach(step => {
+                    step.classList.remove('active');
+                });
+                document.getElementById('step1').classList.add('active');
+                
+                document.querySelectorAll('.step-dot').forEach(dot => {
+                    dot.classList.remove('active', 'completed');
+                });
+                document.querySelector('.step-dot[data-step="1"]').classList.add('active');
+                
+                document.querySelectorAll('.custom-option').forEach(option => {
+                    option.classList.remove('selected');
+                });
+                
+                document.getElementById('customMessage').value = '';
+                document.getElementById('specialInstructions').value = '';
+                document.getElementById('isGift').checked = false;
+                document.getElementById('charCount').textContent = '0';
+                const weightSelect = document.getElementById('customWeight');
+                if (weightSelect) weightSelect.value = '150';
+                
+                this.updateNavigationButtons();
+                this.updatePreview();
+                this.updateSummary();
+                this.updateSelectedToppingsList();
+                
+                document.querySelector('.step-title').textContent = 'Choose Base Chocolate';
+            }
+            
+            colorForCocoa(cocoaPercentage) {
+                const cocoa = Number.isFinite(cocoaPercentage) ? cocoaPercentage : 70;
+                const clamped = Math.max(35, Math.min(95, cocoa));
+                const ratio = (clamped - 35) / (95 - 35); // 0 at 35%, 1 at 95%
+                const hue = 24; // warm brown hue
+                const saturation = 42; // keep moderate saturation
+                const lightness = 26 - (ratio * 10); // darker as cocoa increases
+                return this.hslToHex(hue, saturation, lightness);
+            }
+
+            hslToHex(h, s, l) {
+                const sNorm = s / 100;
+                const lNorm = l / 100;
+
+                const a = sNorm * Math.min(lNorm, 1 - lNorm);
+                const f = (n) => {
+                    const k = (n + h / 30) % 12;
+                    const color = lNorm - a * Math.max(-1, Math.min(k - 3, Math.min(9 - k, 1)));
+                    return Math.round(255 * color)
+                        .toString(16)
+                        .padStart(2, '0');
+                };
+                return `#${f(0)}${f(8)}${f(4)}`;
+            }
+
+            lightenColor(color, percent) {
+                const num = parseInt(color.replace("#", ""), 16);
+                const amt = Math.round(2.55 * percent);
+                const R = (num >> 16) + amt;
+                const G = (num >> 8 & 0x00FF) + amt;
+                const B = (num & 0x0000FF) + amt;
+                return "#" + (
+                    0x1000000 +
+                    (R < 255 ? R < 1 ? 0 : R : 255) * 0x10000 +
+                    (G < 255 ? G < 1 ? 0 : G : 255) * 0x100 +
+                    (B < 255 ? B < 1 ? 0 : B : 255)
+                ).toString(16).slice(1);
+            }
+        }
+    </script>
+</body>
+</html>

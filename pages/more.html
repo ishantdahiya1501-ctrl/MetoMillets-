@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Guides & Resources | Me to Millets</title>
+        <meta name="description" content="Explore guides, reviews, subscriptions, and tools from Me to Millets—made to help you choose healthy chocolate in India.">
+    <link rel="canonical" href="https://metomillets.me/pages/more.html">
+
+        <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "Me to Millets",
+            "url": "https://metomillets.me/",
+            "logo": "https://metomillets.me/images/icons/logo3.png",
+            "contactPoint": [
+                {
+                    "@type": "ContactPoint",
+                    "telephone": "+91-8750441860",
+                    "contactType": "customer support",
+                    "email": "metomillets@gmail.com",
+                    "areaServed": "IN",
+                    "availableLanguage": ["en"]
+                }
+            ]
+        }
+        </script>
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://metomillets.me/pages/more.html">
+    <meta property="og:title" content="Guides & Resources | Me to Millets">
+    <meta property="og:description" content="Explore guides, reviews, subscriptions, and tools from Me to Millets to help you choose healthy chocolate.">
+    <meta property="og:image" content="https://metomillets.me/images/icons/logo2.jpg">
+    <meta property="og:site_name" content="Me to Millets">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://metomillets.me/pages/more.html">
+    <meta name="twitter:title" content="Guides & Resources | Me to Millets">
+    <meta name="twitter:description" content="Explore guides, reviews, subscriptions, and tools from Me to Millets to help you choose healthy chocolate.">
+    <meta name="twitter:image" content="https://metomillets.me/images/icons/logo2.jpg">
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="96x96" href="../images/icons/logo3.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/images/icons/logo3.png">
+    <!-- Fonts (non-blocking) -->
+    <script defer src="../js/async-google-fonts.js"></script>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/more.css">
+    <link rel="stylesheet" href="../css/mobile.css">
+
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <script defer src="../js/async-fontawesome.js"></script>
+    <script defer src="../js/header-loader.js"></script>
+</head>
+<body>
+    <header>
+        <div id="header-container" data-header-src="../header-pages.html"></div>
+    </header>
+
+    <main class="more-page-container">
+        <div class="page-header">
+            <h1>Explore More</h1>
+            <p>Discover stories, guides, and experiences from the world of Me to Millets.</p>
+        </div>
+
+        <div class="nav-grid">
+            <a href="reviews.html" class="nav-card">
+                <div class="nav-card-banner">
+                    <div class="nav-card-icon"><i class="fas fa-star"></i></div>
+                </div>
+                <div class="nav-card-content">
+                    <h3>Customer Reviews</h3>
+                    <p>See what our customers are saying about their favorite chocolates.</p>
+                    <span class="nav-card-link">Read Reviews &rarr;</span>
+                </div>
+            </a>
+            <a href="gift-wizard.html" class="nav-card">
+                <div class="nav-card-banner">
+                    <div class="nav-card-icon"><i class="fas fa-magic"></i></div>
+                </div>
+                <div class="nav-card-content">
+                    <h3>Gift Wizard</h3>
+                    <p>Find the perfect chocolate gift for any occasion with our guided tool.</p>
+                    <span class="nav-card-link">Find a Gift &rarr;</span>
+                </div>
+            </a>
+            <a href="blog.html" class="nav-card">
+                <div class="nav-card-banner">
+                    <div class="nav-card-icon"><i class="fas fa-book-open"></i></div>
+                </div>
+                <div class="nav-card-content">
+                    <h3>Our Blog</h3>
+                    <p>Read our stories, recipes, and insights from the bean-to-bar journey.</p>
+                    <span class="nav-card-link">Visit the Blog &rarr;</span>
+                </div>
+            </a>
+            <a href="tasting-journal.html" class="nav-card">
+                <div class="nav-card-banner">
+                    <div class="nav-card-icon"><i class="fas fa-feather-alt"></i></div>
+                </div>
+                <div class="nav-card-content">
+                    <h3>Tasting Journal</h3>
+                    <p>Keep a personal log of your chocolate tasting experiences.</p>
+                    <span class="nav-card-link">Open Journal &rarr;</span>
+                </div>
+            </a>
+        </div>
+    </main>
+
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; <span id="currentYear">2026</span> Me to Millets. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/utils.js"></script>
+    <script src="../js/cart.js"></script>
+    <script src="../js/main.js"></script>
+    <script src="../js/search.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const yearEl = document.getElementById('currentYear');
+            if(yearEl) yearEl.textContent = new Date().getFullYear();
+            if(window.cartManager) window.cartManager.updateCartCount();
+        });
+    </script>
+</body>
+</html>

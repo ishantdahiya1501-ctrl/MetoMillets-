@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Checkout | Me to Millets</title>
+  <meta name="description" content="Complete your Me to Millets order with shipping details and checkout (India).">
+  <link rel="canonical" href="https://metomillets.me/pages/checkout.html">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Me to Millets",
+    "url": "https://metomillets.me/",
+    "logo": "https://metomillets.me/images/icons/logo3.png",
+    "contactPoint": [
+      {
+        "@type": "ContactPoint",
+        "telephone": "+91-8750441860",
+        "contactType": "customer support",
+        "email": "metomillets@gmail.com",
+        "areaServed": "IN",
+        "availableLanguage": ["en"]
+      }
+    ]
+  }
+  </script>
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://metomillets.me/pages/checkout.html">
+  <meta property="og:title" content="Checkout | Me to Millets">
+  <meta property="og:description" content="Enter shipping details and place your Me to Millets order (India).">
+  <meta property="og:image" content="https://metomillets.me/images/icons/logo2.jpg">
+  <meta property="og:site_name" content="Me to Millets">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://metomillets.me/pages/checkout.html">
+  <meta name="twitter:title" content="Checkout | Me to Millets">
+  <meta name="twitter:description" content="Enter shipping details and place your Me to Millets order (India).">
+  <meta name="twitter:image" content="https://metomillets.me/images/icons/logo2.jpg">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/checkout.css">
+  <link rel="stylesheet" href="../css/mobile.css">
+
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+  <script defer src="../js/async-fontawesome.js"></script>
+  <script defer src="../js/header-loader.js"></script>
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="96x96" href="../images/icons/logo3.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/images/icons/logo3.png">
+  <!-- Fonts (non-blocking) -->
+  <script defer src="../js/async-google-fonts.js"></script>
+  <!-- EmailJS SDK (latest version) -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+</head>
+<body>
+  <header>
+    <div id="header-container" data-header-src="../header-pages.html"></div>
+  </header>
+
+  <!-- Global UI error banner -->
+  <div id="globalError" role="alert" aria-hidden="true" style="display:none;padding:12px;background:#fff3f3;border:1px solid #f5c2c2;color:#9b1c1c;border-radius:6px;margin:12px;position:relative;">
+    <strong style="margin-right:8px">Error:</strong>
+    <span id="globalErrorMsg"></span>
+    <button id="globalErrorClose" aria-label="Close" style="position:absolute;right:8px;top:6px;background:transparent;border:none;font-size:16px;cursor:pointer">&times;</button>
+  </div>
+
+  <h1 style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;">Checkout</h1>
+
+    <div class="checkout-grid">
+      <section class="checkout-left">
+        <form id="checkoutForm" class="checkout-form" novalidate>
+          <h3>Shipping & Contact</h3>
+
+          <label for="fullName">Full Name</label>
+          <input id="fullName" name="fullName" type="text" required>
+
+          <label for="email">Email Address</label>
+          <input id="email" name="email" type="email" required>
+
+          <label for="phone">Phone Number</label>
+          <input id="phone" name="phone" type="tel" required>
+
+          <label for="shippingAddress">Shipping Address</label>
+          <textarea id="shippingAddress" name="shippingAddress" rows="5" required></textarea>
+
+          <label for="instructions">Special Instructions <small>(optional)</small></label>
+          <textarea id="instructions" name="instructions" rows="3"></textarea>
+
+          <h3 style="margin-top: 2rem;">Promo Code</h3>
+          <div style="display: flex; gap: 0.5rem;">
+            <input id="promoCode" type="text" placeholder="Enter promo code" style="flex: 1;">
+            <button type="button" id="applyPromoBtn" class="btn btn-secondary">Apply</button>
+          </div>
+          <div id="promoMessage" hidden style="margin-top: 0.5rem; padding: 0.75rem; border-radius: 6px; font-weight: 600;"></div>
+
+          <div class="form-actions">
+            <button type="button" id="previewOrderBtn" class="btn btn-primary btn-block" onclick="console.log('Preview clicked');">🛒 Proceed to Payment</button>
+          </div>
+        </form>
+
+        <div id="previewPanel" class="preview-panel" hidden>
+          <h3>Order Preview</h3>
+          <div id="previewContent"></div>
+          <div class="preview-actions">
+            <button id="editOrderBtn" class="btn btn-secondary">Edit</button>
+            <button id="sendOrderBtn" type="button" class="btn btn-gold">Pay <span id="payAmount">__</span></button>
+          </div>
+        </div>
+
+        <div id="resultPanel" class="result-panel" hidden>
+          <div id="resultMessage"></div>
+          <div id="retryActions" class="preview-actions" hidden>
+            <button id="retryBtn" class="btn btn-primary">Retry</button>
+            <button id="cancelBtn" class="btn btn-secondary">Cancel</button>
+          </div>
+        </div>
+      </section>
+
+      <aside class="checkout-right">
+        <h3 class="summary-title">Order Summary</h3>
+        <div id="orderSummary" class="order-summary"></div>
+
+        <div class="summary-totals">
+          <div class="summary-row"><span>Subtotal</span><span id="subtotal">$0.00</span></div>
+          <div class="summary-row"><span>Shipping</span><span id="shipping">$0.00</span></div>
+          <div class="summary-row total"><strong>Grand Total</strong><strong id="grandTotal">$0.00</strong></div>
+        </div>
+
+        <div class="spinner" id="spinner" hidden aria-hidden="true"></div>
+      </aside>
+    </div>
+  </main>
+
+  <footer class="container" style="padding:2rem 0;text-align:center">
+    <small>&copy; <span id="currentYear"></span> Me To Millets</small>
+  </footer>
+
+  <script src="../js/utils.js"></script>
+  <script src="../js/orders-api.js"></script>
+  <script src="../js/cart.js"></script>
+  <script src="../js/main.js"></script>
+  <script src="../js/search.js"></script>
+  <script src="../js/checkout-v2.js"></script>
+
+  <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+  <script src="../js/checkout-payment.js"></script>
+</body>
+</html>

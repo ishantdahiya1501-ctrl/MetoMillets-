@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Sugar Free Chocolate Subscription | Me to Millets</title>
+        <meta name="description" content="Get healthy chocolate delivered regularly—sorghum-powered, sweetened with honey & dates, with zero preservatives. Flexible subscription in India.">
+    <link rel="canonical" href="https://metomillets.me/pages/subscriptions.html">
+
+        <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "Me to Millets",
+            "url": "https://metomillets.me/",
+            "logo": "https://metomillets.me/images/icons/logo3.png",
+            "contactPoint": [
+                {
+                    "@type": "ContactPoint",
+                    "telephone": "+91-8750441860",
+                    "contactType": "customer support",
+                    "email": "metomillets@gmail.com",
+                    "areaServed": "IN",
+                    "availableLanguage": ["en"]
+                }
+            ]
+        }
+        </script>
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://metomillets.me/pages/subscriptions.html">
+    <meta property="og:title" content="Subscriptions | Me to Millets">
+    <meta property="og:description" content="Subscription options for regular chocolate deliveries within India.">
+    <meta property="og:image" content="https://metomillets.me/images/icons/logo2.jpg">
+    <meta property="og:site_name" content="Me to Millets">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://metomillets.me/pages/subscriptions.html">
+    <meta name="twitter:title" content="Subscriptions | Me to Millets">
+    <meta name="twitter:description" content="Subscription options for regular chocolate deliveries within India.">
+    <meta name="twitter:image" content="https://metomillets.me/images/icons/logo2.jpg">
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="96x96" href="../images/icons/logo3.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/images/icons/logo3.png">
+    <!-- Fonts (non-blocking) -->
+    <script defer src="../js/async-google-fonts.js"></script>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/components.css">
+    <link rel="stylesheet" href="../css/mobile.css">
+
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <script defer src="../js/async-fontawesome.js"></script>
+    <script defer src="../js/header-loader.js"></script>
+    <style>
+        .subscriptions-page {
+            padding: var(--spacing-xxl) 0;
+            background: var(--background-light);
+        }
+        .page-header {
+            text-align: center;
+            margin-bottom: var(--spacing-xxl);
+        }
+        .page-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: var(--spacing-md);
+        }
+        .page-header p {
+            font-size: 1.1rem;
+            color: var(--light-chocolate);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Styles from subscription.html */
+        .benefits-section { background: linear-gradient(135deg, #F5E6E0 0%, #FFFAF8 100%); padding: 3rem 0; margin: 3rem 0; }
+        .benefits-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; max-width: 1000px; margin: 0 auto; }
+
+        .benefit-card { background: var(--white); padding: 1.5rem; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); border-top: 3px solid #C9A227; }
+        .benefit-card h4 { color: var(--dark-chocolate); margin-bottom: 0.75rem; }
+        .benefit-card p { color: var(--dark-gray); line-height: 1.8; }
+
+        .faq-subscription { max-width: 900px; margin: 3rem auto; }
+        .faq-subscription h2 { color: var(--dark-chocolate); text-align: center; margin-bottom: 2rem; }
+
+        .subscription-faq { background: var(--white); padding: 1.5rem; border-radius: 10px; margin-bottom: 1rem; box-shadow: 0 2px 8px rgba(0,0,0,0.06); cursor: pointer; }
+        .subscription-faq-q { font-weight: 700; color: var(--dark-chocolate); display: flex; justify-content: space-between; align-items: center; }
+        .subscription-faq-a { color: var(--dark-gray); line-height: 1.8; margin-top: 1rem; display: none; }
+        .subscription-faq.active .subscription-faq-a { display: block; }
+        .subscription-faq-icon { color: #C9A227; transition: transform 0.3s ease; }
+        .subscription-faq.active .subscription-faq-icon { transform: rotate(180deg); }
+
+        @media (max-width: 992px) {
+            .benefits-grid { grid-template-columns: 1fr; }
+        }
+
+        .plan-card {
+            transition: all 0.3s ease;
+        }
+        .plan-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+        }
+        .plan-card.featured {
+            border: 2px solid #C9A227;
+            transform: scale(1.05);
+        }
+        .plan-card.featured:hover {
+            transform: scale(1.05) translateY(-8px);
+        }
+        .plan-badge {
+            position: absolute;
+            top: -15px;
+            right: 15px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div id="header-container" data-header-src="../header-pages.html"></div>
+    </header>
+
+    <main class="subscriptions-page">
+        <div class="container">
+            <div class="page-header">
+                <h1>Chocolate Subscriptions</h1>
+                <p>Enjoy our finest creations delivered to your door monthly at special prices. Explore <a href="products.html">healthy sugar free chocolate</a> picks for your next box.</p>
+            </div>
+            
+            <!-- Subscription Plans Section -->
+            <section class="subscription-section" style="padding: 0;">
+                <div class="plans-grid">
+                    <div class="plan-card">
+                        <div class="plan-name">Monthly Starter</div>
+                        <div class="plan-price">₹999</div>
+                        <div class="plan-price-note">per month</div>
+                        <ul class="plan-features">
+                            <li>2-3 curated chocolates</li>
+                            <li>Save 15% vs retail</li>
+                            <li>Free shipping</li>
+                            <li>Tasting notes guide</li>
+                        </ul>
+                        <button class="plan-cta">Subscribe Now</button>
+                    </div>
+                    
+                    <div class="plan-card featured">
+                        <div class="plan-badge">Most Popular</div>
+                        <div class="plan-name">Monthly Connoisseur</div>
+                        <div class="plan-price">₹1,799</div>
+                        <div class="plan-price-note">per month</div>
+                        <ul class="plan-features">
+                            <li>5-6 premium selections</li>
+                            <li>Save 20% vs retail</li>
+                            <li>Free express shipping</li>
+                            <li>Exclusive limited editions</li>
+                            <li>Member discount codes</li>
+                        </ul>
+                        <button class="plan-cta">Subscribe Now</button>
+                    </div>
+                    
+                    <div class="plan-card">
+                        <div class="plan-name">Monthly Luxe</div>
+                        <div class="plan-price">₹2,999</div>
+                        <div class="plan-price-note">per month</div>
+                        <ul class="plan-features">
+                            <li>10 artisan pieces</li>
+                            <li>Save 25% vs retail</li>
+                            <li>Priority shipping</li>
+                            <li>VIP event access</li>
+                            <li>Personal chocolate concierge</li>
+                        </ul>
+                        <button class="plan-cta">Subscribe Now</button>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Benefits Section -->
+        <section class="benefits-section">
+            <div class="container">
+                <h2 style="color: var(--dark-chocolate); text-align: center; margin-bottom: 2rem; font-size: 2rem;">✨ Why Subscribe?</h2>
+                <div class="benefits-grid">
+                    <div class="benefit-card">
+                        <h4>💰 Save Money</h4>
+                        <p>Get up to 25% off retail prices. The longer your commitment, the bigger your savings. Plus, free shipping on all deliveries.</p>
+                    </div>
+                    <div class="benefit-card">
+                        <h4>🚚 Never Run Out</h4>
+                        <p>Enjoy consistent, reliable delivery on your schedule. Set it and forget it. We handle the rest.</p>
+                    </div>
+                    <div class="benefit-card">
+                        <h4>🎁 Exclusive Access</h4>
+                        <p>Subscribers get first access to limited-edition flavors, seasonal releases, and special promotions.</p>
+                    </div>
+                    <div class="benefit-card">
+                        <h4>🔄 Complete Flexibility</h4>
+                        <p>Change flavors, skip months, or pause anytime—no penalties, no questions asked. Your subscription, your rules.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="faq-subscription container">
+            <h2>❓ Subscription FAQs</h2>
+            
+            <div class="subscription-faq">
+                <div class="subscription-faq-q">
+                    Can I change my subscription anytime?
+                    <i class="fas fa-chevron-down subscription-faq-icon"></i>
+                </div>
+                <div class="subscription-faq-a">
+                    Yes! You can modify flavors, frequency, or quantity anytime from your account dashboard. Changes take effect at your next delivery.
+                </div>
+            </div>
+
+            <div class="subscription-faq">
+                <div class="subscription-faq-q">
+                    Can I skip a delivery?
+                    <i class="fas fa-chevron-down subscription-faq-icon"></i>
+                </div>
+                <div class="subscription-faq-a">
+                    Absolutely! You can skip up to 3 months without canceling. Your subscription will resume automatically unless you pause it again.
+                </div>
+            </div>
+
+            <div class="subscription-faq">
+                <div class="subscription-faq-q">
+                    How do I cancel?
+                    <i class="fas fa-chevron-down subscription-faq-icon"></i>
+                </div>
+                <div class="subscription-faq-a">
+                    Cancel anytime from your account settings. No cancellation fees. Your subscription ends at the end of the current billing cycle. If you've paid for future deliveries, we'll refund the unused portion.
+                </div>
+            </div>
+
+            <div class="subscription-faq">
+                <div class="subscription-faq-q">
+                    What if I receive a damaged box?
+                    <i class="fas fa-chevron-down subscription-faq-icon"></i>
+                </div>
+                <div class="subscription-faq-a">
+                    Contact us within 48 hours of delivery with photos. We'll send a replacement immediately at no charge. Subscribers receive expedited replacement shipping.
+                </div>
+            </div>
+
+            <div class="subscription-faq">
+                <div class="subscription-faq-q">
+                    Can I gift a subscription?
+                    <i class="fas fa-chevron-down subscription-faq-icon"></i>
+                </div>
+                <div class="subscription-faq-a">
+                    Yes! Gift subscriptions are perfect for chocolate lovers. Purchase a subscription plan and we'll send a beautiful gift card to your recipient with activation instructions.
+                </div>
+            </div>
+
+            <div class="subscription-faq">
+                <div class="subscription-faq-q">
+                    How does billing work?
+                    <i class="fas fa-chevron-down subscription-faq-icon"></i>
+                </div>
+                <div class="subscription-faq-a">
+                    Your payment method is charged on your selected schedule (monthly, quarterly, or annually). You'll receive a confirmation email before each billing date.
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-logo">
+                        <div style="width: 40px; height: 40px; background: var(--gold); border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; margin-right: var(--spacing-md);">M</div>
+                        <h3>Me to Millets</h3>
+                    </div>
+                    <p class="footer-description">Premium, ethical chocolates with 100% processed-free sugar, sweetened naturally with honey & dates.</p>
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/metomillets/" aria-label="Me to Millets on Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+                        <a href="#" aria-label="Me to Millets on Facebook"><i class="fab fa-facebook" aria-hidden="true"></i></a>
+                        <!-- Pinterest removed -->
+                        <a href="https://www.youtube.com/@Metomillets" aria-label="Me to Millets on YouTube"><i class="fab fa-youtube" aria-hidden="true"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Shop</h4>
+                    <ul class="footer-links">
+                        <li><a href="products.html?category=dark">Flavoured Dark Chocolates</a></li>
+                        <li><a href="products.html?category=gifts">Gift Hampers</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Company</h4>
+                    <ul class="footer-links">
+                        <li><a href="about.html">Our Story</a></li>
+                        <li><a href="about.html#ethics">Ethical Sourcing</a></li>
+                        <li><a href="about.html#sustainability">Sustainability</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Support</h4>
+                    <ul class="footer-links">
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="shipping.html">Shipping & Returns</a></li>
+                        <li><a href="allergens.html">Allergen Information</a></li>
+                        <li><a href="terms.html">Terms & Conditions</a></li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 Me to Millets. All rights reserved. | Made with <i class="fas fa-heart"></i> and 🍫</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/utils.js"></script>
+    <script src="../js/cart.js"></script>
+    <script src="../js/main.js"></script>
+    <script src="../js/search.js"></script>
+    <script>
+        document.querySelectorAll('.subscription-faq').forEach(item => {
+            item.addEventListener('click', () => {
+                item.classList.toggle('active');
+            });
+        });
+    </script>
+</body>
+</html>
